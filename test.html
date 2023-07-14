@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #b {
+        stroke: rgb(255, 0, 0);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-dasharray: 10;
+        stroke-dashoffset: 100;
+        animation: ani 10s linear infinite;
+    }
+
+    #bb {
+        fill: none;
+        stroke: #231815;
+        stroke-linecap: round;
+        stroke-dasharray: 5;
+        stroke-dashoffset: 103;
+        animation: ani 10s linear infinite;
+
+    }
+
+    @keyframes ani {
+        from {
+            stroke-dashoffset: 0;
+        }
+
+        to {
+            stroke-dashoffset: 100;
+        }
+
+    }
+
+    @keyframes ani2 {
+        from {
+            stroke-dashoffset: 0;
+        }
+
+        to {
+            stroke-dashoffset: 103;
+        }
+
+    }
+</style>
+
+<body>
+    <svg id="a" height="210" width="500">
+        <line id="b" x1="0" y1="100" x2="200" y2="100" />
+    </svg>
+
+    <svg id="aa" viewBox="0 0 300 300">
+        <path id="bb" d="M64.2,64.2c-60,0-16.4-63.4-63.4-63.4" />
+    </svg>
+
+</body>
+<script>
+    var id = document.getElementById('b');
+    id.style.strokeDashoffset = '2';
+
+    var id2 = document.getElementById('bb');
+    console.log(id2.getTotalLength());
+</script>
+
+</html>
