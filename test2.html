@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .line {
+        fill: none;
+        stroke: #0C68AC;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-dasharray: 6;
+        stroke-dashoffset: 0;
+    }
+
+    @keyframes animationDashLine {
+        from {
+            stroke-dashoffset: 370;
+        }
+
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    #box {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        z-index: 100;
+        animation: trans 1s ease-out forwards;
+
+    }
+
+    #rect1 {
+        position: absolute;
+        fill: url('#gr');
+        animation: trans 1s ease-out forwards;
+
+    }
+
+    @keyframes trans {
+        from {
+            width: 364px;
+        }
+
+        to {
+            width: 0px;
+        }
+    }
+
+</style>
+
+<body>
+    <div id='a'></div>
+
+    <!-- <div id='container' style="position:relative;width:400px;height:550px"> -->
+    <!-- <div id='box'>
+        </div> -->
+
+    <svg width="364" height="542" style="position:absolute;top:170px">
+        <defs>
+            <linearGradient id="gr">
+                <stop offset="0" stop-color="black"></stop>
+                <stop offset="1" stop-color="black" stop-opacity="0"></stop>
+            </linearGradient>
+        </defs>
+        <path class="line" d="M116.09,10.04c89.46,0,163.6,260.96,244.84,260.96" />
+        <rect  x="0" y="0" id="rect1" width="364" height="542" />
+
+        <!-- <path class="line" d="M68.18,76c87.94,0,210.59,195,292.75,195" /> -->
+
+
+    </svg>
+    <!-- </div> -->
+
+</body>
+
+<script>
+    var id2 = document.getElementById('control-line');
+    document.getElementById('a').innerText = id2.getTotalLength();
+</script>
+
+</html>

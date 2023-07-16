@@ -1,0 +1,484 @@
+:root {
+    --background-image-top: 0px;
+}
+
+@font-face {
+    font-family: "Roboto-Thin";
+    src: url(fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Light";
+    src: url(fonts/Roboto-Light.ttf);
+}
+
+body {
+    margin: 0px;
+    background-color: black;
+    background-image: url('images/background1.png');
+    background-repeat: no-repeat;
+    background-position: center var(--background-image-top);
+    font-family: "Roboto-Thin";
+    overflow: hidden;
+}
+
+#raon-box {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 133px;
+    z-index: 100;
+}
+
+.raonLogo {
+    fill: #fff;
+}
+
+#accelerator-control {
+    position: absolute;
+    color: white;
+    width: 150px;
+    left: 160px;
+    top: 40px;
+    font-family: "Roboto-Light";
+    letter-spacing: 2px;
+    z-index: 100;
+}
+
+#network-container-body {
+    position: relative;
+    width: 1920px;
+    height: 920px;
+    margin: auto;
+    /* border-style: dotted; */
+    /* border-color: red; */
+
+}
+
+#background-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/effect.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    animation: opacity 1s ease-out forwards;
+}
+
+#left-circle-container {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    top: 424px;
+    left: 499px;
+}
+
+#center-circle-container {
+    position: absolute;
+    width: 102px;
+    height: 102px;
+    top: 409px;
+    left: 909px;
+}
+
+#right-circle-container {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    top: 424px;
+    left: 1351px;
+}
+
+#center-circle-inner {
+    fill: #359DD1;
+}
+
+#center-circle-outer {
+    fill: none;
+    stroke: #0C68AC;
+    stroke-width: 2px;
+}
+
+#left-circle-inner,
+#right-circle-inner {
+    fill: #C9154E;
+}
+
+#left-circle-outer,
+#right-circle-outer {
+    fill: none;
+    stroke: #C9154E;
+    stroke-width: 2px;
+
+}
+
+#left-network-container {
+    position: absolute;
+    width: 364px;
+    height: 882px;
+    top: 19px;
+    left: 135px;
+
+    /* border-style: dotted; */
+    /* border-color: red; */
+
+}
+
+#center-left-network {
+    position: absolute;
+    width: 323px;
+    height: 882px;
+    top: 19px;
+    left: 593px;
+
+    /* border-style: dotted; */
+    /* border-color: red; */
+}
+
+#center-right-network {
+    position: absolute;
+    width: 323px;
+    height: 882px;
+    top: 19px;
+    left: 1005px;
+
+    /* border-style: dotted; */
+    /* border-color: red; */
+}
+
+#right-network {
+    position: absolute;
+    width: 364px;
+    height: 882px;
+    top: 19px;
+    left: 1421px;
+
+    /* border-style: dotted; */
+    /* border-color: red; */
+}
+
+#control-line {
+    fill: none;
+    stroke: #0C68AC;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+    animation: animationDashLine 30s linear infinite;
+}
+
+#ctrluser-line {
+    fill: none;
+    stroke: #7D4E22;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+    animation: animationDashLine 30s linear infinite;
+}
+
+#archive1-line,
+#archive2-line,
+#scl3-gateway1-line,
+#scl3-gateway2-line {
+    fill: none;
+    stroke: #88157B;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+    animation: animationDashLine 30s linear infinite;
+}
+
+#display-wall-line {
+    fill: none;
+    stroke: #2CA339;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+    animation: animationDashLine 30s linear infinite;
+}
+
+#operator-line {
+    fill: none;
+    stroke: #F0E62A;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+    animation: animationDashLine 30s linear infinite;
+}
+
+#control-fill {
+    fill: #0C68AC;
+}
+
+#ctrluser-fill {
+    fill: #926034;
+
+}
+
+#display-wall-fill {
+    fill: #2CA339;
+
+}
+
+#operator-fill {
+    fill: #F0E62A;
+
+}
+
+#archive1-fill,
+#scl3-gateway1-fill,
+#scl3-gateway2-fill,
+#archive2-fill {
+    fill: #88157B;
+}
+
+#isol-line,
+#srf-line,
+#cryo-line,
+#low-energy-line,
+#if-line,
+#high-energy-line {
+    fill: none;
+    stroke: #0E9B94;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+    animation: animationDashLine 30s linear infinite;
+}
+
+#isol-fill,
+#srf-fill,
+#cryo-fill,
+#low-energy-fill,
+#if-fill,
+#high-energy-fill {
+    fill: #0E9B94;
+}
+
+
+#ccsi1-line,
+#ccs02-line,
+#ccs05-line,
+#ccs09-line,
+#ccs12-line,
+#ccs14-line,
+#ccs16-line,
+#ccs21-line {
+    fill: none;
+    stroke: #88157B;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+    animation: animationDashLine 30s linear infinite;
+}
+
+#ccs24-line,
+#ccs29-line,
+#ccs34-line,
+#ccs40-line {
+    fill: none;
+    stroke: #DE551A;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+    animation: animationDashLine 30s linear infinite;
+
+}
+
+#ccsi1-fill,
+#ccs02-fill,
+#ccs05-fill,
+#ccs09-fill,
+#ccs12-fill,
+#ccs14-fill,
+#ccs16-fill,
+#ccs21-fill {
+    fill: #88157B;
+}
+
+#ccs24-fill,
+#ccs29-fill,
+#ccs34-fill,
+#ccs40-fill {
+    fill: #E99413;
+}
+
+#left-line-container {
+    position: absolute;
+    width: 360px;
+    height: 4px;
+    top: 460px;
+    left: 559px;    
+}
+
+#right-line-container {
+    position: absolute;
+    width: 360px;
+    height: 4px;
+    top: 458px;
+    left: 1005px;
+
+    /* border-style: dotted; */
+    /* border-color: red; */
+}
+
+#left-line {
+    fill: none;
+    stroke: #D6226D;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+    animation: animationDashLine-L 30s linear infinite;
+}
+
+#right-line {
+    fill: none;
+    stroke: #D6226D;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+    animation: animationDashLine-R 30s linear infinite;
+
+}
+
+.networkTextContainer {
+    position: absolute;
+    width: 120px;
+    height: 46px; 
+}
+
+.networkLeftTitleText {
+    width: 100%;
+    font-family: "Roboto-Thin";
+    color: gray;
+    font-size: 16px;
+    text-align: right;
+}
+
+.networkLeftValueText {
+    width: 100%;
+    font-family: "Roboto-Thin";
+    color: white;
+    font-size: 26px;
+    text-align: right;
+}
+
+.networkRightTitleText {
+    width: 100%;
+    font-family: "Roboto-Thin";
+    color: gray;
+    font-size: 16px;
+    text-align: left;
+}
+
+.networkRightValueText {
+    width: 100%;
+    font-family: "Roboto-Thin";
+    color: white;
+    font-size: 26px;
+    text-align: left;
+}
+
+.networUnconnectedText {
+    width: 100%;
+    font-family: "Roboto-Thin";
+    color: gray;
+    font-size: 26px;
+    text-align: right;
+}
+
+#cpu-valueL {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 428px;
+    left: 503px;
+    font-family: "Roboto-Light";
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    line-height: 65px;
+    /* border-style: dotted;
+    border-color: red; */
+}
+
+#cpu-valueC {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 413px;
+    left: 914px;
+    font-family: "Roboto-Light";
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    line-height: 95px;
+
+    /* border-style: dotted; */
+    /* border-color: red; */
+}
+
+#cpu-valueR {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 428px;
+    left: 1355px;
+    font-family: "Roboto-Light";
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    line-height: 65px;
+
+    /* border-style: dotted; */
+    /* border-color: red; */
+}
+
+@keyframes animationDashLine {
+    from {
+        stroke-dashoffset: 402;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes animationDashLine-L {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 360;
+    }
+}
+
+@keyframes animationDashLine-R {
+    from {
+        stroke-dashoffset: 360;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
