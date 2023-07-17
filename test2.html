@@ -46,17 +46,12 @@
             width: 0px;
         }
     }
-
 </style>
 
 <body>
     <div id='a'></div>
 
-    <!-- <div id='container' style="position:relative;width:400px;height:550px"> -->
-    <!-- <div id='box'>
-        </div> -->
-
-    <svg width="364" height="542" style="position:absolute;top:170px">
+    <svg width="364" height="542">
         <defs>
             <linearGradient id="gr">
                 <stop offset="0" stop-color="black"></stop>
@@ -64,19 +59,44 @@
             </linearGradient>
         </defs>
         <path class="line" d="M116.09,10.04c89.46,0,163.6,260.96,244.84,260.96" />
-        <rect  x="0" y="0" id="rect1" width="364" height="542" />
+        <rect x="0" y="0" id="rect1" width="364" height="542" />
 
-        <!-- <path class="line" d="M68.18,76c87.94,0,210.59,195,292.75,195" /> -->
-
-
+        <path class="line" d="M68.18,76c87.94,0,210.59,195,292.75,195" />
     </svg>
-    <!-- </div> -->
+
+
+    <svg width="500" height="500">
+        <style type="text/css">
+            .st0 {
+                fill: none;
+                stroke: url(#SVGID_1_);
+                stroke-linecap: round;
+                stroke-width: 3px;
+                stroke-dasharray: 6;
+            }
+        </style>
+        <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="126.8043" y1="249.6161" x2="372.6421"
+            y2="249.6161">
+            <stop offset="1" style="stop-color:#FFFFFF;stop-opacity:0">
+                <animate attributeName="offset" from="1" to="0" dur="0.5s" begin="0s" fill="freeze" keySplines=" 0.1 0.2 0.4 1" keyTimes="0;1" calcMode="spline"/>
+            </stop>
+            <stop offset="1" style="stop-color:#036EB8">
+                <animate attributeName="offset" from="1" to="0" dur="0.5s" begin="0.2" fill="freeze" keySplines=" 0.1 0.2 0.4 1" keyTimes="0;1" calcMode="spline"/>
+            </stop>
+
+        </linearGradient>
+        <path class="st0" d="M127.3,119.1c89.5,0,163.6,261,244.8,261" />
+    </svg>
+
 
 </body>
 
 <script>
     var id2 = document.getElementById('control-line');
     document.getElementById('a').innerText = id2.getTotalLength();
+
+    var ani = document.getElementById('gradient-point1');
+    ani.beginElement();
 </script>
 
 </html>
