@@ -204,11 +204,6 @@
             <div class="networkLeftValueText" id="operator-value"></div>
         </div>
 
-        <div class="networkTextContainer" style="top:420px; left:570px">
-            <!-- <div class="networkLeftTitleText">Operator</div> -->
-            <div class="networkLeftValueText" id="left-switch-value"></div>
-        </div>
-
         <div class="networkTextContainer" style="top:12px; left:620px">
             <div class="networUnconnectedText">Utility</div>
         </div>
@@ -246,11 +241,6 @@
         <div class="networkTextContainer" style="top:852px; left:1178px">
             <div class="networkRightTitleText">High Energy</div>
             <div class="networkRightValueText" id="high-energy-value"></div>
-        </div>
-
-        <div class="networkTextContainer" style="top:420px; left:1230px">
-            <!-- <div class="networkLeftTitleText">Operator</div> -->
-            <div class="networkRightValueText" id="right-switch-value"></div>
         </div>
 
         <div class="networkTextContainer" style="top:66px; left:1564px">
@@ -302,6 +292,15 @@
             <div class="networkRightValueText" id="ccs40-value"></div>
         </div>
 
+        <!-- Uplink Switch Value Text -->
+        <div class="networkTextContainer" style="top:420px; left:575px">
+            <div class="networkRightValueText" id="left-switch-value"></div>
+        </div>
+        <div class="networkTextContainer" style="top:420px; left:1230px">
+            <!-- <div class="networkLeftTitleText">Operator</div> -->
+            <div class="networkLeftValueText" id="right-switch-value"></div>
+        </div>
+
         <!-- CPU Value Text -->
         <div id="cpu-valueL">45.4</div>
         <div id="cpu-valueC">69.3</div>
@@ -315,16 +314,11 @@
     var numberOfData = 20;
     var timeInterval = numberOfData * 1000;
 
+    // Backbone Switch
+    monitorinBackboneSwitch(numberOfData);
+
     // Server Room S4048 Uplink Switch
     monitoringServerUplinkSwitch(numberOfData);
-    monitoringControlSwitch(numberOfData);
-    monitoringCtrluserSwitch(numberOfData);
-    monitoringArchive1Switch(numberOfData);
-    monitoringArchive2Switch(numberOfData);
-    monitoringSCL3Gateway1Switch(numberOfData);
-    monitoringSCL3Gateway2Switch(numberOfData);
-    monitoringDisplayWallSwitch(numberOfData);
-    monitoringOperatorSwitch(numberOfData);
 
     // SCL3 Gallery Uplink Switch
     monitoringCCSI1Switch(numberOfData);
@@ -340,15 +334,11 @@
         // var id2 = document.getElementById('ccsi1');
         // console.log(id2.getTotalLength());
 
+        // Backbone Switch
+        setInterval(monitorinBackboneSwitch, timeInterval, numberOfData);
+
+        // Server Room S4048 Uplink Switch
         setInterval(monitoringServerUplinkSwitch, timeInterval, numberOfData);
-        setInterval(monitoringControlSwitch, timeInterval, numberOfData);
-        setInterval(monitoringCtrluserSwitch, timeInterval, numberOfData);
-        setInterval(monitoringArchive1Switch, timeInterval, numberOfData);
-        setInterval(monitoringArchive2Switch, timeInterval, numberOfData);
-        setInterval(monitoringSCL3Gateway1Switch, timeInterval, numberOfData);
-        setInterval(monitoringSCL3Gateway2Switch, timeInterval, numberOfData);
-        setInterval(monitoringDisplayWallSwitch, timeInterval, numberOfData);
-        setInterval(monitoringOperatorSwitch, timeInterval, numberOfData);
 
         // SCL3 Gallery Uplink Switch
         setInterval(monitoringCCSI1Switch, timeInterval, numberOfData);
@@ -360,6 +350,7 @@
         setInterval(monitoringCCS16Switch, timeInterval, numberOfData);
         setInterval(monitoringCCS21Switch, timeInterval, numberOfData);
 
+        // setTimeout(test, 5000);
     }
 
     document.addEventListener('visibilitychange', function () {
@@ -372,8 +363,35 @@
         }
     });
 
+    function changeAnimationDuration(lineID, trafficData, portBandwidth) {
+        let id = document.getElementById(lineID);
+        let traffic = trafficData;
+        let bandwidth = 100 * GByte;
 
+        switch (portBandwidth) {
+            case '100G':
+                bandwidth = 100 * GByte;
+                break;
 
+            case '40G':
+                bandwidth = 40 * GByte;
+                break;
+
+            case '10G':
+                bandwidth = 10 * GByte;
+                break;
+
+            case '1G':
+                bandwidth = 1 * GByte;
+                break;
+        }
+
+        let animationTime = 100 - 90 * (traffic / bandwidth);
+
+        if(animationTime < 10) animationTime = 10;
+
+        id.style.animationDuration = animationTime + 's';
+    }
 </script>
 
 </html>

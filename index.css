@@ -165,7 +165,7 @@ body {
     stroke-linecap: round;
     stroke-dasharray: 6;
     stroke-dashoffset: 0;
-    animation: animationDashLine 30s linear infinite;
+    animation: animationDashLine 100s linear infinite;
 }
 
 #ctrluser-line {
@@ -175,7 +175,7 @@ body {
     stroke-linecap: round;
     stroke-dasharray: 6;
     stroke-dashoffset: 0;
-    animation: animationDashLine 30s linear infinite;
+    animation: animationDashLine 100s linear infinite;
 }
 
 #archive1-line,
@@ -188,7 +188,7 @@ body {
     stroke-linecap: round;
     stroke-dasharray: 6;
     stroke-dashoffset: 0;
-    animation: animationDashLine 30s linear infinite;
+    animation: animationDashLine 100s linear infinite;
 }
 
 #display-wall-line {
@@ -198,7 +198,7 @@ body {
     stroke-linecap: round;
     stroke-dasharray: 6;
     stroke-dashoffset: 0;
-    animation: animationDashLine 30s linear infinite;
+    animation: animationDashLine 100s linear infinite;
 }
 
 #operator-line {
@@ -208,7 +208,7 @@ body {
     stroke-linecap: round;
     stroke-dasharray: 6;
     stroke-dashoffset: 0;
-    animation: animationDashLine 30s linear infinite;
+    animation: animationDashLine 100s linear infinite;
 }
 
 #control-fill {
@@ -249,7 +249,7 @@ body {
     stroke-linecap: round;
     stroke-dasharray: 6;
     stroke-dashoffset: 0;
-    animation: animationDashLine 30s linear infinite;
+    animation: animationDashLine 100s linear infinite;
 }
 
 #isol-fill,
@@ -276,7 +276,7 @@ body {
     stroke-linecap: round;
     stroke-dasharray: 6;
     stroke-dashoffset: 0;
-    animation: animationDashLine 30s linear infinite;
+    animation: animationDashLine 100s linear infinite;
 }
 
 #ccs24-line,
@@ -289,7 +289,7 @@ body {
     stroke-linecap: round;
     stroke-dasharray: 6;
     stroke-dashoffset: 0;
-    animation: animationDashLine 30s linear infinite;
+    animation: animationDashLine 100s linear infinite;
 
 }
 
@@ -337,7 +337,7 @@ body {
     stroke-linecap: round;
     stroke-dasharray: 6;
     stroke-dashoffset: 0;
-    animation: animationDashLine-L 30s linear infinite;
+    animation: animationDashLine-L 100s linear infinite;
 }
 
 #right-line {
@@ -347,7 +347,7 @@ body {
     stroke-linecap: round;
     stroke-dasharray: 6;
     stroke-dashoffset: 0;
-    animation: animationDashLine-R 30s linear infinite;
+    animation: animationDashLine-R 100s linear infinite;
 
 }
 
