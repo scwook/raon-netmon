@@ -34,7 +34,6 @@
         position: absolute;
         fill: url('#gr');
         animation: trans 1s ease-out forwards;
-
     }
 
     @keyframes trans {
@@ -78,25 +77,128 @@
         <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="126.8043" y1="249.6161" x2="372.6421"
             y2="249.6161">
             <stop offset="1" style="stop-color:#FFFFFF;stop-opacity:0">
-                <animate attributeName="offset" from="1" to="0" dur="0.5s" begin="0s" fill="freeze" keySplines=" 0.1 0.2 0.4 1" keyTimes="0;1" calcMode="spline"/>
+                <animate attributeName="offset" from="1" to="0" dur="0.5s" begin="0s" fill="freeze"
+                    keySplines=" 0.1 0.2 0.4 1" keyTimes="0;1" calcMode="spline" />
             </stop>
             <stop offset="1" style="stop-color:#036EB8">
-                <animate attributeName="offset" from="1" to="0" dur="0.5s" begin="0.2" fill="freeze" keySplines=" 0.1 0.2 0.4 1" keyTimes="0;1" calcMode="spline"/>
+                <animate attributeName="offset" from="1" to="0" dur="0.5s" begin="0.2" fill="freeze"
+                    keySplines=" 0.1 0.2 0.4 1" keyTimes="0;1" calcMode="spline" />
             </stop>
 
         </linearGradient>
         <path class="st0" d="M127.3,119.1c89.5,0,163.6,261,244.8,261" />
     </svg>
 
+    <svg id='svg2' width="500" height="500">
+        <style type="text/css">
+            #st1 {
+                fill: none;
+                stroke-linecap: round;
+                stroke-width: 3px;
+                stroke-dasharray: 6;
+            }
+        </style>
+        <path id="st1" d="M127.3,119.1c89.5,0,163.6,261,244.8,261" />
+    </svg>
+
+    <svg width="500" height="500">
+        <style type="text/css">
+            #st2 {
+                fill: none;
+                stroke-linecap: round;
+                stroke-width: 3px;
+                stroke-dasharray: 6;
+            }
+        </style>
+        <path id="st2" d="M127.3,119.1c89.5,0,163.6,261,244.8,261" style="stroke: url(#gradient3);"></path>
+        <linearGradient id="gradient3" gradientUnits="userSpaceOnUse" x1="126.8043" y1="249.6161" x2="372.6421"
+            y2="249.6161">
+            <stop offset="1" style="stop-color: rgb(255, 255, 255); stop-opacity: 0;">
+                <animate attributeName="offset" begin="0s" dur="0.5s" fill="freeze" from="1" to="0"
+                    keySplines="0.1 0.2 0.4 1" keyTimes="0;1" calcMode="spline"></animate>
+            </stop>
+            <stop offset="1" style="stop-color: rgb(3, 110, 184);">
+                <animate attributeName="offset" begin="0.2s" dur="0.5s" fill="freeze" from="1" to="0"
+                    keySplines="0.1 0.2 0.4 1" keyTimes="0;1" calcMode="spline"></animate>
+            </stop>
+        </linearGradient>
+    </svg>
+
 
 </body>
-
 <script>
-    var id2 = document.getElementById('control-line');
-    document.getElementById('a').innerText = id2.getTotalLength();
+    // var id2 = document.getElementById('control-line');
+    // document.getElementById('a').innerText = id2.getTotalLength();
 
-    var ani = document.getElementById('gradient-point1');
-    ani.beginElement();
+    // var ani = document.getElementById('gradient-point1');
+    // ani.beginElement();
+
+
+    var linearGr = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
+    linearGr.setAttribute('id', 'gradient');
+    linearGr.setAttribute('gradientUnits', 'userSpaceOnUse');
+    linearGr.setAttribute('x1', '126.8043');
+    linearGr.setAttribute('y1', '249.6161');
+    linearGr.setAttribute('x2', '372.6421');
+    linearGr.setAttribute('y2', '249.6161');
+
+    var stop1 = document.createElementNS("http://www.w3.org/2000/svg", 'stop');
+    stop1.setAttribute('offset', '1');
+    stop1.style.stopColor = "#FFFFFF";
+    stop1.style.stopOpacity = "0";
+
+    var stop2 = document.createElementNS("http://www.w3.org/2000/svg", 'stop');
+    stop2.setAttribute('offset', '1');
+    stop2.style.stopColor = "#036EB8";
+
+    var ani1 = document.createElementNS("http://www.w3.org/2000/svg", 'animate');
+    // ani1.setAttribute('class', 'animation');
+    ani1.setAttribute("attributeName", "offset");
+    ani1.setAttribute('begin', '0s');
+    ani1.setAttribute('dur', '0.5s');
+    ani1.setAttribute('fill', 'freeze');
+    ani1.setAttribute('from', '1');
+    ani1.setAttribute('to', '0');
+    ani1.setAttribute('keySplines', "0.1 0.2 0.4 1");
+    ani1.setAttribute('keyTimes', "0;1");
+    ani1.setAttribute('calcMode', "spline");
+
+    var ani2 = document.createElementNS("http://www.w3.org/2000/svg", 'animate');
+    // ani2.setAttribute('class', 'animation');
+    ani2.setAttribute("attributeName", "offset");
+    ani2.setAttribute('begin', '0.2s');
+    ani2.setAttribute('dur', '0.5s');
+    ani2.setAttribute('fill', 'freeze');
+    ani2.setAttribute('from', '1');
+    ani2.setAttribute('to', '0');
+    ani2.setAttribute('keySplines', "0.1 0.2 0.4 1");
+    ani2.setAttribute('keyTimes', "0;1");
+    ani2.setAttribute('calcMode', "spline");
+
+    stop1.appendChild(ani1);
+    stop2.appendChild(ani2);
+
+    // console.log(stop1, stop2);
+
+    linearGr.appendChild(stop1);
+    linearGr.appendChild(stop2);
+
+    //     console.log(linearGr);
+
+    var svg2 = document.getElementById('svg2');
+    svg2.appendChild(linearGr);
+    //     console.log(pa);
+
+    var id = document.getElementById('st1');
+
+    id.style.stroke = 'url(#gradient)';
+
+    console.log(svg2);
+
+    // var trigger = document.getElementsByClassName('animation');
+    // trigger[0].beginElement();
+    // trigger[1].beginElement();
+
 </script>
 
 </html>

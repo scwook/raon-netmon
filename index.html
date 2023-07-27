@@ -297,7 +297,6 @@
             <div class="networkRightValueText" id="left-switch-value"></div>
         </div>
         <div class="networkTextContainer" style="top:420px; left:1230px">
-            <!-- <div class="networkLeftTitleText">Operator</div> -->
             <div class="networkLeftValueText" id="right-switch-value"></div>
         </div>
 
@@ -311,8 +310,8 @@
 
 <script>
     var documentHidden = true;
-    var numberOfData = 20;
-    var timeInterval = numberOfData * 1000;
+    var numberOfData = 20; // second
+    var timeInterval = numberOfData * 1000; // millisecond
 
     // Backbone Switch
     monitorinBackboneSwitch(numberOfData);
@@ -387,7 +386,7 @@
         }
 
         let animationTime = 100 - 90 * (traffic / bandwidth);
-
+        
         if(animationTime < 10) animationTime = 10;
 
         id.style.animationDuration = animationTime + 's';

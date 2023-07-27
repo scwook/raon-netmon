@@ -80,6 +80,7 @@ body {
     height: 102px;
     top: 409px;
     left: 909px;
+    z-index: 100;
 }
 
 #right-circle-container {
@@ -422,6 +423,7 @@ body {
     font-size: 32px;
     text-align: center;
     line-height: 95px;
+    z-index: 200;
 
     /* border-style: dotted; */
     /* border-color: red; */
