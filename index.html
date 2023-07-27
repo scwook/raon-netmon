@@ -5,6 +5,8 @@
 
 <script src="config.js"></script>
 <script src="influxDB.js"></script>
+<script src="lineAnimation.js"></script>
+
 
 <body>
     <div style="margin:auto; position: relative; width:1920px; height:80px;">
@@ -59,11 +61,11 @@
 
 
         <div id="left-network-container">
-            <svg width="364" height="542" style="position:absolute;top:170px">
+            <svg id="left-line-group" width="364" height="542" style="position:absolute;top:170px">
                 <path id="control-line" d="M116.09,10.04c89.46,0,163.6,260.96,244.84,260.96" />
                 <path id="ctrluser-line" d="M68.18,76c87.94,0,210.59,195,292.75,195" />
-                <path id="archive1-line" d="M20.57,230.23c86.32,0,257.56,40.77,342.86,40.77" />
-                <path id="scl3-gateway1-line" d="M35.02,150.48c86.87,0,240,120.52,325.91,120.52" />
+                <path id="archive1-line" d="M35.02,150.48c86.87,0,240,120.52,325.91,120.52" />
+                <path id="scl3-gateway1-line" d="M20.57,230.23c86.32,0,257.56,40.77,342.86,40.77" />
                 <path id="scl3-gateway2-line" d="M20.57,311.77c86.32,0,257.56-40.77,342.86-40.77" />
                 <path id="archive2-line" d="M35.02,391.52c86.87,0,240-120.52,325.91-120.52" />
                 <path id="display-wall-line" d="M68.18,466c87.94,0,210.59-195,292.75-195" />
@@ -329,6 +331,8 @@
     monitoringCCS16Switch(numberOfData);
     monitoringCCS21Switch(numberOfData);
 
+
+
     window.onload = function () {
         // var id2 = document.getElementById('ccsi1');
         // console.log(id2.getTotalLength());
@@ -350,6 +354,16 @@
         setInterval(monitoringCCS21Switch, timeInterval, numberOfData);
 
         // setTimeout(test, 5000);
+
+        lineShowUp(lineGradientInfo.control);
+        lineShowUp(lineGradientInfo.ctrluser);
+        lineShowUp(lineGradientInfo.archive1);
+        lineShowUp(lineGradientInfo.scl3Gateway1);
+
+
+
+        // lineShowUp('operator-line');
+
     }
 
     document.addEventListener('visibilitychange', function () {
@@ -386,8 +400,8 @@
         }
 
         let animationTime = 100 - 90 * (traffic / bandwidth);
-        
-        if(animationTime < 10) animationTime = 10;
+
+        if (animationTime < 10) animationTime = 10;
 
         id.style.animationDuration = animationTime + 's';
     }
