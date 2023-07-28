@@ -103,6 +103,162 @@ var svgInfo = {
             'id': 'operator-fill'
         }
     },
+    'spare1': {
+        'line': {
+            'id': 'spare1-line',
+            'color': '#3E3A39',
+            'x1': '183',
+            'y1': '227',
+            'x2': '320',
+            'y2': '227'
+        },
+        'fill': {
+            'id': 'spare1-fill'
+        }
+    },
+    'spare2': {
+        'line': {
+            'id': 'spare2-line',
+            'color': '#3E3A39',
+            'x1': '98',
+            'y1': '252',
+            'x2': '320',
+            'y2': '252'
+        },
+        'fill': {
+            'id': 'spare2-fill'
+        }
+    },
+    'spare3': {
+        'line': {
+            'id': 'spare3-line',
+            'color': '#3E3A39',
+            'x1': '26',
+            'y1': '284',
+            'x2': '320',
+            'y2': '284'
+        },
+        'fill': {
+            'id': 'spare3-fill'
+        }
+    },
+    'spare4': {
+        'line': {
+            'id': 'spare4-line',
+            'color': '#3E3A39',
+            'x1': '26',
+            'y1': '598',
+            'x2': '320',
+            'y2': '598'
+        },
+        'fill': {
+            'id': 'spare4-fill'
+        }
+    },
+    'spare5': {
+        'line': {
+            'id': 'spare5-line',
+            'color': '#3E3A39',
+            'x1': '98',
+            'y1': '630',
+            'x2': '320',
+            'y2': '630'
+        },
+        'fill': {
+            'id': 'spare5-fill'
+        }
+    },
+    'spare6': {
+        'line': {
+            'id': 'spare6-line',
+            'color': '#3E3A39',
+            'x1': '183',
+            'y1': '655',
+            'x2': '320',
+            'y2': '655'
+        },
+        'fill': {
+            'id': 'spare6-fill'
+        }
+    },
+    'isol': {
+        'line': {
+            'id': 'isol-line',
+            'color': '#0E9B94',
+            'x1': '0',
+            'y1': '227',
+            'x2': '139',
+            'y2': '227'
+        },
+        'fill': {
+            'id': 'isol-fill'
+        }
+    },
+    'srf': {
+        'line': {
+            'id': 'srf-line',
+            'color': '#0E9B94',
+            'x1': '0',
+            'y1': '252',
+            'x2': '224',
+            'y2': '252'
+        },
+        'fill': {
+            'id': 'srf-fill'
+        }
+    },
+    'cryo': {
+        'line': {
+            'id': 'cryo-line',
+            'color': '#0E9B94',
+            'x1': '0',
+            'y1': '284',
+            'x2': '296',
+            'y2': '284'
+        },
+        'fill': {
+            'id': 'cryo-fill'
+        }
+    },
+    'lowEnergy': {
+        'line': {
+            'id': 'low-energy-line',
+            'color': '#0E9B94',
+            'x1': '0',
+            'y1': '598',
+            'x2': '296',
+            'y2': '598'
+        },
+        'fill': {
+            'id': 'low-energy-fill'
+        }
+    },
+    'if': {
+        'line': {
+            'id': 'if-line',
+            'color': '#0E9B94',
+            'x1': '0',
+            'y1': '630',
+            'x2': '224',
+            'y2': '630'
+        },
+        'fill': {
+            'id': 'if-fill'
+        }
+    },
+    'highEnergy': {
+        'line': {
+            'id': 'high-energy-line',
+            'color': '#0E9B94',
+            'x1': '0',
+            'y1': '655',
+            'x2': '139',
+            'y2': '655'
+        },
+        'fill': {
+            'id': 'high-energy-fill'
+        }
+    },
     'ccsi1': {
         'line': {
             'id': 'ccsi1-line',
@@ -265,6 +421,7 @@ function leftLineShowUp(line, showUpDelay) {
     let lineInfo = line;
     let delay = showUpDelay;
     let duration = 2;
+    let keySplines = "0.6 0 0.4 1";
 
     let gradientID = lineInfo.line.id + '-gradient';
 
@@ -292,7 +449,7 @@ function leftLineShowUp(line, showUpDelay) {
     ani1.setAttribute('fill', 'freeze');
     ani1.setAttribute('from', '1');
     ani1.setAttribute('to', '0');
-    ani1.setAttribute('keySplines', "0.6 0 0.4 1");
+    ani1.setAttribute('keySplines', keySplines);
     ani1.setAttribute('keyTimes', "0;1");
     ani1.setAttribute('calcMode', "spline");
 
@@ -303,7 +460,7 @@ function leftLineShowUp(line, showUpDelay) {
     ani2.setAttribute('fill', 'freeze');
     ani2.setAttribute('from', '1');
     ani2.setAttribute('to', '0');
-    ani2.setAttribute('keySplines', "0.6 0 0.4 1");
+    ani2.setAttribute('keySplines', keySplines);
     ani2.setAttribute('keyTimes', "0;1");
     ani2.setAttribute('calcMode', "spline");
 
@@ -324,6 +481,7 @@ function rightLineShowUp(line, showUpDelay) {
     let lineInfo = line;
     let delay = showUpDelay;
     let duration = 2;
+    let keySplines = "0.6 0 0.4 1";
 
     let gradientID = lineInfo.line.id + '-gradient';
 
@@ -351,7 +509,7 @@ function rightLineShowUp(line, showUpDelay) {
     ani1.setAttribute('fill', 'freeze');
     ani1.setAttribute('from', '0');
     ani1.setAttribute('to', '1');
-    ani1.setAttribute('keySplines', "0.6 0 0.4 1");
+    ani1.setAttribute('keySplines', keySplines);
     ani1.setAttribute('keyTimes', "0;1");
     ani1.setAttribute('calcMode', "spline");
 
@@ -362,7 +520,7 @@ function rightLineShowUp(line, showUpDelay) {
     ani2.setAttribute('fill', 'freeze');
     ani2.setAttribute('from', '0');
     ani2.setAttribute('to', '1');
-    ani2.setAttribute('keySplines', "0.6 0 0.4 1");
+    ani2.setAttribute('keySplines', keySplines);
     ani2.setAttribute('keyTimes', "0;1");
     ani2.setAttribute('calcMode', "spline");
 

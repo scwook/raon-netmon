@@ -85,40 +85,27 @@
 
         <div id="center-left-network">
             <svg width="322" height="882">
-                <style type="text/css">
-                    .st0 {
-                        fill: #3E3A39;
-                    }
+                <path id="spare1-line" d="M184.05,13.46C298.11,13.46,203.74,441,320.4,441" />
+                <path id="spare2-line" d="M99.31,62.38C208.92,62.38,222.87,441,320.4,441" />
+                <path id="spare3-line" d="M26.59,127.85C133.94,127.85,222.91,441,320.4,441" />
+                <path id="spare4-line" d="M26.59,754.15C133.94,754.15,222.91,441,320.4,441" />
+                <path id="spare5-line" d="M99.31,819.62C208.92,819.62,222.87,441,320.4,441" />
+                <path id="spare6-line" d="M184.05,868.54C298.11,868.54,203.74,441,320.4,441" />
 
-                    .st1 {
-                        fill: none;
-                        stroke: #3E3A39;
-                        stroke-linecap: round;
-                        stroke-miterlimit: 10;
-                        stroke-dasharray: 6;
-                    }
-                </style>
-                <circle class="st0" cx="14.6" cy="127.85" r="12" />
-                <circle class="st0" cx="87.31" cy="62.38" r="12" />
-                <circle class="st0" cx="172.04" cy="13.46" r="12" />
-                <path class="st1" d="M26.59,127.85C133.94,127.85,222.91,441,320.4,441" />
-                <path class="st1" d="M99.31,62.38C208.92,62.38,222.87,441,320.4,441" />
-                <path class="st1" d="M184.05,13.46C298.11,13.46,203.74,441,320.4,441" />
-
-                <circle class="st0" cx="14.6" cy="754.15" r="12" />
-                <circle class="st0" cx="87.31" cy="819.62" r="12" />
-                <circle class="st0" cx="172.04" cy="868.54" r="12" />
-                <path class="st1" d="M26.59,754.15C133.94,754.15,222.91,441,320.4,441" />
-                <path class="st1" d="M99.31,819.62C208.92,819.62,222.87,441,320.4,441" />
-                <path class="st1" d="M184.05,868.54C298.11,868.54,203.74,441,320.4,441" />
+                <circle id="spare1-fill" cx="172.04" cy="13.46" r="12" />
+                <circle id="spare2-fill" cx="87.31" cy="62.38" r="12" />
+                <circle id="spare3-fill" cx="14.6" cy="127.85" r="12" />
+                <circle id="spare4-fill" cx="14.6" cy="754.15" r="12" />
+                <circle id="spare5-fill" cx="87.31" cy="819.62" r="12" />
+                <circle id="spare6-fill" cx="172.04" cy="868.54" r="12" />
             </svg>
         </div>
 
         <div id="center-right-network">
             <svg width="322" height="882">
-                <path id="isol-line" d="M296.41,127.85C189.06,127.85,100.09,441,2.6,441" />
+                <path id="isol-line" d="M138.95,13.46C24.89,13.46,119.26,441,2.6,441" />
                 <path id="srf-line" d="M223.69,62.38C114.08,62.38,100.13,441,2.6,441" />
-                <path id="cryo-line" d="M138.95,13.46C24.89,13.46,119.26,441,2.6,441" />
+                <path id="cryo-line" d="M296.41,127.85C189.06,127.85,100.09,441,2.6,441" />
                 <path id="low-energy-line" d="M296.41,754.15C189.06,754.15,100.09,441,2.6,441" />
                 <path id="if-line" d="M223.69,819.62C114.08,819.62,100.13,441,2.6,441" />
                 <path id="high-energy-line" d="M138.95,868.54C24.89,868.54,119.26,441,2.6,441" />
@@ -164,132 +151,153 @@
         </div>
 
         <svg id="left-line-container" width="360" height="4">
-            <path id="left-line" d="M358,2C294.25,2,65,2,2,2" />
+            <linearGradient id="left-line-gradient" gradientUnits="userSpaceOnUse" x1="0.5" y1="2" x2="359.5" y2="2">
+                <stop offset="1" style="stop-color: #D6226D;stop-opacity: 0;">
+                    <animate attributeName="offset" begin="0" dur="2s" fill="freeze" from="1" to="0"
+                        keySplines="0.6 0 0.4 1" keyTimes="0;1" calcMode="spline"></animate>
+                </stop>
+                <stop offset="1" style="stop-color: #D6226D;">
+                    <animate attributeName="offset" begin="0.2" dur="2s" fill="freeze" from="1" to="0"
+                        keySplines="0.6 0 0.4 1" keyTimes="0;1" calcMode="spline"></animate>
+                </stop>
+            </linearGradient>
+            <path id="left-line" d="M358,2C294.25,2,65,2,2,2" style="stroke:url(#left-line-gradient)" />
         </svg>
 
         <svg id="right-line-container" width="360" height="4">
-            <path id="right-line" d="M358,2C294.25,2,65,2,2,2" />
+            <linearGradient id="right-line-gradient" gradientUnits="userSpaceOnUse" x1="0.5" y1="2" x2="359.5" y2="2">
+                <stop offset="0" style="stop-color: #D6226D;">
+                    <animate attributeName="offset" begin="0.2" dur="2s" fill="freeze" from="0" to="1"
+                        keySplines="0.6 0 0.4 1" keyTimes="0;1" calcMode="spline"></animate>
+                </stop>
+                <stop offset="0" style="stop-color: #D6226D; stop-opacity: 0;">
+                    <animate attributeName="offset" begin="0" dur="2s" fill="freeze" from="0" to="1"
+                        keySplines="0.6 0 0.4 1" keyTimes="0;1" calcMode="spline"></animate>
+                </stop>
+            </linearGradient>
+            <path id="right-line" d="M358,2C294.25,2,65,2,2,2" style="stroke:url(#right-line-gradient)" />
         </svg>
+
 
         <!-- Nework Traffic Text -->
         <!-- Left Text -->
-        <div class="networkTextContainer" style="top:162px; left:100px; --delay:2s">
+        <div class="networkTextContainer" style="top:162px; left:100px; --delay:4s">
             <div class="networkLeftTitleText">control</div>
             <div class="networkLeftValueText" id="control-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:228px; left:55px; --delay:2.1s">
+        <div class="networkTextContainer" style="top:228px; left:55px; --delay:4.1s">
             <div class="networkLeftTitleText">ctrluer</div>
             <div class="networkLeftValueText" id="ctrluser-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:302px; left:20px; --delay:2.2s">
+        <div class="networkTextContainer" style="top:302px; left:20px; --delay:4.2s">
             <div class="networkLeftTitleText">Archive 1</div>
             <div class="networkLeftValueText" id="archive1-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:382px; left:5px; --delay:2.3s">
+        <div class="networkTextContainer" style="top:382px; left:5px; --delay:4.3s">
             <div class="networkLeftTitleText">SCL3 Gateway 1</div>
             <div class="networkLeftValueText" id="scl3-gateway1-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:464px; left:5px; --delay:2.4s">
+        <div class="networkTextContainer" style="top:464px; left:5px; --delay:4.4s">
             <div class="networkLeftTitleText">SCL3 Gateway 2</div>
             <div class="networkLeftValueText" id="scl3-gateway2-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:544px; left:20px; --delay:2.5s">
+        <div class="networkTextContainer" style="top:544px; left:20px; --delay:4.5s">
             <div class="networkLeftTitleText">Archive 2</div>
             <div class="networkLeftValueText" id="archive2-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:618px; left:55px; --delay:2.6s">
+        <div class="networkTextContainer" style="top:618px; left:55px; --delay:4.6s">
             <div class="networkLeftTitleText">Display Wall</div>
             <div class="networkLeftValueText" id="display-wall-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:684px; left:100px; --delay:2.7s">
+        <div class="networkTextContainer" style="top:684px; left:100px; --delay:4.7s">
             <div class="networkLeftTitleText">Operator</div>
             <div class="networkLeftValueText" id="operator-value"></div>
         </div>
 
-        <div class="networkTextContainer" style="top:12px; left:620px">
+        <div class="networkTextContainer" style="top:12px; left:620px; --delay:4.0s">
             <div class="networUnconnectedText">Utility</div>
         </div>
-        <div class="networkTextContainer" style="top:64px; left:535px">
+        <div class="networkTextContainer" style="top:64px; left:535px; --delay:4.1s">
             <div class="networUnconnectedText">Plant</div>
         </div>
-        <div class="networkTextContainer" style="top:824px; left:535px">
+        <div class="networkTextContainer" style="top:824px; left:535px; --delay:4.4s">
             <div class="networUnconnectedText">SCL3</div>
         </div>
-        <div class="networkTextContainer" style="top:872px; left:620px">
+        <div class="networkTextContainer" style="top:872px; left:620px; --delay:4.5s">
             <div class="networUnconnectedText">SCL2</div>
         </div>
 
         <!-- Right Text -->
-        <div class="networkTextContainer" style="top:-4px; left:1178px;">
+        <div class="networkTextContainer" style="top:-4px; left:1178px; --delay:2s">
             <div class="networkRightTitleText">ISOL</div>
             <div class="networkRightValueText" id="isol-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:46px; left:1260px">
+        <div class="networkTextContainer" style="top:46px; left:1260px; --delay:2.1s">
             <div class="networkRightTitleText">SRF</div>
             <div class="networkRightValueText" id="srf-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:112px; left:1334px">
+        <div class="networkTextContainer" style="top:112px; left:1334px; --delay:2.2s">
             <div class="networkRightTitleText">Cryo</div>
             <div class="networkRightValueText" id="cryo-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:738px; left:1334px">
+        <div class="networkTextContainer" style="top:738px; left:1334px; --delay:2.3s">
             <div class="networkRightTitleText">Low Energy</div>
             <div class="networkRightValueText" id="low-energy-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:804px; left:1260px">
+        <div class="networkTextContainer" style="top:804px; left:1260px; --delay:2.4s">
             <div class="networkRightTitleText">IF</div>
             <div class="networkRightValueText" id="if-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:852px; left:1178px">
+        <div class="networkTextContainer" style="top:852px; left:1178px; --delay:2.5s">
             <div class="networkRightTitleText">High Energy</div>
             <div class="networkRightValueText" id="high-energy-value"></div>
         </div>
 
-        <div class="networkTextContainer" style="top:66px; left:1564px; --delay:1.5s">
+        <div class="networkTextContainer" style="top:66px; left:1564px; --delay:3.5s">
             <div class="networkRightTitleText">CCSI1</div>
             <div class="networkRightValueText" id="ccsi1-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:110px; left:1632px; --delay:1.6s">
+        <div class="networkTextContainer" style="top:110px; left:1632px; --delay:3.6s">
             <div class="networkRightTitleText">CCS02</div>
             <div class="networkRightValueText" id="ccs02-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:164px; left:1696px; --delay:1.7s">
+        <div class="networkTextContainer" style="top:164px; left:1696px; --delay:3.7s">
             <div class="networkRightTitleText">CCS05</div>
             <div class="networkRightValueText" id="ccs05-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:230px; left:1742px; --delay:1.8s">
+        <div class="networkTextContainer" style="top:230px; left:1742px; --delay:3.8s">
             <div class="networkRightTitleText">CCS09</div>
             <div class="networkRightValueText" id="ccs09-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:304px; left:1778px; --delay:1.9s">
+        <div class="networkTextContainer" style="top:304px; left:1778px; --delay:3.9s">
             <div class="networkRightTitleText">CCS12</div>
             <div class="networkRightValueText" id="ccs12-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:384px; left:1794px; --delay:2.0s">
+        <div class="networkTextContainer" style="top:384px; left:1794px; --delay:4.0s">
             <div class="networkRightTitleText">CCS14</div>
             <div class="networkRightValueText" id="ccs14-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:466px; left:1794px; --delay:2.1s">
+        <div class="networkTextContainer" style="top:466px; left:1794px; --delay:4.1s">
             <div class="networkRightTitleText">CCS16</div>
             <div class="networkRightValueText" id="ccs16-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:546px; left:1778px; --delay:2.2s">
+        <div class="networkTextContainer" style="top:546px; left:1778px; --delay:4.2s">
             <div class="networkRightTitleText">CCS21</div>
             <div class="networkRightValueText" id="ccs21-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:620px; left:1742px; --delay:2.3s">
+        <div class="networkTextContainer" style="top:620px; left:1742px; --delay:4.3s">
             <div class="networkRightTitleText">CCS24</div>
             <div class="networkRightValueText" id="ccs24-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:686px; left:1696px; --delay:2.4s">
+        <div class="networkTextContainer" style="top:686px; left:1696px; --delay:4.4s">
             <div class="networkRightTitleText">CCS29</div>
             <div class="networkRightValueText" id="ccs29-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:741px; left:1632px; --delay:2.5s">
+        <div class="networkTextContainer" style="top:741px; left:1632px; --delay:4.5s">
             <div class="networkRightTitleText">CCS34</div>
             <div class="networkRightValueText" id="ccs34-value"></div>
         </div>
-        <div class="networkTextContainer" style="top:782px; left:1564px; --delay:2.6s">
+        <div class="networkTextContainer" style="top:782px; left:1564px; --delay:4.6s">
             <div class="networkRightTitleText">CCS40</div>
             <div class="networkRightValueText" id="ccs40-value"></div>
         </div>
@@ -303,9 +311,9 @@
         </div>
 
         <!-- CPU Value Text -->
-        <div id="cpu-valueL">45.4</div>
-        <div id="cpu-valueC">69.3</div>
-        <div id="cpu-valueR">0.2</div>
+        <div id="cpu-valueL"></div>
+        <div id="cpu-valueC"></div>
+        <div id="cpu-valueR"></div>
 
     </div>
 </body>
@@ -354,28 +362,45 @@
         setInterval(monitoringCCS21Switch, timeInterval, numberOfData);
 
         // setTimeout(test, 5000);
+        var delay = 2;
+        leftLineShowUp(svgInfo.control, delay);
+        leftLineShowUp(svgInfo.ctrluser, delay);
+        leftLineShowUp(svgInfo.archive1, delay);
+        leftLineShowUp(svgInfo.scl3Gateway1, delay);
+        leftLineShowUp(svgInfo.scl3Gateway2, delay);
+        leftLineShowUp(svgInfo.archive2, delay);
+        leftLineShowUp(svgInfo.displayWall, delay);
+        leftLineShowUp(svgInfo.operator, delay);
 
-        leftLineShowUp(svgInfo.control, 0);
-        leftLineShowUp(svgInfo.ctrluser, 0);
-        leftLineShowUp(svgInfo.archive1, 0);
-        leftLineShowUp(svgInfo.scl3Gateway1, 0);
-        leftLineShowUp(svgInfo.scl3Gateway2, 0);
-        leftLineShowUp(svgInfo.archive2, 0);
-        leftLineShowUp(svgInfo.displayWall, 0);
-        leftLineShowUp(svgInfo.operator, 0);
+        delay = 0;
+        leftLineShowUp(svgInfo.spare1, delay);
+        leftLineShowUp(svgInfo.spare2, delay);
+        leftLineShowUp(svgInfo.spare3, delay);
+        leftLineShowUp(svgInfo.spare4, delay);
+        leftLineShowUp(svgInfo.spare5, delay);
+        leftLineShowUp(svgInfo.spare6, delay);
 
-        rightLineShowUp(svgInfo.ccsi1, 0);
-        rightLineShowUp(svgInfo.ccs02, 0);
-        rightLineShowUp(svgInfo.ccs05, 0);
-        rightLineShowUp(svgInfo.ccs09, 0);
-        rightLineShowUp(svgInfo.ccs12, 0);
-        rightLineShowUp(svgInfo.ccs14, 0);
-        rightLineShowUp(svgInfo.ccs16, 0);
-        rightLineShowUp(svgInfo.ccs21, 0);
-        rightLineShowUp(svgInfo.ccs24, 0);
-        rightLineShowUp(svgInfo.ccs29, 0);
-        rightLineShowUp(svgInfo.ccs34, 0);
-        rightLineShowUp(svgInfo.ccs40, 0);
+        delay = 0;
+        rightLineShowUp(svgInfo.isol, delay);
+        rightLineShowUp(svgInfo.srf, delay);
+        rightLineShowUp(svgInfo.cryo, delay);
+        rightLineShowUp(svgInfo.lowEnergy, delay);
+        rightLineShowUp(svgInfo.if, delay);
+        rightLineShowUp(svgInfo.highEnergy, delay);
+
+        delay = 2;
+        rightLineShowUp(svgInfo.ccsi1, delay);
+        rightLineShowUp(svgInfo.ccs02, delay);
+        rightLineShowUp(svgInfo.ccs05, delay);
+        rightLineShowUp(svgInfo.ccs09, delay);
+        rightLineShowUp(svgInfo.ccs12, delay);
+        rightLineShowUp(svgInfo.ccs14, delay);
+        rightLineShowUp(svgInfo.ccs16, delay);
+        rightLineShowUp(svgInfo.ccs21, delay);
+        rightLineShowUp(svgInfo.ccs24, delay);
+        rightLineShowUp(svgInfo.ccs29, delay);
+        rightLineShowUp(svgInfo.ccs34, delay);
+        rightLineShowUp(svgInfo.ccs40, delay);
     }
 
     document.addEventListener('visibilitychange', function () {

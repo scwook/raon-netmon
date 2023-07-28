@@ -63,7 +63,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0;
-    animation: opacity 1s ease-out forwards;
+    animation: opacity 1s 4.5s ease-out forwards;
 }
 
 #left-circle-container {
@@ -215,50 +215,93 @@ body {
 #control-fill {
     fill: #0C68AC;
     opacity: 0;
-    animation: opacity 1s 2s linear forwards;
+    animation: opacity 1s 4s linear forwards;
 }
 
 #ctrluser-fill {
     fill: #926034;
     opacity: 0;
-    animation: opacity 1s 2.1s linear forwards;
+    animation: opacity 1s 4.1s linear forwards;
 }
 
 #archive1-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 2.2s linear forwards;
+    animation: opacity 1s 4.2s linear forwards;
 }
 
 #scl3-gateway1-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 2.3s linear forwards;
+    animation: opacity 1s 4.3s linear forwards;
 }
 
 #scl3-gateway2-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 2.4s linear forwards;
+    animation: opacity 1s 4.4s linear forwards;
 }
 
 #archive2-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 2.5s linear forwards;
+    animation: opacity 1s 4.5s linear forwards;
 
 }
 
 #display-wall-fill {
     fill: #2CA339;
     opacity: 0;
-    animation: opacity 1s 2.6s linear forwards;
+    animation: opacity 1s 4.6s linear forwards;
 }
 
 #operator-fill {
     fill: #F0E62A;
     opacity: 0;
-    animation: opacity 1s 2.7s linear forwards;
+    animation: opacity 1s 4.7s linear forwards;
+}
+
+#spare1-line,
+#spare2-line,
+#spare3-line,
+#spare4-line,
+#spare5-line,
+#spare6-line {
+    fill: none;
+    stroke: #3E3A39;
+    stroke-linecap: round;
+    stroke-dasharray: 6;
+}
+
+#spare1-fill {
+    fill: #3E3A39;
+    opacity: 0;
+    animation: opacity 1s 2.0s linear forwards;
+}
+#spare2-fill {
+    fill: #3E3A39;
+    opacity: 0;
+    animation: opacity 1s 2.1s linear forwards;
+}
+#spare3-fill {
+    fill: #3E3A39;
+    opacity: 0;
+    animation: opacity 1s 2.2s linear forwards;
+}
+#spare4-fill {
+    fill: #3E3A39;
+    opacity: 0;
+    animation: opacity 1s 2.3s linear forwards;
+}
+#spare5-fill {
+    fill: #3E3A39;
+    opacity: 0;
+    animation: opacity 1s 2.4s linear forwards;
+}
+#spare6-fill {
+    fill: #3E3A39;
+    opacity: 0;
+    animation: opacity 1s 2.5s linear forwards;
 }
 
 #isol-line,
@@ -276,13 +319,40 @@ body {
     animation: animationDashLine 100s linear infinite;
 }
 
-#isol-fill,
-#srf-fill,
-#cryo-fill,
-#low-energy-fill,
-#if-fill,
+#isol-fill {
+    fill: #0E9B94;
+    opacity: 0;
+    animation: opacity 1s 2.0s linear forwards;
+}
+
+#srf-fill {
+    fill: #0E9B94;
+    opacity: 0;
+    animation: opacity 1s 2.1s linear forwards;
+}
+
+#cryo-fill {
+    fill: #0E9B94;
+    opacity: 0;
+    animation: opacity 1s 2.2s linear forwards;
+}
+
+#low-energy-fill {
+    fill: #0E9B94;
+    opacity: 0;
+    animation: opacity 1s 2.3s linear forwards;
+}
+
+#if-fill {
+    fill: #0E9B94;
+    opacity: 0;
+    animation: opacity 1s 2.4s linear forwards;
+}
+
 #high-energy-fill {
     fill: #0E9B94;
+    opacity: 0;
+    animation: opacity 1s 2.5s linear forwards;
 }
 
 
@@ -320,62 +390,62 @@ body {
 #ccsi1-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 1.5s linear forwards;
+    animation: opacity 1s 3.5s linear forwards;
 }
 #ccs02-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 1.6s linear forwards;
+    animation: opacity 1s 3.6s linear forwards;
 }
 #ccs05-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 1.7s linear forwards;
+    animation: opacity 1s 3.7s linear forwards;
 }
 #ccs09-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 1.8s linear forwards;
+    animation: opacity 1s 3.8s linear forwards;
 }
 #ccs12-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 1.9s linear forwards;
+    animation: opacity 1s 3.9s linear forwards;
 }
 #ccs14-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 2.0s linear forwards;
+    animation: opacity 1s 4.0s linear forwards;
 }
 #ccs16-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 2.1s linear forwards;
+    animation: opacity 1s 4.1s linear forwards;
 }
 #ccs21-fill {
     fill: #88157B;
     opacity: 0;
-    animation: opacity 1s 2.2s linear forwards;
+    animation: opacity 1s 4.2s linear forwards;
 }
 #ccs24-fill {
     fill: #E99413;
     opacity: 0;
-    animation: opacity 1s 2.3s linear forwards;
+    animation: opacity 1s 4.3s linear forwards;
 }
 #ccs29-fill {
     fill: #E99413;
     opacity: 0;
-    animation: opacity 1s 2.4s linear forwards;
+    animation: opacity 1s 4.4s linear forwards;
 }
 #ccs34-fill {
     fill: #E99413;
     opacity: 0;
-    animation: opacity 1s 2.5s linear forwards;
+    animation: opacity 1s 4.5s linear forwards;
 }
 #ccs40-fill {
     fill: #E99413;
     opacity: 0;
-    animation: opacity 1s 2.6s linear forwards;
+    animation: opacity 1s 4.6s linear forwards;
 }
 
 #left-line-container {
