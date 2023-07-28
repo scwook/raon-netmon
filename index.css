@@ -214,28 +214,51 @@ body {
 
 #control-fill {
     fill: #0C68AC;
+    opacity: 0;
+    animation: opacity 1s 2s linear forwards;
 }
 
 #ctrluser-fill {
     fill: #926034;
+    opacity: 0;
+    animation: opacity 1s 2.1s linear forwards;
+}
+
+#archive1-fill {
+    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 2.2s linear forwards;
+}
+
+#scl3-gateway1-fill {
+    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 2.3s linear forwards;
+}
+
+#scl3-gateway2-fill {
+    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 2.4s linear forwards;
+}
+
+#archive2-fill {
+    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 2.5s linear forwards;
 
 }
 
 #display-wall-fill {
     fill: #2CA339;
-
+    opacity: 0;
+    animation: opacity 1s 2.6s linear forwards;
 }
 
 #operator-fill {
     fill: #F0E62A;
-
-}
-
-#archive1-fill,
-#scl3-gateway1-fill,
-#scl3-gateway2-fill,
-#archive2-fill {
-    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 2.7s linear forwards;
 }
 
 #isol-line,
@@ -294,22 +317,65 @@ body {
 
 }
 
-#ccsi1-fill,
-#ccs02-fill,
-#ccs05-fill,
-#ccs09-fill,
-#ccs12-fill,
-#ccs14-fill,
-#ccs16-fill,
+#ccsi1-fill {
+    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 1.5s linear forwards;
+}
+#ccs02-fill {
+    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 1.6s linear forwards;
+}
+#ccs05-fill {
+    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 1.7s linear forwards;
+}
+#ccs09-fill {
+    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 1.8s linear forwards;
+}
+#ccs12-fill {
+    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 1.9s linear forwards;
+}
+#ccs14-fill {
+    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 2.0s linear forwards;
+}
+#ccs16-fill {
+    fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 2.1s linear forwards;
+}
 #ccs21-fill {
     fill: #88157B;
+    opacity: 0;
+    animation: opacity 1s 2.2s linear forwards;
 }
-
-#ccs24-fill,
-#ccs29-fill,
-#ccs34-fill,
+#ccs24-fill {
+    fill: #E99413;
+    opacity: 0;
+    animation: opacity 1s 2.3s linear forwards;
+}
+#ccs29-fill {
+    fill: #E99413;
+    opacity: 0;
+    animation: opacity 1s 2.4s linear forwards;
+}
+#ccs34-fill {
+    fill: #E99413;
+    opacity: 0;
+    animation: opacity 1s 2.5s linear forwards;
+}
 #ccs40-fill {
     fill: #E99413;
+    opacity: 0;
+    animation: opacity 1s 2.6s linear forwards;
 }
 
 #left-line-container {
@@ -355,7 +421,9 @@ body {
 .networkTextContainer {
     position: absolute;
     width: 120px;
-    height: 46px; 
+    height: 46px;
+    opacity: 0;
+    animation: opacity 1s var(--delay) linear forwards;
 }
 
 .networkLeftTitleText {
