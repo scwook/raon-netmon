@@ -63,7 +63,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0;
-    animation: opacity 1s 4.5s ease-out forwards;
+    animation: opacity 1s 2.5s ease-out forwards;
 }
 
 #left-circle-container {
@@ -72,6 +72,8 @@ body {
     height: 72px;
     top: 424px;
     left: 499px;
+    opacity: 0;
+    animation: opacity 1s 1s ease-in forwards;
 }
 
 #center-circle-container {
@@ -81,6 +83,8 @@ body {
     top: 409px;
     left: 909px;
     z-index: 100;
+    opacity: 0;
+    animation: opacity 1s 0s ease-in forwards;
 }
 
 #right-circle-container {
@@ -89,6 +93,8 @@ body {
     height: 72px;
     top: 424px;
     left: 1351px;
+    opacity: 0;
+    animation: opacity 1s 1s ease-in forwards;
 }
 
 #center-circle-inner {
@@ -99,6 +105,7 @@ body {
     fill: none;
     stroke: #0C68AC;
     stroke-width: 2px;
+
 }
 
 #left-circle-inner,
@@ -212,55 +219,6 @@ body {
     animation: animationDashLine 100s linear infinite;
 }
 
-#control-fill {
-    fill: #0C68AC;
-    opacity: 0;
-    animation: opacity 1s 4s linear forwards;
-}
-
-#ctrluser-fill {
-    fill: #926034;
-    opacity: 0;
-    animation: opacity 1s 4.1s linear forwards;
-}
-
-#archive1-fill {
-    fill: #88157B;
-    opacity: 0;
-    animation: opacity 1s 4.2s linear forwards;
-}
-
-#scl3-gateway1-fill {
-    fill: #88157B;
-    opacity: 0;
-    animation: opacity 1s 4.3s linear forwards;
-}
-
-#scl3-gateway2-fill {
-    fill: #88157B;
-    opacity: 0;
-    animation: opacity 1s 4.4s linear forwards;
-}
-
-#archive2-fill {
-    fill: #88157B;
-    opacity: 0;
-    animation: opacity 1s 4.5s linear forwards;
-
-}
-
-#display-wall-fill {
-    fill: #2CA339;
-    opacity: 0;
-    animation: opacity 1s 4.6s linear forwards;
-}
-
-#operator-fill {
-    fill: #F0E62A;
-    opacity: 0;
-    animation: opacity 1s 4.7s linear forwards;
-}
-
 #spare1-line,
 #spare2-line,
 #spare3-line,
@@ -271,37 +229,6 @@ body {
     stroke: #3E3A39;
     stroke-linecap: round;
     stroke-dasharray: 6;
-}
-
-#spare1-fill {
-    fill: #3E3A39;
-    opacity: 0;
-    animation: opacity 1s 2.0s linear forwards;
-}
-#spare2-fill {
-    fill: #3E3A39;
-    opacity: 0;
-    animation: opacity 1s 2.1s linear forwards;
-}
-#spare3-fill {
-    fill: #3E3A39;
-    opacity: 0;
-    animation: opacity 1s 2.2s linear forwards;
-}
-#spare4-fill {
-    fill: #3E3A39;
-    opacity: 0;
-    animation: opacity 1s 2.3s linear forwards;
-}
-#spare5-fill {
-    fill: #3E3A39;
-    opacity: 0;
-    animation: opacity 1s 2.4s linear forwards;
-}
-#spare6-fill {
-    fill: #3E3A39;
-    opacity: 0;
-    animation: opacity 1s 2.5s linear forwards;
 }
 
 #isol-line,
@@ -318,43 +245,6 @@ body {
     stroke-dashoffset: 0;
     animation: animationDashLine 100s linear infinite;
 }
-
-#isol-fill {
-    fill: #0E9B94;
-    opacity: 0;
-    animation: opacity 1s 2.0s linear forwards;
-}
-
-#srf-fill {
-    fill: #0E9B94;
-    opacity: 0;
-    animation: opacity 1s 2.1s linear forwards;
-}
-
-#cryo-fill {
-    fill: #0E9B94;
-    opacity: 0;
-    animation: opacity 1s 2.2s linear forwards;
-}
-
-#low-energy-fill {
-    fill: #0E9B94;
-    opacity: 0;
-    animation: opacity 1s 2.3s linear forwards;
-}
-
-#if-fill {
-    fill: #0E9B94;
-    opacity: 0;
-    animation: opacity 1s 2.4s linear forwards;
-}
-
-#high-energy-fill {
-    fill: #0E9B94;
-    opacity: 0;
-    animation: opacity 1s 2.5s linear forwards;
-}
-
 
 #ccsi1-line,
 #ccs02-line,
@@ -387,65 +277,69 @@ body {
 
 }
 
-#ccsi1-fill {
-    fill: #88157B;
+.networkStateFill {
     opacity: 0;
-    animation: opacity 1s 3.5s linear forwards;
+    animation: opacity 1s var(--delay) linear forwards;
 }
-#ccs02-fill {
+
+#control-fill {
+    fill: #0C68AC;
+
+}
+
+#ctrluser-fill {
+    fill: #926034;
+}
+
+#archive1-fill,
+#archive2-fill,
+#scl3-gateway1-fill,
+#scl3-gateway2-fill {
     fill: #88157B;
-    opacity: 0;
-    animation: opacity 1s 3.6s linear forwards;
 }
-#ccs05-fill {
-    fill: #88157B;
-    opacity: 0;
-    animation: opacity 1s 3.7s linear forwards;
+
+#display-wall-fill {
+    fill: #2CA339;
 }
-#ccs09-fill {
-    fill: #88157B;
-    opacity: 0;
-    animation: opacity 1s 3.8s linear forwards;
+
+#operator-fill {
+    fill: #F0E62A;
 }
-#ccs12-fill {
-    fill: #88157B;
-    opacity: 0;
-    animation: opacity 1s 3.9s linear forwards;
+
+#spare1-fill,
+#spare2-fill,
+#spare3-fill,
+#spare4-fill,
+#spare5-fill,
+#spare6-fill {
+    fill: #3E3A39;
 }
-#ccs14-fill {
-    fill: #88157B;
-    opacity: 0;
-    animation: opacity 1s 4.0s linear forwards;
+
+#isol-fill,
+#srf-fill,
+#cryo-fill,
+#low-energy-fill,
+#if-fill,
+#high-energy-fill {
+    fill: #0E9B94;
 }
-#ccs16-fill {
-    fill: #88157B;
-    opacity: 0;
-    animation: opacity 1s 4.1s linear forwards;
-}
+
+#ccsi1-fill,
+#ccs02-fill,
+#ccs05-fill,
+#ccs09-fill,
+#ccs12-fill,
+#ccs14-fill,
+#ccs16-fill,
 #ccs21-fill {
     fill: #88157B;
-    opacity: 0;
-    animation: opacity 1s 4.2s linear forwards;
 }
-#ccs24-fill {
+
+#ccs24-fill,
+#ccs29-fill,
+#ccs34-fill,
+#ccs40-fill{
     fill: #E99413;
-    opacity: 0;
-    animation: opacity 1s 4.3s linear forwards;
-}
-#ccs29-fill {
-    fill: #E99413;
-    opacity: 0;
-    animation: opacity 1s 4.4s linear forwards;
-}
-#ccs34-fill {
-    fill: #E99413;
-    opacity: 0;
-    animation: opacity 1s 4.5s linear forwards;
-}
-#ccs40-fill {
-    fill: #E99413;
-    opacity: 0;
-    animation: opacity 1s 4.6s linear forwards;
 }
 
 #left-line-container {
@@ -619,5 +513,16 @@ body {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }

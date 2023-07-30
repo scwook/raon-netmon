@@ -417,10 +417,10 @@ var svgInfo = {
     }
 }
 
-function leftLineShowUp(line, showUpDelay) {
+function leftLineShowUp(line, showUpDelay, duration) {
     let lineInfo = line;
     let delay = showUpDelay;
-    let duration = 2;
+    let dur = duration;
     let keySplines = "0.6 0 0.4 1";
 
     let gradientID = lineInfo.line.id + '-gradient';
@@ -445,7 +445,7 @@ function leftLineShowUp(line, showUpDelay) {
     let ani1 = document.createElementNS("http://www.w3.org/2000/svg", 'animate');
     ani1.setAttribute("attributeName", "offset");
     ani1.setAttribute('begin', delay);
-    ani1.setAttribute('dur', duration);
+    ani1.setAttribute('dur', dur);
     ani1.setAttribute('fill', 'freeze');
     ani1.setAttribute('from', '1');
     ani1.setAttribute('to', '0');
@@ -456,7 +456,7 @@ function leftLineShowUp(line, showUpDelay) {
     let ani2 = document.createElementNS("http://www.w3.org/2000/svg", 'animate');
     ani2.setAttribute("attributeName", "offset");
     ani2.setAttribute('begin', delay + 0.2);
-    ani2.setAttribute('dur', duration);
+    ani2.setAttribute('dur', dur);
     ani2.setAttribute('fill', 'freeze');
     ani2.setAttribute('from', '1');
     ani2.setAttribute('to', '0');
@@ -477,10 +477,10 @@ function leftLineShowUp(line, showUpDelay) {
     id.style.stroke = `url(#${gradientID}`;
 }
 
-function rightLineShowUp(line, showUpDelay) {
+function rightLineShowUp(line, showUpDelay, duration) {
     let lineInfo = line;
     let delay = showUpDelay;
-    let duration = 2;
+    let dur = duration;
     let keySplines = "0.6 0 0.4 1";
 
     let gradientID = lineInfo.line.id + '-gradient';
@@ -505,7 +505,7 @@ function rightLineShowUp(line, showUpDelay) {
     let ani1 = document.createElementNS("http://www.w3.org/2000/svg", 'animate');
     ani1.setAttribute("attributeName", "offset");
     ani1.setAttribute('begin',  delay + 0.2);
-    ani1.setAttribute('dur', duration + 0.4);
+    ani1.setAttribute('dur', dur);
     ani1.setAttribute('fill', 'freeze');
     ani1.setAttribute('from', '0');
     ani1.setAttribute('to', '1');
@@ -516,7 +516,7 @@ function rightLineShowUp(line, showUpDelay) {
     let ani2 = document.createElementNS("http://www.w3.org/2000/svg", 'animate');
     ani2.setAttribute("attributeName", "offset");
     ani2.setAttribute('begin', delay);
-    ani2.setAttribute('dur', duration);
+    ani2.setAttribute('dur', dur);
     ani2.setAttribute('fill', 'freeze');
     ani2.setAttribute('from', '0');
     ani2.setAttribute('to', '1');
