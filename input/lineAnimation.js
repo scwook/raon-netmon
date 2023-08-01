@@ -537,10 +537,11 @@ function rightLineShowUp(line, showUpDelay, duration) {
     id.style.stroke = `url(#${gradientID}`;
 }
 
-function changeAnimationDuration(lineID, trafficData, portBandwidth) {
-    let id = document.getElementById(lineID);
+function checkTraffic(lineID, valueID, trafficData, portBandwidth) {
+    let lineSVG = document.getElementById(lineID);
+    let valueText = document.getElementById(valueID);
     let traffic = trafficData;
-    let bandwidth = 100 * GByte;
+    let bandwidth = 100 * GByte; // Default Bandwidth
 
     switch (portBandwidth) {
         case '100G':
@@ -560,9 +561,23 @@ function changeAnimationDuration(lineID, trafficData, portBandwidth) {
             break;
     }
 
-    let animationTime = 100 - 90 * (traffic / bandwidth);
+    let trafficRatio = traffic / bandwidth;
 
+    let animationTime = 100 - 90 * trafficRatio;
     if (animationTime < 10) animationTime = 10;
+    lineSVG.style.animationDuration = animationTime + 's';
 
-    id.style.animationDuration = animationTime + 's';
+    let trafficeRange = trafficRatio * 100;
+    let textColor = '#FFFFFF';
+    if(trafficeRange < 50) {
+        textColor = '#FFFFFF';
+    }
+    else if (trafficeRange >= 50 && trafficeRange < 80) {
+        textColor = '#FAEE00';
+    }
+    else if (trafficeRange >= 80) {
+        textColor = '#E60012';
+    }
+
+    valueText.style.color = textColor; 
 }

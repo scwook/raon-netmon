@@ -389,7 +389,7 @@ function monitoringServerUplinkSwitch(count) {
             let uplinkUnitTraffic = changeUnit(uplinkTotalTraffic);
 
             document.getElementById('left-switch-value').innerText = uplinkUnitTraffic.value.toFixed(1) + uplinkUnitTraffic.unit + '/s';
-            changeAnimationDuration('left-line', uplinkTotalTraffic, '40G');
+            checkTraffic('left-line', 'left-switch-value', uplinkTotalTraffic, '40G');
 
             // Control
             var portlist = ['input-Te1-25', 'input-Te1-26'];
@@ -399,7 +399,7 @@ function monitoringServerUplinkSwitch(count) {
             let controlUnitTraffic = changeUnit(controlTotalTraffic);
 
             document.getElementById('control-value').innerText = controlUnitTraffic.value.toFixed(1) + controlUnitTraffic.unit + '/s';
-            changeAnimationDuration('control-line', controlTotalTraffic, '10G');
+            checkTraffic('control-line', 'control-value', controlTotalTraffic, '10G');
 
             // Ctrluser
             var portlist = ['input-Te1-32'];
@@ -409,7 +409,7 @@ function monitoringServerUplinkSwitch(count) {
             let ctrluserUnitTraffic = changeUnit(ctrluserTotalTraffic);
 
             document.getElementById('ctrluser-value').innerText = ctrluserUnitTraffic.value.toFixed(1) + ctrluserUnitTraffic.unit + '/s';
-            changeAnimationDuration('ctrluser-line', ctrluserTotalTraffic, '10G');
+            checkTraffic('ctrluser-line', 'ctrluser-value', ctrluserTotalTraffic, '10G');
 
             // Archive1
             var portlist = ['input-Te1-11'];
@@ -419,7 +419,7 @@ function monitoringServerUplinkSwitch(count) {
             let archive1UnitTraffic = changeUnit(archive1TotalTraffic);
 
             document.getElementById('archive1-value').innerText = archive1UnitTraffic.value.toFixed(1) + archive1UnitTraffic.unit + '/s';
-            changeAnimationDuration('archive1-line', archive1TotalTraffic, '10G');
+            checkTraffic('archive1-line', 'archive1-value', archive1TotalTraffic, '10G');
 
             // Archive2
             var portlist = ['input-Te1-12'];
@@ -429,7 +429,7 @@ function monitoringServerUplinkSwitch(count) {
             let archive2UnitTraffic = changeUnit(archive2TotalTraffic);
 
             document.getElementById('archive2-value').innerText = archive2UnitTraffic.value.toFixed(1) + archive2UnitTraffic.unit + '/s';
-            changeAnimationDuration('archive2-line', archive2TotalTraffic, '10G');
+            checkTraffic('archive2-line', 'archive2-value', archive2TotalTraffic, '10G');
 
             // SCL3 Gateway1
             var portlist = ['input-Te1-09'];
@@ -439,7 +439,7 @@ function monitoringServerUplinkSwitch(count) {
             let scl3Gateway1UnitTraffic = changeUnit(scl3Gateway1TotalTraffic);
 
             document.getElementById('scl3-gateway1-value').innerText = scl3Gateway1UnitTraffic.value.toFixed(1) + scl3Gateway1UnitTraffic.unit + '/s';
-            changeAnimationDuration('scl3-gateway1-line', scl3Gateway1TotalTraffic, '10G');
+            checkTraffic('scl3-gateway1-line', 'scl3-gateway1-value', scl3Gateway1TotalTraffic, '10G');
 
             // SCL3 Gateway1
             var portlist = ['input-Te1-10'];
@@ -449,7 +449,7 @@ function monitoringServerUplinkSwitch(count) {
             let scl3Gateway2UnitTraffic = changeUnit(scl3Gateway2TotalTraffic);
 
             document.getElementById('scl3-gateway2-value').innerText = scl3Gateway2UnitTraffic.value.toFixed(1) + scl3Gateway2UnitTraffic.unit + '/s';
-            changeAnimationDuration('scl3-gateway2-line', scl3Gateway2TotalTraffic, '10G');
+            checkTraffic('scl3-gateway2-line', 'scl3-gateway2-value', scl3Gateway2TotalTraffic, '10G');
 
             // Display Wall
             var portlist = ['input-Te1-27', 'input-Te1-28'];
@@ -459,7 +459,7 @@ function monitoringServerUplinkSwitch(count) {
             let displayWallUnitTraffic = changeUnit(displayWallTotalTraffic);
 
             document.getElementById('display-wall-value').innerText = displayWallUnitTraffic.value.toFixed(1) + displayWallUnitTraffic.unit + '/s';
-            changeAnimationDuration('display-wall-line', displayWallTotalTraffic, '10G');
+            checkTraffic('display-wall-line', 'display-wall-vlaue', displayWallTotalTraffic, '10G');
 
             // Operator
             var portlist = ['input-Te1-29', 'input-Te1-30'];
@@ -469,7 +469,7 @@ function monitoringServerUplinkSwitch(count) {
             let operatorUnitTraffic = changeUnit(operatorTotalTraffic);
 
             document.getElementById('operator-value').innerText = operatorUnitTraffic.value.toFixed(1) + operatorUnitTraffic.unit + '/s';
-            changeAnimationDuration('operator-line', operatorTotalTraffic, '10G');
+            checkTraffic('operator-line', 'operator-value', operatorTotalTraffic, '10G');
         }
     };
 
@@ -521,6 +521,8 @@ function monitorinBackboneSwitch(count) {
             let isolUnitTraffic = changeUnit(isolTotalTraffic);
 
             document.getElementById('isol-value').innerText = isolUnitTraffic.value.toFixed(1) + isolUnitTraffic.unit + '/s';
+            checkTraffic('isol-line', 'isol-value', isolTotalTraffic, '10G');
+
 
             // SRF
             var portlist = ['input-Te1-11-01'];
@@ -530,6 +532,8 @@ function monitorinBackboneSwitch(count) {
             let srfUnitTraffic = changeUnit(srfTotalTraffic);
 
             document.getElementById('srf-value').innerText = srfUnitTraffic.value.toFixed(1) + srfUnitTraffic.unit + '/s';
+            checkTraffic('srf-line', 'srf-value', srfTotalTraffic, '10G');
+
 
             // Cryo
             var portlist = ['input-Te1-09-04'];
@@ -539,6 +543,8 @@ function monitorinBackboneSwitch(count) {
             let cryoUnitTraffic = changeUnit(cryoTotalTraffic);
 
             document.getElementById('cryo-value').innerText = cryoUnitTraffic.value.toFixed(1) + cryoUnitTraffic.unit + '/s';
+            checkTraffic('cryo-line', 'cryo-value', cryoTotalTraffic, '10G');
+
 
             // Low Energy
             var portlist = ['input-Te1-09-03'];
@@ -548,6 +554,7 @@ function monitorinBackboneSwitch(count) {
             let lowEnergyUnitTraffic = changeUnit(lowEnergyTotalTraffic);
 
             document.getElementById('low-energy-value').innerText = lowEnergyUnitTraffic.value.toFixed(1) + lowEnergyUnitTraffic.unit + '/s';
+            checkTraffic('low-energy-line', 'low-energy-value', cryoTotalTraffic, '10G');
 
             // Low Energy
             var portlist = ['input-Te1-10-04'];
@@ -557,6 +564,7 @@ function monitorinBackboneSwitch(count) {
             let ifUnitTraffic = changeUnit(ifTotalTraffic);
 
             document.getElementById('if-value').innerText = ifUnitTraffic.value.toFixed(1) + ifUnitTraffic.unit + '/s';
+            checkTraffic('if-line', 'if-value', cryoTotalTraffic, '10G');
         }
     };
 
@@ -614,6 +622,7 @@ function monitoringCCSI1Switch(count) {
             let unitTraffic = changeUnit(totalTraffic);
 
             document.getElementById('ccsi1-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
+            checkTraffic('ccsi-line', 'ccsi1-value', totalTraffic, '10G');
         }
     };
 
@@ -669,6 +678,8 @@ function monitoringCCS02Switch(count) {
             let unitTraffic = changeUnit(totalTraffic);
 
             document.getElementById('ccs02-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
+            checkTraffic('ccs02-line', 'ccs02-value', totalTraffic, '10G');
+
         }
     };
 
@@ -724,6 +735,7 @@ function monitoringCCS05Switch(count) {
             let unitTraffic = changeUnit(totalTraffic);
 
             document.getElementById('ccs05-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
+            checkTraffic('ccs05-line', 'ccs05-value', totalTraffic, '10G');
         }
     };
 
@@ -779,6 +791,7 @@ function monitoringCCS09Switch(count) {
             let unitTraffic = changeUnit(totalTraffic);
 
             document.getElementById('ccs09-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
+            checkTraffic('ccs09-line', 'ccs09-value', totalTraffic, '10G');
         }
     };
 
@@ -834,6 +847,7 @@ function monitoringCCS12Switch(count) {
             let unitTraffic = changeUnit(totalTraffic);
 
             document.getElementById('ccs12-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
+            checkTraffic('ccs12-line', 'ccs12-value', totalTraffic, '10G');
         }
     };
 
@@ -889,6 +903,7 @@ function monitoringCCS14Switch(count) {
             let unitTraffic = changeUnit(totalTraffic);
 
             document.getElementById('ccs14-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
+            checkTraffic('ccs14-line', 'ccs14-value', totalTraffic, '10G');
         }
     };
 
@@ -944,6 +959,7 @@ function monitoringCCS16Switch(count) {
             let unitTraffic = changeUnit(totalTraffic);
 
             document.getElementById('ccs16-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
+            checkTraffic('ccs16-line', 'ccs16-value', totalTraffic, '10G');
         }
     };
 
@@ -999,6 +1015,7 @@ function monitoringCCS21Switch(count) {
             let unitTraffic = changeUnit(totalTraffic);
 
             document.getElementById('ccs21-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
+            checkTraffic('ccs21-line', 'ccs21-value', totalTraffic, '10G');
         }
     };
 
