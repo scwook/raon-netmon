@@ -536,3 +536,33 @@ function rightLineShowUp(line, showUpDelay, duration) {
     let id = document.getElementById(lineInfo.line.id);
     id.style.stroke = `url(#${gradientID}`;
 }
+
+function changeAnimationDuration(lineID, trafficData, portBandwidth) {
+    let id = document.getElementById(lineID);
+    let traffic = trafficData;
+    let bandwidth = 100 * GByte;
+
+    switch (portBandwidth) {
+        case '100G':
+            bandwidth = 100 * GByte;
+            break;
+
+        case '40G':
+            bandwidth = 40 * GByte;
+            break;
+
+        case '10G':
+            bandwidth = 10 * GByte;
+            break;
+
+        case '1G':
+            bandwidth = 1 * GByte;
+            break;
+    }
+
+    let animationTime = 100 - 90 * (traffic / bandwidth);
+
+    if (animationTime < 10) animationTime = 10;
+
+    id.style.animationDuration = animationTime + 's';
+}

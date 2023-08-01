@@ -508,10 +508,13 @@ function monitorinBackboneSwitch(count) {
             let data = this.responseText.split(",");
 
             // CPU
-            let cpu5secIndex = data.indexOf("cpu5sec") - 1;
-            let cpu5sec = parseInt(data[cpu5secIndex]);
+            let cpu5secIndex1 = data.indexOf("cpu5sec");
+            let cpu5secIndex2 = data.indexOf("cpu5sec", cpu5secIndex1 + 1);
 
-            document.getElementById('cpu-valueC').innerText = cpu5sec.toFixed(1);
+            let cpu5sec1 = parseInt(data[cpu5secIndex1 - 1]);
+            let cpu5sec2 = parseInt(data[cpu5secIndex2 - 1]);
+
+            document.getElementById('cpu-valueC').innerText = cpu5sec1.toFixed(1);
 
             // ISOL
             var portlist = ['output-Te1-10-01'];

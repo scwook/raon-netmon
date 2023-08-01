@@ -76,17 +76,6 @@ body {
     animation: opacity 1s 1s ease-in forwards;
 }
 
-#center-circle-container {
-    position: absolute;
-    width: 102px;
-    height: 102px;
-    top: 409px;
-    left: 909px;
-    z-index: 100;
-    opacity: 0;
-    animation: opacity 1s 0s ease-in forwards;
-}
-
 #right-circle-container {
     position: absolute;
     width: 72px;
@@ -97,15 +86,32 @@ body {
     animation: opacity 1s 1s ease-in forwards;
 }
 
-#center-circle-inner {
-    fill: #359DD1;
+#center-circle-container {
+    position: absolute;
+    width: 102px;
+    height: 102px;
+    top: 409px;
+    left: 909px;
+    z-index: 100;
+    border: 2px solid #2EA7E0;
+    border-radius: 100px;
+    opacity: 0;
+    animation: opacity 1s 0s ease-in forwards;
 }
 
+#center-circle-inner {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    --degree: -360deg;
+    animation: rotation 30s 0s linear infinite;
+}
 #center-circle-outer {
-    fill: none;
-    stroke: #0C68AC;
-    stroke-width: 2px;
-
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    --degree: 360deg;
+    animation: rotation 30s 0s linear infinite;
 }
 
 #left-circle-inner,
@@ -121,7 +127,7 @@ body {
 
 }
 
-#left-network-container {
+#left-network {
     position: absolute;
     width: 364px;
     height: 882px;
@@ -354,7 +360,7 @@ body {
     position: absolute;
     width: 360px;
     height: 4px;
-    top: 458px;
+    top: 460px;
     left: 1005px;
 
     /* border-style: dotted; */
@@ -440,6 +446,8 @@ body {
     font-size: 26px;
     text-align: center;
     line-height: 65px;
+    opacity: 0;
+    animation: opacity 1s 2s linear forwards;
     /* border-style: dotted;
     border-color: red; */
 }
@@ -449,13 +457,15 @@ body {
     width: 90px;
     height: 90px;
     top: 413px;
-    left: 914px;
+    left: 916px;
     font-family: "Roboto-Light";
     color: white;
     font-size: 32px;
     text-align: center;
     line-height: 95px;
     z-index: 200;
+    opacity: 0;
+    animation: opacity 1s 2s linear forwards;
 
     /* border-style: dotted; */
     /* border-color: red; */
@@ -472,6 +482,8 @@ body {
     font-size: 26px;
     text-align: center;
     line-height: 65px;
+    opacity: 0;
+    animation: opacity 1s 2s linear forwards;
 
     /* border-style: dotted; */
     /* border-color: red; */
@@ -524,5 +536,14 @@ body {
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(var(--degree));
     }
 }
