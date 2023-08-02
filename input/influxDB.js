@@ -459,7 +459,7 @@ function monitoringServerUplinkSwitch(count) {
             let displayWallUnitTraffic = changeUnit(displayWallTotalTraffic);
 
             document.getElementById('display-wall-value').innerText = displayWallUnitTraffic.value.toFixed(1) + displayWallUnitTraffic.unit + '/s';
-            checkTraffic('display-wall-line', 'display-wall-vlaue', displayWallTotalTraffic, '10G');
+            checkTraffic('display-wall-line', 'display-wall-value', displayWallTotalTraffic, '10G');
 
             // Operator
             var portlist = ['input-Te1-29', 'input-Te1-30'];
@@ -622,7 +622,7 @@ function monitoringCCSI1Switch(count) {
             let unitTraffic = changeUnit(totalTraffic);
 
             document.getElementById('ccsi1-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
-            checkTraffic('ccsi-line', 'ccsi1-value', totalTraffic, '10G');
+            checkTraffic('ccsi1-line', 'ccsi1-value', totalTraffic, '10G');
         }
     };
 

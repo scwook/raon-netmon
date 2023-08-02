@@ -47,6 +47,12 @@
 
         <div id="center-circle-container">
             <svg id="center-circle-inner" width="100" height="100">
+                <circle id="center-circle-inner" cx="50" cy="50" r="34" />
+            </svg>
+            <svg id="center-circle-outer" width="100" height="100">
+                <circle cx="50" cy="50" r="47.5" />
+            </svg>
+            <svg id="center-circle-fan-inner" width="100" height="100">
                 <style type="text/css">
                     .st0 {
                         fill: #29ABE2;
@@ -94,9 +100,8 @@
                 <polygon class="st0" points="64.6,12.8 60,11.2 61.8,14.9 66.3,16.5 " />
                 <polygon class="st1" points="57.9,10.8 53.1,10 55.5,13.3 60.2,14.2 " />
             </svg>
-
-    
-            <svg id="center-circle-outer" width="100" height="100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+            <svg id="center-circle-fan-outer" width="100" height="100" style="enable-background:new 0 0 100 100;"
+                xml:space="preserve">
                 <style type="text/css">
                     .st0 {
                         fill: #29ABE2;
@@ -429,32 +434,41 @@
     var textDelay = 2.0;
     var textGapDelay = 0.05;
 
-    for(count; count < 8; count++) {
+    // Left Value
+    for (count; count < 8; count++) {
         textDelay += textGapDelay;
         textContainerClass[count].style.setProperty('--delay', textDelay + 's');
         stateFillClass[count].style.setProperty('--delay', textDelay + 's');
     }
 
+    // Center Left Value
     textDelay = 1.5;
-    for(count; count < 14; count++) {
+    for (count; count < 14; count++) {
         textDelay += textGapDelay;
         textContainerClass[count].style.setProperty('--delay', textDelay + 's');
         stateFillClass[count].style.setProperty('--delay', textDelay + 's');
     }
 
+    // Center Right Value
     textDelay = 1.5;
-    for(count; count < 20; count++) {
+    for (count; count < 20; count++) {
         textDelay += textGapDelay;
         textContainerClass[count].style.setProperty('--delay', textDelay + 's');
         stateFillClass[count].style.setProperty('--delay', textDelay + 's');
     }
 
+    // Right Value
     textDelay = 2.0;
-    for(count; count < 32; count++) {
+    for (count; count < 32; count++) {
         textDelay += textGapDelay;
         textContainerClass[count].style.setProperty('--delay', textDelay + 's');
         stateFillClass[count].style.setProperty('--delay', textDelay + 's');
     }
+
+    // Uplink Switch Value
+    textDelay = 2.0;
+    textContainerClass[count].style.setProperty('--delay', textDelay + 's');
+    textContainerClass[count + 1].style.setProperty('--delay', textDelay + 's');
 
     // textContainerClass[1].style.setProperty('--delay', 4.1);
     // textContainerClass[2].style.setProperty('--delay', 4.2);
@@ -502,47 +516,47 @@
         var delay = 1;
         var delayGap = 0.05;
         var duration = 1;
-        leftLineShowUp(svgInfo.control,     delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.ctrluser,    delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.archive1,    delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.scl3Gateway1,delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.scl3Gateway2,delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.archive2,    delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.displayWall, delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.operator,    delay+=delayGap, duration);
+        leftLineShowUp(svgInfo.control, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.ctrluser, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.archive1, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.scl3Gateway1, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.scl3Gateway2, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.archive2, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.displayWall, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.operator, delay += delayGap, duration);
 
         delay = 0;
         duration = 2;
-        leftLineShowUp(svgInfo.spare1, delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.spare2, delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.spare3, delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.spare4, delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.spare5, delay+=delayGap, duration);
-        leftLineShowUp(svgInfo.spare6, delay+=delayGap, duration);
+        leftLineShowUp(svgInfo.spare1, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.spare2, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.spare3, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.spare4, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.spare5, delay += delayGap, duration);
+        leftLineShowUp(svgInfo.spare6, delay += delayGap, duration);
 
         delay = 0;
         duration = 2;
-        rightLineShowUp(svgInfo.isol,       delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.srf,        delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.cryo,       delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.lowEnergy,  delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.if,         delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.highEnergy, delay+=delayGap, duration);
+        rightLineShowUp(svgInfo.isol, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.srf, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.cryo, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.lowEnergy, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.if, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.highEnergy, delay += delayGap, duration);
 
         delay = 1;
         duration = 1;
-        rightLineShowUp(svgInfo.ccsi1, delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.ccs02, delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.ccs05, delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.ccs09, delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.ccs12, delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.ccs14, delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.ccs16, delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.ccs21, delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.ccs24, delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.ccs29, delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.ccs34, delay+=delayGap, duration);
-        rightLineShowUp(svgInfo.ccs40, delay+=delayGap, duration);
+        rightLineShowUp(svgInfo.ccsi1, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.ccs02, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.ccs05, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.ccs09, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.ccs12, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.ccs14, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.ccs16, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.ccs21, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.ccs24, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.ccs29, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.ccs34, delay += delayGap, duration);
+        rightLineShowUp(svgInfo.ccs40, delay += delayGap, duration);
     }
 
     document.addEventListener('visibilitychange', function () {
