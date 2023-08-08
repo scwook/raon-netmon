@@ -184,7 +184,7 @@ var svgInfo = {
     'isol': {
         'line': {
             'id': 'isol-line',
-            'color': '#0E9B94',
+            'color': '#2EA7E0',
             'x1': '0',
             'y1': '227',
             'x2': '139',
@@ -197,7 +197,7 @@ var svgInfo = {
     'srf': {
         'line': {
             'id': 'srf-line',
-            'color': '#0E9B94',
+            'color': '#2EA7E0',
             'x1': '0',
             'y1': '252',
             'x2': '224',
@@ -210,7 +210,7 @@ var svgInfo = {
     'cryo': {
         'line': {
             'id': 'cryo-line',
-            'color': '#0E9B94',
+            'color': '#2EA7E0',
             'x1': '0',
             'y1': '284',
             'x2': '296',
@@ -223,7 +223,7 @@ var svgInfo = {
     'lowEnergy': {
         'line': {
             'id': 'low-energy-line',
-            'color': '#0E9B94',
+            'color': '#2EA7E0',
             'x1': '0',
             'y1': '598',
             'x2': '296',
@@ -236,7 +236,7 @@ var svgInfo = {
     'if': {
         'line': {
             'id': 'if-line',
-            'color': '#0E9B94',
+            'color': '#2EA7E0',
             'x1': '0',
             'y1': '630',
             'x2': '224',
@@ -249,7 +249,7 @@ var svgInfo = {
     'highEnergy': {
         'line': {
             'id': 'high-energy-line',
-            'color': '#0E9B94',
+            'color': '#2EA7E0',
             'x1': '0',
             'y1': '655',
             'x2': '139',

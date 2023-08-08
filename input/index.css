@@ -59,31 +59,11 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url('images/effect.png');
+    background-image: url('images/effect1-2.png');
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0;
     animation: opacity 1s 2.5s ease-out forwards;
-}
-
-#left-circle-container {
-    position: absolute;
-    width: 72px;
-    height: 72px;
-    top: 424px;
-    left: 499px;
-    opacity: 0;
-    animation: opacity 1s 1s ease-in forwards;
-}
-
-#right-circle-container {
-    position: absolute;
-    width: 72px;
-    height: 72px;
-    top: 424px;
-    left: 1351px;
-    opacity: 0;
-    animation: opacity 1s 1s ease-in forwards;
 }
 
 #center-circle-container {
@@ -93,7 +73,6 @@ body {
     top: 409px;
     left: 909px;
     z-index: 100;
-
     opacity: 0;
     animation: opacity 1s 0s ease-in forwards;
 }
@@ -128,22 +107,84 @@ body {
     position: absolute;
     left: 1px;
     top: 1px;
+    --degree: 360deg;
+    animation: rotation 30s 0s linear infinite;
+}
+
+#left-circle-container {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 420px;
+    left: 495px;
+    z-index: 100;
+    opacity: 0;
+    animation: opacity 1s 1s ease-in forwards;
+}
+
+#left-circle-inner {
+    position: absolute;
+    fill:none;
+    stroke:#00A29A;
+    stroke-width: 1;
+}
+
+#left-circle-outer {
+    position: absolute;
+    fill:none;
+    stroke:#00A29A;
+    stroke-width: 1;
+    opacity: 0;
+}
+
+#left-circle-fan-inner {
+    position: absolute;
+    --degree: 360deg;
+    animation: rotation 30s 0s linear infinite;
+}
+
+#left-circle-fan-outer {
+    position: absolute;
+    --degree: 360deg;
+    animation: rotation 30s 0s linear infinite;
+}
+
+#right-circle-container {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    top: 424px;
+    left: 1351px;
+    z-index: 100;
+    opacity: 0;
+    animation: opacity 1s 1s ease-in forwards;
+}
+
+#right-circle-inner {
+    position: absolute;
+    fill:none;
+    stroke:#00A29A;
+    stroke-width: 1;
+}
+
+#right-circle-outer {
+    position: absolute;
+    fill:none;
+    stroke:#00A29A;
+    stroke-width: 1;
+    opacity: 0;
+}
+
+#right-circle-fan-inner {
+    position: absolute;
     --degree: -360deg;
     animation: rotation 30s 0s linear infinite;
 }
 
-
-#left-circle-inner,
-#right-circle-inner {
-    fill: #C9154E;
-}
-
-#left-circle-outer,
-#right-circle-outer {
-    fill: none;
-    stroke: #C9154E;
-    stroke-width: 2px;
-
+#right-circle-fan-outer {
+    position: absolute;
+    --degree: -360deg;
+    animation: rotation 30s 0s linear infinite;
 }
 
 #left-network {
@@ -263,7 +304,7 @@ body {
 #if-line,
 #high-energy-line {
     fill: none;
-    stroke: #0E9B94;
+    stroke: #2EA7E0;
     stroke-width: 2px;
     stroke-linecap: round;
     stroke-dasharray: 6;
@@ -346,7 +387,7 @@ body {
 #low-energy-fill,
 #if-fill,
 #high-energy-fill {
-    fill: #0E9B94;
+    fill: #2EA7E0;
 }
 
 #ccsi1-fill,
@@ -372,7 +413,7 @@ body {
     width: 360px;
     height: 4px;
     top: 460px;
-    left: 559px;    
+    left: 570px;    
 }
 
 #right-line-container {
@@ -380,7 +421,7 @@ body {
     width: 360px;
     height: 4px;
     top: 460px;
-    left: 1005px;
+    left: 1007px;
 
     /* border-style: dotted; */
     /* border-color: red; */
