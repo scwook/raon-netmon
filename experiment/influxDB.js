@@ -16,104 +16,26 @@ const GByte = MByte * 1000;
 const TByte = GByte * 1000;
 const PByte = TByte * 1000;
 
-var backboneSwitchQuery = `from(bucket: "${bucket}") \
+var kobraE1TPSQuery = `from(bucket: "${bucket}") \
 |> range(start: -60s) \
 |> filter(fn: (r) => r["_measurement"] == "snmp") \
-|> filter(fn: (r) => r["agent_host"] == "SR0742-BACKBONE1" or r["agent_host"] == "SR0738-BACKBONE2") \
+|> filter(fn: (r) => r["agent_host"] == "192.168.66.210") \
 |> filter(fn: (r) => \
 r["_field"] == "cpu5sec" or \ 
-r["_field"] == "input-Hu1-31" or \
-r["_field"] == "input-Hu1-32" or \
-r["_field"] == "input-Te1-09-03" or \
-r["_field"] == "input-Te1-09-04" or \
-r["_field"] == "input-Te1-10-01" or \ 
-r["_field"] == "input-Te1-10-04" or \
-r["_field"] == "input-Te1-11-01") \
-|> limit(n:2, offset: 0)`
-
-var leftSwitchQuery = `from(bucket: "${bucket}") \
-|> range(start: -60s) \
-|> filter(fn: (r) => r["_measurement"] == "snmp") \
-|> filter(fn: (r) => r["agent_host"] == "SR0729-UPLINK") \
-|> filter(fn: (r) => \
-r["_field"] == "cpu5sec" or \ 
-r["_field"] == "input-Te1-09" or \
-r["_field"] == "input-Te1-10" or \
-r["_field"] == "input-Te1-11" or \
-r["_field"] == "input-Te1-12" or \
-r["_field"] == "input-Te1-25" or \ 
-r["_field"] == "input-Te1-26" or \
-r["_field"] == "input-Te1-27" or \
-r["_field"] == "input-Te1-28" or \
-r["_field"] == "input-Te1-29" or \
-r["_field"] == "input-Te1-30" or \
-r["_field"] == "input-Te1-32" or \
-r["_field"] == "output-Fo1-49" or \
-r["_field"] == "output-Fo1-50" or \
-r["_field"] == "output-Fo1-51" or \
-r["_field"] == "output-Fo1-52" or \
-r["_field"] == "output-Fo1-53" or \
-r["_field"] == "output-Fo1-54") \
-|> limit(n:2, offset: 0)`
-
-var ccsi1Query = `from(bucket: "${bucket}") \
-|> range(start: -60s) \
-|> filter(fn: (r) => r["_measurement"] == "snmp") \
-|> filter(fn: (r) => r["agent_host"] == "CCSI136-INJECTOR") \
-|> filter(fn: (r) => r["_field"] == "output-Te1-0-03" or r["_field"] == "output-Te1-0-04") \
-|> limit(n:2, offset: 0)`
-
-var ccs02Query = `from(bucket: "${bucket}") \
-|> range(start: -60s) \
-|> filter(fn: (r) => r["_measurement"] == "snmp") \
-|> filter(fn: (r) => r["agent_host"] == "CCS0240-SCL3") \
-|> filter(fn: (r) => r["_field"] == "output-Te1-31" or r["_field"] == "output-Te1-32" or r["_field"] == "output-Te1-47" or r["_field"] == "output-Te1-48") \
-|> limit(n:2, offset: 0)`
-
-var ccs05Query = `from(bucket: "${bucket}") \
-|> range(start: -60s) \
-|> filter(fn: (r) => r["_measurement"] == "snmp") \
-|> filter(fn: (r) => r["agent_host"] == "CCS0540-SCL3") \
-|> filter(fn: (r) => r["_field"] == "output-Te1-31" or r["_field"] == "output-Te1-32" or r["_field"] == "output-Te1-47" or r["_field"] == "output-Te1-48") \
-|> limit(n:2, offset: 0)`
-
-var ccs09Query = `from(bucket: "${bucket}") \
-|> range(start: -60s) \
-|> filter(fn: (r) => r["_measurement"] == "snmp") \
-|> filter(fn: (r) => r["agent_host"] == "CCS0940-SCL3") \
-|> filter(fn: (r) => r["_field"] == "output-Te1-31" or r["_field"] == "output-Te1-32" or r["_field"] == "output-Te1-47" or r["_field"] == "output-Te1-48") \
-|> limit(n:2, offset: 0)`
-
-var ccs12Query = `from(bucket: "${bucket}") \
-|> range(start: -60s) \
-|> filter(fn: (r) => r["_measurement"] == "snmp") \
-|> filter(fn: (r) => r["agent_host"] == "CCS1240-SCL3") \
-|> filter(fn: (r) => r["_field"] == "output-Te1-31" or r["_field"] == "output-Te1-32" or r["_field"] == "output-Te1-47" or r["_field"] == "output-Te1-48") \
-|> limit(n:2, offset: 0)`
-
-var ccs14Query = `from(bucket: "${bucket}") \
-|> range(start: -60s) \
-|> filter(fn: (r) => r["_measurement"] == "snmp") \
-|> filter(fn: (r) => r["agent_host"] == "CCS1440-SCL3") \
-|> filter(fn: (r) => r["_field"] == "output-Te1-31" or r["_field"] == "output-Te1-32" or r["_field"] == "output-Te1-47" or r["_field"] == "output-Te1-48") \
-|> limit(n:2, offset: 0)`
-
-var ccs16Query = `from(bucket: "${bucket}") \
-|> range(start: -60s) \
-|> filter(fn: (r) => r["_measurement"] == "snmp") \
-|> filter(fn: (r) => r["agent_host"] == "CCS1640-SCL3") \
-|> filter(fn: (r) => r["_field"] == "output-Te1-31" or r["_field"] == "output-Te1-32" or r["_field"] == "output-Te1-47" or r["_field"] == "output-Te1-48") \
-|> limit(n:2, offset: 0)`
-
-var ccs21Query = `from(bucket: "${bucket}") \
-|> range(start: -60s) \
-|> filter(fn: (r) => r["_measurement"] == "snmp") \
-|> filter(fn: (r) => r["agent_host"] == "CCS2138-P2DT") \
-|> filter(fn: (r) => r["_field"] == "output-Te1-31" or r["_field"] == "output-Te1-32" or r["_field"] == "output-Te1-47" or r["_field"] == "output-Te1-48") \
+r["_field"] == "input-Gi1-0-01" or \
+r["_field"] == "input-Gi1-0-02" or \
+r["_field"] == "input-Gi1-0-03" or \
+r["_field"] == "input-Te1-0-01" or \
+r["_field"] == "input-Te1-0-02" or \ 
+r["_field"] == "output-Gi1-0-01" or \
+r["_field"] == "output-Gi1-0-02" or \
+r["_field"] == "output-Gi1-0-03" or \
+r["_field"] == "output-Te1-0-01" or \
+r["_field"] == "output-Te1-0-02") \
 |> limit(n:2, offset: 0)`
 
 var queryData = {
-    "backboneSwitch":
+    "kobraE1TPS":
     {
         "dialect": {
             "annotations": [
@@ -126,151 +48,7 @@ var queryData = {
         },
         "now": isoTime,
         "params": {},
-        "query": backboneSwitchQuery,
-        "type": "flux"
-    },
-    "leftSwitch":
-    {
-        "dialect": {
-            "annotations": [
-                "group"
-            ],
-            "commentPrefix": "#",
-            "dateTimeFormat": "RFC3339",
-            "delimiter": ",",
-            "header": true
-        },
-        "now": isoTime,
-        "params": {},
-        "query": leftSwitchQuery,
-        "type": "flux"
-    },
-    "ccsi1":
-    {
-        "dialect": {
-            "annotations": [
-                "group"
-            ],
-            "commentPrefix": "#",
-            "dateTimeFormat": "RFC3339",
-            "delimiter": ",",
-            "header": true
-        },
-        "now": isoTime,
-        "params": {},
-        "query": ccsi1Query,
-        "type": "flux"
-    },
-    "ccs02":
-    {
-        "dialect": {
-            "annotations": [
-                "group"
-            ],
-            "commentPrefix": "#",
-            "dateTimeFormat": "RFC3339",
-            "delimiter": ",",
-            "header": true
-        },
-        "now": isoTime,
-        "params": {},
-        "query": ccs02Query,
-        "type": "flux"
-    },
-    "ccs05":
-    {
-        "dialect": {
-            "annotations": [
-                "group"
-            ],
-            "commentPrefix": "#",
-            "dateTimeFormat": "RFC3339",
-            "delimiter": ",",
-            "header": true
-        },
-        "now": isoTime,
-        "params": {},
-        "query": ccs05Query,
-        "type": "flux"
-    },
-    "ccs09":
-    {
-        "dialect": {
-            "annotations": [
-                "group"
-            ],
-            "commentPrefix": "#",
-            "dateTimeFormat": "RFC3339",
-            "delimiter": ",",
-            "header": true
-        },
-        "now": isoTime,
-        "params": {},
-        "query": ccs09Query,
-        "type": "flux"
-    },
-    "ccs12":
-    {
-        "dialect": {
-            "annotations": [
-                "group"
-            ],
-            "commentPrefix": "#",
-            "dateTimeFormat": "RFC3339",
-            "delimiter": ",",
-            "header": true
-        },
-        "now": isoTime,
-        "params": {},
-        "query": ccs12Query,
-        "type": "flux"
-    },
-    "ccs14":
-    {
-        "dialect": {
-            "annotations": [
-                "group"
-            ],
-            "commentPrefix": "#",
-            "dateTimeFormat": "RFC3339",
-            "delimiter": ",",
-            "header": true
-        },
-        "now": isoTime,
-        "params": {},
-        "query": ccs14Query,
-        "type": "flux"
-    },
-    "ccs16":
-    {
-        "dialect": {
-            "annotations": [
-                "group"
-            ],
-            "commentPrefix": "#",
-            "dateTimeFormat": "RFC3339",
-            "delimiter": ",",
-            "header": true
-        },
-        "now": isoTime,
-        "params": {},
-        "query": ccs16Query,
-        "type": "flux"
-    },
-    "ccs21":
-    {
-        "dialect": {
-            "annotations": [
-                "group"
-            ],
-            "commentPrefix": "#",
-            "dateTimeFormat": "RFC3339",
-            "delimiter": ",",
-            "header": true
-        },
-        "now": isoTime,
-        "params": {},
-        "query": ccs21Query,
+        "query": kobraE1TPSQuery,
         "type": "flux"
     }
 };
@@ -352,333 +130,115 @@ function changeUnit(byteValue) {
     return { value: calValue, unit: calUnit }
 }
 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-//  Server Room Uplink Switch 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-
-function monitoringServerUplinkSwitch(count) {
+function monitoringKoBRAe1TPSSwitch(interval) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
 
             let data = this.responseText.split(",");
 
-            // CPU
-            let cpu5secIndex = data.indexOf("cpu5sec") - 1;
-            let cpu5sec = parseInt(data[cpu5secIndex]);
+            let index_input1_1 = data.indexOf("input-Gi1-0-01");
+            let index_input1_2 = data.indexOf("input-Gi1-0-01", index_input1_1 + 1);
 
-            document.getElementById('cpu-valueL').innerText = cpu5sec.toFixed(1);
+            let data_input1_1 = data[index_input1_1 - 1];
+            let data_input1_2 = data[index_input1_2 - 1];
 
-            // Uplink
-            var portlist = ['output-Fo1-49', 'output-Fo1-50', 'output-Fo1-51', 'output-Fo1-52'];
-            let uplinkTrafficArray = calcTraffic(data, portlist, count);
+            let index_input2_1 = data.indexOf("input-Gi1-0-02");
+            let index_input2_2 = data.indexOf("input-Gi1-0-02", index_input2_1 + 1);
 
-            let uplinkTotalTraffic = uplinkTrafficArray[0] + uplinkTrafficArray[1] + uplinkTrafficArray[2] + uplinkTrafficArray[3];
-            let uplinkUnitTraffic = changeUnit(uplinkTotalTraffic);
+            let data_input2_1 = data[index_input2_1 - 1];
+            let data_input2_2 = data[index_input2_2 - 1];
 
-            document.getElementById('left-switch-value').innerText = uplinkUnitTraffic.value.toFixed(1) + uplinkUnitTraffic.unit + '/s';
-            checkTraffic('left-line', 'left-switch-value', uplinkTotalTraffic, '40G');
+            let index_input3_1 = data.indexOf("input-Gi1-0-03");
+            let index_input3_2 = data.indexOf("input-Gi1-0-03", index_input3_1 + 1);
 
-            // Control
-            var portlist = ['input-Te1-25', 'input-Te1-26'];
-            let controlTrafficArray = calcTraffic(data, portlist, count);
+            let data_input3_1 = data[index_input3_1 - 1];
+            let data_input3_2 = data[index_input3_2 - 1];
 
-            let controlTotalTraffic = controlTrafficArray[0] + controlTrafficArray[1];
-            let controlUnitTraffic = changeUnit(controlTotalTraffic);
+            let index_input4_1 = data.indexOf("input-Te1-0-01");
+            let index_input4_2 = data.indexOf("input-Te1-0-01", index_input4_1 + 1);
 
-            document.getElementById('control-value').innerText = controlUnitTraffic.value.toFixed(1) + controlUnitTraffic.unit + '/s';
-            checkTraffic('control-line', 'control-value', controlTotalTraffic, '10G');
+            let data_input4_1 = data[index_input4_1 - 1];
+            let data_input4_2 = data[index_input4_2 - 1];
 
-            // Ctrluser
-            var portlist = ['input-Te1-32'];
-            let ctrluserTrafficArray = calcTraffic(data, portlist, count);
+            let index_input5_1 = data.indexOf("input-Te1-0-02");
+            let index_input5_2 = data.indexOf("input-Te1-0-02", index_input5_1 + 1);
 
-            let ctrluserTotalTraffic = ctrluserTrafficArray[0];
-            let ctrluserUnitTraffic = changeUnit(ctrluserTotalTraffic);
+            let data_input5_1 = data[index_input5_1 - 1];
+            let data_input5_2 = data[index_input5_2 - 1];
 
-            document.getElementById('ctrluser-value').innerText = ctrluserUnitTraffic.value.toFixed(1) + ctrluserUnitTraffic.unit + '/s';
-            checkTraffic('ctrluser-line', 'ctrluser-value', ctrluserTotalTraffic, '10G');
+            let traffic_input1 = (data_input1_2 - data_input1_1) / interval;
+            let traffic_input2 = (data_input2_2 - data_input2_1) / interval;
+            let traffic_input3 = (data_input3_2 - data_input3_1) / interval;
+            let traffic_input4 = (data_input4_2 - data_input4_1) / interval;
+            let traffic_input5 = (data_input5_2 - data_input5_1) / interval;
 
-            // Archive1
-            var portlist = ['input-Te1-11'];
-            let archive1TrafficArray = calcTraffic(data, portlist, count);
+            // let totalTraffic = traffic1;
+            // let unitTraffic = changeUnit(totalTraffic);
+            let unitTraffic_input1 = changeUnit(traffic_input1)
+            let unitTraffic_input2 = changeUnit(traffic_input2)
+            let unitTraffic_input3 = changeUnit(traffic_input3)
+            let unitTraffic_input4 = changeUnit(traffic_input4)
+            let unitTraffic_input5 = changeUnit(traffic_input5)
 
-            let archive1TotalTraffic = archive1TrafficArray[0];
-            let archive1UnitTraffic = changeUnit(archive1TotalTraffic);
+            document.getElementById('kobra-e1-tps-value-in1').innerText = unitTraffic_input1.value.toFixed(1) + unitTraffic_input1.unit + '/s';
+            document.getElementById('kobra-e1-tps-value-in2').innerText = unitTraffic_input2.value.toFixed(1) + unitTraffic_input2.unit + '/s';
+            document.getElementById('kobra-e1-tps-value-in3').innerText = unitTraffic_input3.value.toFixed(1) + unitTraffic_input3.unit + '/s';
+            document.getElementById('kobra-e1-tps-value-in4').innerText = unitTraffic_input4.value.toFixed(1) + unitTraffic_input4.unit + '/s';
+            document.getElementById('kobra-e1-tps-value-in5').innerText = unitTraffic_input5.value.toFixed(1) + unitTraffic_input5.unit + '/s';
 
-            document.getElementById('archive1-value').innerText = archive1UnitTraffic.value.toFixed(1) + archive1UnitTraffic.unit + '/s';
-            checkTraffic('archive1-line', 'archive1-value', archive1TotalTraffic, '10G');
 
-            // Archive2
-            var portlist = ['input-Te1-12'];
-            let archive2TrafficArray = calcTraffic(data, portlist, count);
+            let index_output1_1 = data.indexOf("output-Gi1-0-01");
+            let index_output1_2 = data.indexOf("output-Gi1-0-01", index_output1_1 + 1);
 
-            let archive2TotalTraffic = archive2TrafficArray[0];
-            let archive2UnitTraffic = changeUnit(archive2TotalTraffic);
+            let data_output1_1 = data[index_output1_1 - 1];
+            let data_output1_2 = data[index_output1_2 - 1];
 
-            document.getElementById('archive2-value').innerText = archive2UnitTraffic.value.toFixed(1) + archive2UnitTraffic.unit + '/s';
-            checkTraffic('archive2-line', 'archive2-value', archive2TotalTraffic, '10G');
+            let index_output2_1 = data.indexOf("output-Gi1-0-02");
+            let index_output2_2 = data.indexOf("output-Gi1-0-02", index_output2_1 + 1);
 
-            // SCL3 Gateway1
-            var portlist = ['input-Te1-09'];
-            let scl3Gateway1TrafficArray = calcTraffic(data, portlist, count);
+            let data_output2_1 = data[index_output2_1 - 1];
+            let data_output2_2 = data[index_output2_2 - 1];
 
-            let scl3Gateway1TotalTraffic = scl3Gateway1TrafficArray[0];
-            let scl3Gateway1UnitTraffic = changeUnit(scl3Gateway1TotalTraffic);
+            let index_output3_1 = data.indexOf("output-Gi1-0-03");
+            let index_output3_2 = data.indexOf("output-Gi1-0-03", index_output3_1 + 1);
 
-            document.getElementById('scl3-gateway1-value').innerText = scl3Gateway1UnitTraffic.value.toFixed(1) + scl3Gateway1UnitTraffic.unit + '/s';
-            checkTraffic('scl3-gateway1-line', 'scl3-gateway1-value', scl3Gateway1TotalTraffic, '10G');
+            let data_output3_1 = data[index_output3_1 - 1];
+            let data_output3_2 = data[index_output3_2 - 1];
 
-            // SCL3 Gateway1
-            var portlist = ['input-Te1-10'];
-            let scl3Gateway2TrafficArray = calcTraffic(data, portlist, count);
+            let index_output4_1 = data.indexOf("output-Te1-0-01");
+            let index_output4_2 = data.indexOf("output-Te1-0-01", index_output4_1 + 1);
 
-            let scl3Gateway2TotalTraffic = scl3Gateway2TrafficArray[0];
-            let scl3Gateway2UnitTraffic = changeUnit(scl3Gateway2TotalTraffic);
+            let data_output4_1 = data[index_output4_1 - 1];
+            let data_output4_2 = data[index_output4_2 - 1];
 
-            document.getElementById('scl3-gateway2-value').innerText = scl3Gateway2UnitTraffic.value.toFixed(1) + scl3Gateway2UnitTraffic.unit + '/s';
-            checkTraffic('scl3-gateway2-line', 'scl3-gateway2-value', scl3Gateway2TotalTraffic, '10G');
+            let index_output5_1 = data.indexOf("output-Te1-0-02");
+            let index_output5_2 = data.indexOf("output-Te1-0-02", index_output5_1 + 1);
 
-            // Display Wall
-            var portlist = ['input-Te1-27', 'input-Te1-28'];
-            let displayWallTrafficArray = calcTraffic(data, portlist, count);
+            let data_output5_1 = data[index_output5_1 - 1];
+            let data_output5_2 = data[index_output5_2 - 1];
 
-            let displayWallTotalTraffic = displayWallTrafficArray[0] + displayWallTrafficArray[1];
-            let displayWallUnitTraffic = changeUnit(displayWallTotalTraffic);
+            let traffic_output1 = (data_output1_2 - data_output1_1) / interval;
+            let traffic_output2 = (data_output2_2 - data_output2_1) / interval;
+            let traffic_output3 = (data_output3_2 - data_output3_1) / interval;
+            let traffic_output4 = (data_output4_2 - data_output4_1) / interval;
+            let traffic_output5 = (data_output5_2 - data_output5_1) / interval;
 
-            document.getElementById('display-wall-value').innerText = displayWallUnitTraffic.value.toFixed(1) + displayWallUnitTraffic.unit + '/s';
-            checkTraffic('display-wall-line', 'display-wall-value', displayWallTotalTraffic, '10G');
+            // let totalTraffic = traffic1;
+            // let unitTraffic = changeUnit(totalTraffic);
+            let unitTraffic_output1 = changeUnit(traffic_output1)
+            let unitTraffic_output2 = changeUnit(traffic_output2)
+            let unitTraffic_output3 = changeUnit(traffic_output3)
+            let unitTraffic_output4 = changeUnit(traffic_output4)
+            let unitTraffic_output5 = changeUnit(traffic_output5)
 
-            // Operator
-            var portlist = ['input-Te1-29', 'input-Te1-30'];
-            let operatorTrafficArray = calcTraffic(data, portlist, count);
+            document.getElementById('kobra-e1-tps-value-out1').innerText = unitTraffic_output1.value.toFixed(1) + unitTraffic_output1.unit + '/s';
+            document.getElementById('kobra-e1-tps-value-out2').innerText = unitTraffic_output2.value.toFixed(1) + unitTraffic_output2.unit + '/s';
+            document.getElementById('kobra-e1-tps-value-out3').innerText = unitTraffic_output3.value.toFixed(1) + unitTraffic_output3.unit + '/s';
+            document.getElementById('kobra-e1-tps-value-out4').innerText = unitTraffic_output4.value.toFixed(1) + unitTraffic_output4.unit + '/s';
+            document.getElementById('kobra-e1-tps-value-out5').innerText = unitTraffic_output5.value.toFixed(1) + unitTraffic_output5.unit + '/s';
 
-            let operatorTotalTraffic = operatorTrafficArray[0] + operatorTrafficArray[1];
-            let operatorUnitTraffic = changeUnit(operatorTotalTraffic);
-
-            document.getElementById('operator-value').innerText = operatorUnitTraffic.value.toFixed(1) + operatorUnitTraffic.unit + '/s';
-            checkTraffic('operator-line', 'operator-value', operatorTotalTraffic, '10G');
-        }
-    };
-
-    xhttp.open('POST', queryString, true);
-
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.setRequestHeader("Authorization", "Token " + influxDBToken)
-    xhttp.send(JSON.stringify(queryData.leftSwitch));
-
-    let date = new Date();
-    let isoTime = date.toISOString().replace('Z', timezone);
-    queryData.leftSwitch.now = isoTime;
-}
-
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-//  Backbone Switch 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-
-function monitorinBackboneSwitch(count) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-
-            let data = this.responseText.split(",");
-
-            // CPU
-            let cpu5secIndex = data.indexOf("cpu5sec") - 1;
-            let cpu5sec = parseInt(data[cpu5secIndex]);
-
-            document.getElementById('cpu-valueC').innerText = cpu5sec.toFixed(1);
-
-            // ISOL
-            var portlist = ['input-Te1-10-01'];
-            let isolTrafficArray = calcRedundancyTraffic(data, portlist, count);
-
-            let isolTotalTraffic = isolTrafficArray[0] + isolTrafficArray[1];
-            let isolUnitTraffic = changeUnit(isolTotalTraffic);
-
-            document.getElementById('isol-value').innerText = isolUnitTraffic.value.toFixed(1) + isolUnitTraffic.unit + '/s';
-            checkTraffic('isol-line', 'isol-value', isolTotalTraffic, '10G');
-
-
-            // SRF
-            var portlist = ['input-Te1-11-01'];
-            let srfTrafficArray = calcRedundancyTraffic(data, portlist, count);
-
-            let srfTotalTraffic = srfTrafficArray[0] + srfTrafficArray[1];
-            let srfUnitTraffic = changeUnit(srfTotalTraffic);
-
-            document.getElementById('srf-value').innerText = srfUnitTraffic.value.toFixed(1) + srfUnitTraffic.unit + '/s';
-            checkTraffic('srf-line', 'srf-value', srfTotalTraffic, '10G');
-
-
-            // Cryo
-            var portlist = ['input-Te1-09-04'];
-            let cryoTrafficArray = calcRedundancyTraffic(data, portlist, count);
-
-            let cryoTotalTraffic = cryoTrafficArray[0] + cryoTrafficArray[1];
-            let cryoUnitTraffic = changeUnit(cryoTotalTraffic);
-
-            document.getElementById('cryo-value').innerText = cryoUnitTraffic.value.toFixed(1) + cryoUnitTraffic.unit + '/s';
-            checkTraffic('cryo-line', 'cryo-value', cryoTotalTraffic, '10G');
-
-
-            // Low Energy
-            var portlist = ['input-Te1-09-03'];
-            let lowEnergyTrafficArray = calcRedundancyTraffic(data, portlist, count);
-
-            let lowEnergyTotalTraffic = lowEnergyTrafficArray[0] + lowEnergyTrafficArray[1];
-            let lowEnergyUnitTraffic = changeUnit(lowEnergyTotalTraffic);
-
-            document.getElementById('low-energy-value').innerText = lowEnergyUnitTraffic.value.toFixed(1) + lowEnergyUnitTraffic.unit + '/s';
-            checkTraffic('low-energy-line', 'low-energy-value', cryoTotalTraffic, '10G');
-
-            // Low Energy
-            var portlist = ['input-Te1-10-04'];
-            let ifTrafficArray = calcRedundancyTraffic(data, portlist, count);
-
-            let ifTotalTraffic = ifTrafficArray[0] + ifTrafficArray[1];
-            let ifUnitTraffic = changeUnit(ifTotalTraffic);
-
-            document.getElementById('if-value').innerText = ifUnitTraffic.value.toFixed(1) + ifUnitTraffic.unit + '/s';
-            checkTraffic('if-line', 'if-value', cryoTotalTraffic, '10G');
-        }
-    };
-
-    xhttp.open('POST', queryString, true);
-
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.setRequestHeader("Authorization", "Token " + influxDBToken)
-    xhttp.send(JSON.stringify(queryData.backboneSwitch));
-
-    let date = new Date();
-    let isoTime = date.toISOString().replace('Z', timezone);
-    queryData.backboneSwitch.now = isoTime;
-}
-
-
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-//  Gallery Switch 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-
-function monitoringCCSI1Switch(count) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-
-            let data = this.responseText.split(",");
-
-            let index1_1 = data.indexOf("output-Te1-0-03");
-            let index1_2 = data.indexOf("output-Te1-0-03", index1_1 + 1);
-
-            let data1_1 = data[index1_1 - 1];
-            let data1_2 = data[index1_2 - 1];
-
-            let index2_1 = data.indexOf("output-Te1-0-04");
-            let index2_2 = data.indexOf("output-Te1-0-04", index2_1 + 1);
-
-            let data2_1 = data[index2_1 - 1];
-            let data2_2 = data[index2_2 - 1];
-
-            let traffic1 = (data1_2 - data1_1) / count;
-            let traffic2 = (data2_2 - data2_1) / count;
-
-            let totalTraffic = traffic1 + traffic2;
-            let unitTraffic = changeUnit(totalTraffic);
-
-            document.getElementById('ccsi1-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
-            checkTraffic('ccsi1-line', 'ccsi1-value', totalTraffic, '10G');
-        }
-    };
-
-    xhttp.open('POST', queryString, true);
-
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.setRequestHeader("Authorization", "Token " + influxDBToken)
-    xhttp.send(JSON.stringify(queryData.ccsi1));
-
-    let date = new Date();
-    let isoTime = date.toISOString().replace('Z', timezone);
-    queryData.ccsi1.now = isoTime;
-}
-
-function monitoringCCS02Switch(count) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-
-            let data = this.responseText.split(",");
-
-            let index1_1 = data.indexOf("output-Te1-31");
-            let index1_2 = data.indexOf("output-Te1-31", index1_1 + 1);
-
-            let data1_1 = data[index1_1 - 1];
-            let data1_2 = data[index1_2 - 1];
-
-            let index2_1 = data.indexOf("output-Te1-32");
-            let index2_2 = data.indexOf("output-Te1-32", index2_1 + 1);
-
-            let data2_1 = data[index2_1 - 1];
-            let data2_2 = data[index2_2 - 1];
-
-            let index3_1 = data.indexOf("output-Te1-47");
-            let index3_2 = data.indexOf("output-Te1-47", index3_1 + 1);
-
-            let data3_1 = data[index3_1 - 1];
-            let data3_2 = data[index3_2 - 1];
-
-            let index4_1 = data.indexOf("output-Te1-48");
-            let index4_2 = data.indexOf("output-Te1-48", index4_1 + 1);
-
-            let data4_1 = data[index4_1 - 1];
-            let data4_2 = data[index4_2 - 1];
-
-            let traffic1 = (data1_2 - data1_1) / count;
-            let traffic2 = (data2_2 - data2_1) / count;
-            let traffic3 = (data3_2 - data3_1) / count;
-            let traffic4 = (data4_2 - data4_1) / count;
-
-
-            let totalTraffic = traffic1 + traffic2 + traffic3 + traffic4;
-            let unitTraffic = changeUnit(totalTraffic);
-
-            document.getElementById('ccs02-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
-            checkTraffic('ccs02-line', 'ccs02-value', totalTraffic, '10G');
+            // checkTraffic('ccsi1-line', 'ccsi1-value', totalTraffic, '10G');
 
         }
     };
@@ -687,345 +247,9 @@ function monitoringCCS02Switch(count) {
 
     xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.setRequestHeader("Authorization", "Token " + influxDBToken)
-    xhttp.send(JSON.stringify(queryData.ccs02));
+    xhttp.send(JSON.stringify(queryData.kobraE1TPS));
 
     let date = new Date();
     let isoTime = date.toISOString().replace('Z', timezone);
-    queryData.ccs02.now = isoTime;
-}
-
-function monitoringCCS05Switch(count) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-
-            let data = this.responseText.split(",");
-
-            let index1_1 = data.indexOf("output-Te1-31");
-            let index1_2 = data.indexOf("output-Te1-31", index1_1 + 1);
-
-            let data1_1 = data[index1_1 - 1];
-            let data1_2 = data[index1_2 - 1];
-
-            let index2_1 = data.indexOf("output-Te1-32");
-            let index2_2 = data.indexOf("output-Te1-32", index2_1 + 1);
-
-            let data2_1 = data[index2_1 - 1];
-            let data2_2 = data[index2_2 - 1];
-
-            let index3_1 = data.indexOf("output-Te1-47");
-            let index3_2 = data.indexOf("output-Te1-47", index3_1 + 1);
-
-            let data3_1 = data[index3_1 - 1];
-            let data3_2 = data[index3_2 - 1];
-
-            let index4_1 = data.indexOf("output-Te1-48");
-            let index4_2 = data.indexOf("output-Te1-48", index4_1 + 1);
-
-            let data4_1 = data[index4_1 - 1];
-            let data4_2 = data[index4_2 - 1];
-
-            let traffic1 = (data1_2 - data1_1) / count;
-            let traffic2 = (data2_2 - data2_1) / count;
-            let traffic3 = (data3_2 - data3_1) / count;
-            let traffic4 = (data4_2 - data4_1) / count;
-
-
-            let totalTraffic = traffic1 + traffic2 + traffic3 + traffic4;
-            let unitTraffic = changeUnit(totalTraffic);
-
-            document.getElementById('ccs05-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
-            checkTraffic('ccs05-line', 'ccs05-value', totalTraffic, '10G');
-        }
-    };
-
-    xhttp.open('POST', queryString, true);
-
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.setRequestHeader("Authorization", "Token " + influxDBToken)
-    xhttp.send(JSON.stringify(queryData.ccs05));
-
-    let date = new Date();
-    let isoTime = date.toISOString().replace('Z', timezone);
-    queryData.ccs05.now = isoTime;
-}
-
-function monitoringCCS09Switch(count) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-
-            let data = this.responseText.split(",");
-
-            let index1_1 = data.indexOf("output-Te1-31");
-            let index1_2 = data.indexOf("output-Te1-31", index1_1 + 1);
-
-            let data1_1 = data[index1_1 - 1];
-            let data1_2 = data[index1_2 - 1];
-
-            let index2_1 = data.indexOf("output-Te1-32");
-            let index2_2 = data.indexOf("output-Te1-32", index2_1 + 1);
-
-            let data2_1 = data[index2_1 - 1];
-            let data2_2 = data[index2_2 - 1];
-
-            let index3_1 = data.indexOf("output-Te1-47");
-            let index3_2 = data.indexOf("output-Te1-47", index3_1 + 1);
-
-            let data3_1 = data[index3_1 - 1];
-            let data3_2 = data[index3_2 - 1];
-
-            let index4_1 = data.indexOf("output-Te1-48");
-            let index4_2 = data.indexOf("output-Te1-48", index4_1 + 1);
-
-            let data4_1 = data[index4_1 - 1];
-            let data4_2 = data[index4_2 - 1];
-
-            let traffic1 = (data1_2 - data1_1) / count;
-            let traffic2 = (data2_2 - data2_1) / count;
-            let traffic3 = (data3_2 - data3_1) / count;
-            let traffic4 = (data4_2 - data4_1) / count;
-
-
-            let totalTraffic = traffic1 + traffic2 + traffic3 + traffic4;
-            let unitTraffic = changeUnit(totalTraffic);
-
-            document.getElementById('ccs09-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
-            checkTraffic('ccs09-line', 'ccs09-value', totalTraffic, '10G');
-        }
-    };
-
-    xhttp.open('POST', queryString, true);
-
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.setRequestHeader("Authorization", "Token " + influxDBToken)
-    xhttp.send(JSON.stringify(queryData.ccs09));
-
-    let date = new Date();
-    let isoTime = date.toISOString().replace('Z', timezone);
-    queryData.ccs09.now = isoTime;
-}
-
-function monitoringCCS12Switch(count) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-
-            let data = this.responseText.split(",");
-
-            let index1_1 = data.indexOf("output-Te1-31");
-            let index1_2 = data.indexOf("output-Te1-31", index1_1 + 1);
-
-            let data1_1 = data[index1_1 - 1];
-            let data1_2 = data[index1_2 - 1];
-
-            let index2_1 = data.indexOf("output-Te1-32");
-            let index2_2 = data.indexOf("output-Te1-32", index2_1 + 1);
-
-            let data2_1 = data[index2_1 - 1];
-            let data2_2 = data[index2_2 - 1];
-
-            let index3_1 = data.indexOf("output-Te1-47");
-            let index3_2 = data.indexOf("output-Te1-47", index3_1 + 1);
-
-            let data3_1 = data[index3_1 - 1];
-            let data3_2 = data[index3_2 - 1];
-
-            let index4_1 = data.indexOf("output-Te1-48");
-            let index4_2 = data.indexOf("output-Te1-48", index4_1 + 1);
-
-            let data4_1 = data[index4_1 - 1];
-            let data4_2 = data[index4_2 - 1];
-
-            let traffic1 = (data1_2 - data1_1) / count;
-            let traffic2 = (data2_2 - data2_1) / count;
-            let traffic3 = (data3_2 - data3_1) / count;
-            let traffic4 = (data4_2 - data4_1) / count;
-
-
-            let totalTraffic = traffic1 + traffic2 + traffic3 + traffic4;
-            let unitTraffic = changeUnit(totalTraffic);
-
-            document.getElementById('ccs12-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
-            checkTraffic('ccs12-line', 'ccs12-value', totalTraffic, '10G');
-        }
-    };
-
-    xhttp.open('POST', queryString, true);
-
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.setRequestHeader("Authorization", "Token " + influxDBToken)
-    xhttp.send(JSON.stringify(queryData.ccs12));
-
-    let date = new Date();
-    let isoTime = date.toISOString().replace('Z', timezone);
-    queryData.ccs12.now = isoTime;
-}
-
-function monitoringCCS14Switch(count) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-
-            let data = this.responseText.split(",");
-
-            let index1_1 = data.indexOf("output-Te1-31");
-            let index1_2 = data.indexOf("output-Te1-31", index1_1 + 1);
-
-            let data1_1 = data[index1_1 - 1];
-            let data1_2 = data[index1_2 - 1];
-
-            let index2_1 = data.indexOf("output-Te1-32");
-            let index2_2 = data.indexOf("output-Te1-32", index2_1 + 1);
-
-            let data2_1 = data[index2_1 - 1];
-            let data2_2 = data[index2_2 - 1];
-
-            let index3_1 = data.indexOf("output-Te1-47");
-            let index3_2 = data.indexOf("output-Te1-47", index3_1 + 1);
-
-            let data3_1 = data[index3_1 - 1];
-            let data3_2 = data[index3_2 - 1];
-
-            let index4_1 = data.indexOf("output-Te1-48");
-            let index4_2 = data.indexOf("output-Te1-48", index4_1 + 1);
-
-            let data4_1 = data[index4_1 - 1];
-            let data4_2 = data[index4_2 - 1];
-
-            let traffic1 = (data1_2 - data1_1) / count;
-            let traffic2 = (data2_2 - data2_1) / count;
-            let traffic3 = (data3_2 - data3_1) / count;
-            let traffic4 = (data4_2 - data4_1) / count;
-
-
-            let totalTraffic = traffic1 + traffic2 + traffic3 + traffic4;
-            let unitTraffic = changeUnit(totalTraffic);
-
-            document.getElementById('ccs14-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
-            checkTraffic('ccs14-line', 'ccs14-value', totalTraffic, '10G');
-        }
-    };
-
-    xhttp.open('POST', queryString, true);
-
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.setRequestHeader("Authorization", "Token " + influxDBToken)
-    xhttp.send(JSON.stringify(queryData.ccs14));
-
-    let date = new Date();
-    let isoTime = date.toISOString().replace('Z', timezone);
-    queryData.ccs14.now = isoTime;
-}
-
-function monitoringCCS16Switch(count) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-
-            let data = this.responseText.split(",");
-
-            let index1_1 = data.indexOf("output-Te1-31");
-            let index1_2 = data.indexOf("output-Te1-31", index1_1 + 1);
-
-            let data1_1 = data[index1_1 - 1];
-            let data1_2 = data[index1_2 - 1];
-
-            let index2_1 = data.indexOf("output-Te1-32");
-            let index2_2 = data.indexOf("output-Te1-32", index2_1 + 1);
-
-            let data2_1 = data[index2_1 - 1];
-            let data2_2 = data[index2_2 - 1];
-
-            let index3_1 = data.indexOf("output-Te1-47");
-            let index3_2 = data.indexOf("output-Te1-47", index3_1 + 1);
-
-            let data3_1 = data[index3_1 - 1];
-            let data3_2 = data[index3_2 - 1];
-
-            let index4_1 = data.indexOf("output-Te1-48");
-            let index4_2 = data.indexOf("output-Te1-48", index4_1 + 1);
-
-            let data4_1 = data[index4_1 - 1];
-            let data4_2 = data[index4_2 - 1];
-
-            let traffic1 = (data1_2 - data1_1) / count;
-            let traffic2 = (data2_2 - data2_1) / count;
-            let traffic3 = (data3_2 - data3_1) / count;
-            let traffic4 = (data4_2 - data4_1) / count;
-
-
-            let totalTraffic = traffic1 + traffic2 + traffic3 + traffic4;
-            let unitTraffic = changeUnit(totalTraffic);
-
-            document.getElementById('ccs16-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
-            checkTraffic('ccs16-line', 'ccs16-value', totalTraffic, '10G');
-        }
-    };
-
-    xhttp.open('POST', queryString, true);
-
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.setRequestHeader("Authorization", "Token " + influxDBToken)
-    xhttp.send(JSON.stringify(queryData.ccs16));
-
-    let date = new Date();
-    let isoTime = date.toISOString().replace('Z', timezone);
-    queryData.ccs16.now = isoTime;
-}
-
-function monitoringCCS21Switch(count) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-
-            let data = this.responseText.split(",");
-
-            let index1_1 = data.indexOf("output-Te1-31");
-            let index1_2 = data.indexOf("output-Te1-31", index1_1 + 1);
-
-            let data1_1 = data[index1_1 - 1];
-            let data1_2 = data[index1_2 - 1];
-
-            let index2_1 = data.indexOf("output-Te1-32");
-            let index2_2 = data.indexOf("output-Te1-32", index2_1 + 1);
-
-            let data2_1 = data[index2_1 - 1];
-            let data2_2 = data[index2_2 - 1];
-
-            let index3_1 = data.indexOf("output-Te1-47");
-            let index3_2 = data.indexOf("output-Te1-47", index3_1 + 1);
-
-            let data3_1 = data[index3_1 - 1];
-            let data3_2 = data[index3_2 - 1];
-
-            let index4_1 = data.indexOf("output-Te1-48");
-            let index4_2 = data.indexOf("output-Te1-48", index4_1 + 1);
-
-            let data4_1 = data[index4_1 - 1];
-            let data4_2 = data[index4_2 - 1];
-
-            let traffic1 = (data1_2 - data1_1) / count;
-            let traffic2 = (data2_2 - data2_1) / count;
-            let traffic3 = (data3_2 - data3_1) / count;
-            let traffic4 = (data4_2 - data4_1) / count;
-
-
-            let totalTraffic = traffic1 + traffic2 + traffic3 + traffic4;
-            let unitTraffic = changeUnit(totalTraffic);
-
-            document.getElementById('ccs21-value').innerText = unitTraffic.value.toFixed(1) + unitTraffic.unit + '/s';
-            checkTraffic('ccs21-line', 'ccs21-value', totalTraffic, '10G');
-        }
-    };
-
-    xhttp.open('POST', queryString, true);
-
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.setRequestHeader("Authorization", "Token " + influxDBToken)
-    xhttp.send(JSON.stringify(queryData.ccs21));
-
-    let date = new Date();
-    let isoTime = date.toISOString().replace('Z', timezone);
-    queryData.ccs21.now = isoTime;
+    queryData.kobraE1TPS.now = isoTime;
 }

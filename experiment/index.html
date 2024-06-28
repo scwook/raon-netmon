@@ -1,9 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <body>
+<script src="config.js"></script>
+<script src="influxDB.js"></script>
+<style>
+    div {
+        margin: 10px;
+    }
+</style>
+<body>
+    <div style="display: flex;">
+        <div id="kobra-e1-tps-value-in1"></div>
+        <div id="kobra-e1-tps-value-out1"></div>
+    </div>
 
-    </body>
-    <script>
-        
-    </script>
+    <div style="display: flex;">
+        <div id="kobra-e1-tps-value-in2"></div>
+        <div id="kobra-e1-tps-value-out2"></div>
+    </div>
+    
+    <div style="display: flex;">
+        <div id="kobra-e1-tps-value-in3"></div>
+        <div id="kobra-e1-tps-value-out3"></div>
+    </div>
+
+    <div style="display: flex;">
+        <div id="kobra-e1-tps-value-in4"></div>
+        <div id="kobra-e1-tps-value-out4"></div>
+    </div>
+
+    <div style="display: flex;">
+        <div id="kobra-e1-tps-value-in5"></div>
+        <div id="kobra-e1-tps-value-out5"></div>
+    </div>
+</body>
+<script>
+
+    // This value depend on saved push time interval on telegraf configuration
+    var dataTimeInterval = 20; // second
+
+    var timeInterval = 10000; // millisecond
+
+    monitoringKoBRAe1TPSSwitch(dataTimeInterval);
+    setInterval(monitoringKoBRAe1TPSSwitch, timeInterval, dataTimeInterval);
+
+</script>
+
 </html>
