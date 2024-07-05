@@ -26,12 +26,14 @@ r["_field"] == "input-Gi1-0-01" or \
 r["_field"] == "input-Gi1-0-02" or \
 r["_field"] == "input-Gi1-0-03" or \
 r["_field"] == "input-Te1-0-01" or \
-r["_field"] == "input-Te1-0-02" or \ 
+r["_field"] == "input-Te1-0-02" or \
+r["_field"] == "input-Te1-0-03" or \ 
 r["_field"] == "output-Gi1-0-01" or \
 r["_field"] == "output-Gi1-0-02" or \
 r["_field"] == "output-Gi1-0-03" or \
 r["_field"] == "output-Te1-0-01" or \
-r["_field"] == "output-Te1-0-02") \
+r["_field"] == "output-Te1-0-02" or \
+r["_field"] == "output-Te1-0-03") \
 |> limit(n:2, offset: 0)`
 
 var queryData = {
@@ -167,11 +169,18 @@ function monitoringKoBRAe1TPSSwitch(interval) {
             let data_input5_1 = data[index_input5_1 - 1];
             let data_input5_2 = data[index_input5_2 - 1];
 
+            let index_input6_1 = data.indexOf("input-Te1-0-03");
+            let index_input6_2 = data.indexOf("input-Te1-0-03", index_input6_1 + 1);
+
+            let data_input6_1 = data[index_input6_1 - 1];
+            let data_input6_2 = data[index_input6_2 - 1];
+
             let traffic_input1 = (data_input1_2 - data_input1_1) / interval;
             let traffic_input2 = (data_input2_2 - data_input2_1) / interval;
             let traffic_input3 = (data_input3_2 - data_input3_1) / interval;
             let traffic_input4 = (data_input4_2 - data_input4_1) / interval;
             let traffic_input5 = (data_input5_2 - data_input5_1) / interval;
+            let traffic_input6 = (data_input6_2 - data_input6_1) / interval;
 
             // let totalTraffic = traffic1;
             // let unitTraffic = changeUnit(totalTraffic);
@@ -180,12 +189,14 @@ function monitoringKoBRAe1TPSSwitch(interval) {
             let unitTraffic_input3 = changeUnit(traffic_input3)
             let unitTraffic_input4 = changeUnit(traffic_input4)
             let unitTraffic_input5 = changeUnit(traffic_input5)
+            let unitTraffic_input6 = changeUnit(traffic_input6)
 
             document.getElementById('kobra-e1-tps-value-in1').innerText = unitTraffic_input1.value.toFixed(1) + unitTraffic_input1.unit + '/s';
             document.getElementById('kobra-e1-tps-value-in2').innerText = unitTraffic_input2.value.toFixed(1) + unitTraffic_input2.unit + '/s';
             document.getElementById('kobra-e1-tps-value-in3').innerText = unitTraffic_input3.value.toFixed(1) + unitTraffic_input3.unit + '/s';
             document.getElementById('kobra-e1-tps-value-in4').innerText = unitTraffic_input4.value.toFixed(1) + unitTraffic_input4.unit + '/s';
             document.getElementById('kobra-e1-tps-value-in5').innerText = unitTraffic_input5.value.toFixed(1) + unitTraffic_input5.unit + '/s';
+            document.getElementById('kobra-e1-tps-value-in6').innerText = unitTraffic_input6.value.toFixed(1) + unitTraffic_input6.unit + '/s';
 
 
             let index_output1_1 = data.indexOf("output-Gi1-0-01");
@@ -218,11 +229,18 @@ function monitoringKoBRAe1TPSSwitch(interval) {
             let data_output5_1 = data[index_output5_1 - 1];
             let data_output5_2 = data[index_output5_2 - 1];
 
+            let index_output6_1 = data.indexOf("output-Te1-0-03");
+            let index_output6_2 = data.indexOf("output-Te1-0-03", index_output6_1 + 1);
+
+            let data_output6_1 = data[index_output6_1 - 1];
+            let data_output6_2 = data[index_output6_2 - 1];
+
             let traffic_output1 = (data_output1_2 - data_output1_1) / interval;
             let traffic_output2 = (data_output2_2 - data_output2_1) / interval;
             let traffic_output3 = (data_output3_2 - data_output3_1) / interval;
             let traffic_output4 = (data_output4_2 - data_output4_1) / interval;
             let traffic_output5 = (data_output5_2 - data_output5_1) / interval;
+            let traffic_output6 = (data_output6_2 - data_output6_1) / interval;
 
             // let totalTraffic = traffic1;
             // let unitTraffic = changeUnit(totalTraffic);
@@ -231,12 +249,14 @@ function monitoringKoBRAe1TPSSwitch(interval) {
             let unitTraffic_output3 = changeUnit(traffic_output3)
             let unitTraffic_output4 = changeUnit(traffic_output4)
             let unitTraffic_output5 = changeUnit(traffic_output5)
+            let unitTraffic_output6 = changeUnit(traffic_output6)
 
             document.getElementById('kobra-e1-tps-value-out1').innerText = unitTraffic_output1.value.toFixed(1) + unitTraffic_output1.unit + '/s';
             document.getElementById('kobra-e1-tps-value-out2').innerText = unitTraffic_output2.value.toFixed(1) + unitTraffic_output2.unit + '/s';
             document.getElementById('kobra-e1-tps-value-out3').innerText = unitTraffic_output3.value.toFixed(1) + unitTraffic_output3.unit + '/s';
             document.getElementById('kobra-e1-tps-value-out4').innerText = unitTraffic_output4.value.toFixed(1) + unitTraffic_output4.unit + '/s';
             document.getElementById('kobra-e1-tps-value-out5').innerText = unitTraffic_output5.value.toFixed(1) + unitTraffic_output5.unit + '/s';
+            document.getElementById('kobra-e1-tps-value-out6').innerText = unitTraffic_output6.value.toFixed(1) + unitTraffic_output6.unit + '/s';
 
             // checkTraffic('ccsi1-line', 'ccsi1-value', totalTraffic, '10G');
 
