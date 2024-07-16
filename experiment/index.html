@@ -7,7 +7,6 @@
 <script src="influxDB.js"></script>
 <script src="lineAnimation.js"></script>
 
-
 <body>
     <div style="margin:auto; position: relative; width:1920px; height:80px;">
         <div id="raon-box">
@@ -28,121 +27,9 @@
                     transform="translate(-183.5864 -232.9662)" />
             </svg>
         </div>
-        <div id="accelerator-control">CS</div>
     </div>
-
     <div id="network-container-body">
         <div id="background-effect"></div>
-        <!-- Center Align Line -->
-        <!-- <svg width="1920" height="2" style="position:absolute; top:460px">
-            <line x1="0" y1="0" x2="1800" y2="0" style="stroke:rgb(255,0,0);stroke-width:2" />
-          </svg> -->
-
-        <div id="left-circle-container">
-            <svg id="left-circle-inner" width="80" height="80">
-                <circle cx="40" cy="40" r="29.5" />
-            </svg>
-            <svg id="left-circle-outer" width="80" height="80">
-                <circle cx="40" cy="40" r="39" />
-            </svg>
-            <svg id="left-circle-fan-inner" width="80" height="80">
-                <style type="text/css">
-                    .leftS0 {
-                        fill: #00A29A;
-                    }
-
-                    .leftS1 {
-                        opacity: 0.5;
-                        fill: #00A29A;
-                    }
-                </style>
-                <polygon class="leftS0" points="40.8,73.3 36.8,73.3 39.2,70.9 43.2,70.9 "/>
-                <polygon class="leftS1" points="35,72.9 31.1,72.2 33.8,70.3 37.8,71 "/>
-                <polygon class="leftS0" points="29.4,71.5 25.6,70.2 28.7,68.7 32.5,70.1 "/>
-                <polygon class="leftS1" points="24.1,69.2 20.6,67.2 23.9,66.3 27.3,68.3 "/>
-                <polygon class="leftS0" points="19.2,66 16.1,63.4 19.5,63.1 22.6,65.7 "/>
-                <polygon class="leftS1" points="15,62 12.4,58.9 15.8,59.2 18.4,62.3 "/>
-                <polygon class="leftS0" points="11.6,57.3 9.6,53.9 12.9,54.7 14.9,58.2 "/>
-                <polygon class="leftS1" points="9,52.1 7.6,48.4 10.7,49.8 12.1,53.6 "/>
-                <polygon class="leftS0" points="7.4,46.6 6.7,42.6 9.5,44.6 10.2,48.5 "/>
-                <polygon class="leftS1" points="6.7,40.8 6.7,36.8 9.1,39.2 9.1,43.2 "/>
-                <polygon class="leftS0" points="7.1,35 7.8,31.1 9.7,33.8 9,37.8 "/>
-                <polygon class="leftS1" points="8.5,29.4 9.8,25.6 11.3,28.7 9.9,32.5 "/>
-                <polygon class="leftS0" points="10.8,24.1 12.8,20.6 13.7,23.9 11.7,27.3 "/>
-                <polygon class="leftS1" points="14,19.2 16.6,16.1 16.9,19.5 14.3,22.6 "/>
-                <polygon class="leftS0" points="18,15 21.1,12.4 20.8,15.8 17.7,18.4 "/>
-                <polygon class="leftS1" points="22.7,11.6 26.1,9.6 25.3,12.9 21.8,14.9 "/>
-                <polygon class="leftS0" points="27.9,9 31.6,7.6 30.2,10.7 26.4,12.1 "/>
-                <polygon class="leftS1" points="33.4,7.4 37.4,6.7 35.4,9.5 31.5,10.2 "/>
-                <polygon class="leftS0" points="39.2,6.7 43.2,6.7 40.8,9.1 36.8,9.1 "/>
-                <polygon class="leftS1" points="45,7.1 48.9,7.8 46.2,9.7 42.2,9 "/>
-                <polygon class="leftS0" points="50.6,8.5 54.4,9.8 51.3,11.3 47.5,9.9 "/>
-                <polygon class="leftS1" points="55.9,10.8 59.4,12.8 56.1,13.7 52.7,11.7 "/>
-                <polygon class="leftS0" points="60.8,14 63.9,16.6 60.5,16.9 57.4,14.3 "/>
-                <polygon class="leftS1" points="65,18 67.6,21.1 64.2,20.8 61.6,17.7 "/>
-                <polygon class="leftS0" points="68.4,22.7 70.4,26.1 67.1,25.3 65.1,21.8 "/>
-                <polygon class="leftS1" points="71,27.9 72.4,31.6 69.3,30.2 67.9,26.4 "/>
-                <polygon class="leftS0" points="72.6,33.4 73.3,37.4 70.5,35.4 69.8,31.5 "/>
-                <polygon class="leftS1" points="73.3,39.2 73.3,43.2 70.9,40.8 70.9,36.8 "/>
-                <polygon class="leftS0" points="72.9,45 72.2,48.9 70.3,46.2 71,42.2 "/>
-                <polygon class="leftS1" points="71.5,50.6 70.2,54.4 68.7,51.3 70.1,47.5 "/>
-                <polygon class="leftS0" points="69.2,55.9 67.2,59.4 66.3,56.1 68.3,52.7 "/>
-                <polygon class="leftS1" points="66,60.8 63.4,63.9 63.1,60.5 65.7,57.4 "/>
-                <polygon class="leftS0" points="62,65 58.9,67.6 59.2,64.2 62.3,61.6 "/>
-                <polygon class="leftS1" points="57.3,68.4 53.9,70.4 54.7,67.1 58.2,65.1 "/>
-                <polygon class="leftS0" points="52.1,71 48.4,72.4 49.8,69.3 53.6,67.9 "/>
-                <polygon class="leftS1" points="46.6,72.6 42.6,73.3 44.6,70.5 48.5,69.8 "/>
-            </svg>
-            <svg id="left-circle-fan-outer" width="80" height="80">
-                <style type="text/css">
-                    .leftS0 {
-                        fill: #00A29A;
-                    }
-
-                    .leftS1 {
-                        opacity: 0.5;
-                        fill: #00A29A;
-                    }
-                </style>
-                <polygon class="leftS0" points="39.1,77.4 43.6,77.4 40.9,74.7 36.4,74.7 "/>
-                <polygon class="leftS1" points="45.6,77 50.1,76.2 46.9,74.1 42.5,74.8 "/>
-                <polygon class="leftS0" points="52,75.5 56.2,73.9 52.7,72.3 48.5,73.9 "/>
-                <polygon class="leftS1" points="57.9,72.9 61.8,70.6 58.1,69.6 54.2,71.9 "/>
-                <polygon class="leftS0" points="63.4,69.3 66.8,66.4 63,66 59.6,68.9 "/>
-                <polygon class="leftS1" points="68.1,64.8 71,61.3 67.2,61.6 64.3,65.1 "/>
-                <polygon class="leftS0" points="72,59.5 74.2,55.6 70.5,56.6 68.3,60.5 "/>
-                <polygon class="leftS1" points="74.9,53.7 76.4,49.4 72.9,51 71.4,55.3 "/>
-                <polygon class="leftS0" points="76.7,47.4 77.5,42.9 74.4,45.1 73.6,49.6 "/>
-                <polygon class="leftS1" points="77.4,40.9 77.4,36.4 74.7,39.1 74.7,43.6 "/>
-                <polygon class="leftS0" points="77,34.4 76.2,29.9 74.1,33.1 74.8,37.5 "/>
-                <polygon class="leftS1" points="75.5,28 73.9,23.8 72.3,27.3 73.9,31.5 "/>
-                <polygon class="leftS0" points="72.9,22.1 70.6,18.2 69.6,21.9 71.9,25.8 "/>
-                <polygon class="leftS1" points="69.3,16.6 66.4,13.2 66,17 68.9,20.4 "/>
-                <polygon class="leftS0" points="64.8,11.9 61.3,9 61.6,12.8 65.1,15.7 "/>
-                <polygon class="leftS1" points="59.5,8 55.6,5.8 56.6,9.5 60.5,11.7 "/>
-                <polygon class="leftS0" points="53.7,5.1 49.4,3.6 51,7.1 55.3,8.6 "/>
-                <polygon class="leftS1" points="47.4,3.3 42.9,2.5 45.1,5.6 49.6,6.4 "/>
-                <polygon class="leftS0" points="40.9,2.6 36.4,2.6 39.1,5.3 43.6,5.3 "/>
-                <polygon class="leftS1" points="34.4,3 29.9,3.8 33.1,5.9 37.5,5.2 "/>
-                <polygon class="leftS0" points="28,4.5 23.8,6.1 27.3,7.7 31.5,6.1 "/>
-                <polygon class="leftS1" points="22.1,7.1 18.2,9.4 21.9,10.4 25.8,8.1 "/>
-                <polygon class="leftS0" points="16.6,10.7 13.2,13.6 17,14 20.4,11.1 "/>
-                <polygon class="leftS1" points="11.9,15.2 9,18.7 12.8,18.4 15.7,14.9 "/>
-                <polygon class="leftS0" points="8,20.5 5.8,24.4 9.5,23.4 11.7,19.5 "/>
-                <polygon class="leftS1" points="5.1,26.3 3.6,30.6 7.1,29 8.6,24.7 "/>
-                <polygon class="leftS0" points="3.3,32.6 2.5,37.1 5.6,34.9 6.4,30.4 "/>
-                <polygon class="leftS1" points="2.6,39.1 2.6,43.6 5.3,40.9 5.3,36.4 "/>
-                <polygon class="leftS0" points="3,45.6 3.8,50.1 5.9,46.9 5.2,42.5 "/>
-                <polygon class="leftS1" points="4.5,52 6.1,56.2 7.7,52.7 6.1,48.5 "/>
-                <polygon class="leftS0" points="7.1,57.9 9.4,61.8 10.4,58.1 8.1,54.2 "/>
-                <polygon class="leftS1" points="10.7,63.4 13.6,66.8 14,63 11.1,59.6 "/>
-                <polygon class="leftS0" points="15.2,68.1 18.7,71 18.4,67.2 14.9,64.3 "/>
-                <polygon class="leftS1" points="20.5,72 24.4,74.2 23.4,70.5 19.5,68.3 "/>
-                <polygon class="leftS0" points="26.3,74.9 30.6,76.4 29,72.9 24.7,71.4 "/>
-                <polygon class="leftS1" points="32.6,76.7 37.1,77.5 34.9,74.4 30.4,73.6 "/>
-            </svg>
-        </div>
-
         <div id="center-circle-container">
             <svg id="center-circle-inner" width="100" height="100">
                 <circle id="center-circle-inner" cx="50" cy="50" r="34" />
@@ -198,8 +85,7 @@
                 <polygon class="st0" points="64.6,12.8 60,11.2 61.8,14.9 66.3,16.5 " />
                 <polygon class="st1" points="57.9,10.8 53.1,10 55.5,13.3 60.2,14.2 " />
             </svg>
-            <svg id="center-circle-fan-outer" width="100" height="100" style="enable-background:new 0 0 100 100;"
-                xml:space="preserve">
+            <svg id="center-circle-fan-outer" width="100" height="100" style="enable-background:new 0 0 100 100;">
                 <style type="text/css">
                     .st0 {
                         fill: #29ABE2;
@@ -248,523 +134,357 @@
                 <polygon class="st1" points="41.1,5.9 46.5,5 43.8,8.8 38.5,9.7 " />
             </svg>
         </div>
-        <div id="right-circle-container">
-            <svg id="right-circle-inner" width="80" height="80">
-                <circle cx="40" cy="40" r="29.5" />
-            </svg>
-            <svg id="right-circle-outer" width="80" height="80">
-                <circle cx="40" cy="40" r="39" />
-            </svg>
-            <svg id="right-circle-fan-inner" width="80" height="80">
-                <style type="text/css">
-                    .rightS0 {
-                        fill: #00A29A;
-                    }
 
-                    .rightS1 {
-                        opacity: 0.5;
-                        fill: #00A29A;
-                    }
-                </style>
-                <polygon class="rightS0" points="40.8,6.7 36.8,6.7 39.2,9.1 43.2,9.1 " />
-                <polygon class="rightS1" points="35,7.1 31.1,7.8 33.8,9.7 37.8,9 " />
-                <polygon class="rightS0" points="29.4,8.5 25.6,9.8 28.7,11.3 32.5,9.9 " />
-                <polygon class="rightS1" points="24.1,10.8 20.6,12.8 23.9,13.7 27.3,11.7 " />
-                <polygon class="rightS0" points="19.2,14 16.1,16.6 19.5,16.9 22.6,14.3 " />
-                <polygon class="rightS1" points="15,18 12.4,21.1 15.8,20.8 18.4,17.7 " />
-                <polygon class="rightS0" points="11.6,22.7 9.6,26.1 12.9,25.3 14.9,21.8 " />
-                <polygon class="rightS1" points="9,27.9 7.6,31.6 10.7,30.2 12.1,26.4 " />
-                <polygon class="rightS0" points="7.4,33.4 6.7,37.4 9.5,35.4 10.2,31.5 " />
-                <polygon class="rightS1" points="6.7,39.2 6.7,43.2 9.1,40.8 9.1,36.8 " />
-                <polygon class="rightS0" points="7.1,45 7.8,48.9 9.7,46.2 9,42.2 " />
-                <polygon class="rightS1" points="8.5,50.6 9.8,54.4 11.3,51.3 9.9,47.5 " />
-                <polygon class="rightS0" points="10.8,55.9 12.8,59.4 13.7,56.1 11.7,52.7 " />
-                <polygon class="rightS1" points="14,60.8 16.6,63.9 16.9,60.5 14.3,57.4 " />
-                <polygon class="rightS0" points="18,65 21.1,67.6 20.8,64.2 17.7,61.6 " />
-                <polygon class="rightS1" points="22.7,68.4 26.1,70.4 25.3,67.1 21.8,65.1 " />
-                <polygon class="rightS0" points="27.9,71 31.6,72.4 30.2,69.3 26.4,67.9 " />
-                <polygon class="rightS1" points="33.4,72.6 37.4,73.3 35.4,70.5 31.5,69.8 " />
-                <polygon class="rightS0" points="39.2,73.3 43.2,73.3 40.8,70.9 36.8,70.9 " />
-                <polygon class="rightS1" points="45,72.9 48.9,72.2 46.2,70.3 42.2,71 " />
-                <polygon class="rightS0" points="50.6,71.5 54.4,70.2 51.3,68.7 47.5,70.1 " />
-                <polygon class="rightS1" points="55.9,69.2 59.4,67.2 56.1,66.3 52.7,68.3 " />
-                <polygon class="rightS0" points="60.8,66 63.9,63.4 60.5,63.1 57.4,65.7 " />
-                <polygon class="rightS1" points="65,62 67.6,58.9 64.2,59.2 61.6,62.3 " />
-                <polygon class="rightS0" points="68.4,57.3 70.4,53.9 67.1,54.7 65.1,58.2 " />
-                <polygon class="rightS1" points="71,52.1 72.4,48.4 69.3,49.8 67.9,53.6 " />
-                <polygon class="rightS0" points="72.6,46.6 73.3,42.6 70.5,44.6 69.8,48.5 " />
-                <polygon class="rightS1" points="73.3,40.8 73.3,36.8 70.9,39.2 70.9,43.2 " />
-                <polygon class="rightS0" points="72.9,35 72.2,31.1 70.3,33.8 71,37.8 " />
-                <polygon class="rightS1" points="71.5,29.4 70.2,25.6 68.7,28.7 70.1,32.5 " />
-                <polygon class="rightS0" points="69.2,24.1 67.2,20.6 66.3,23.9 68.3,27.3 " />
-                <polygon class="rightS1" points="66,19.2 63.4,16.1 63.1,19.5 65.7,22.6 " />
-                <polygon class="rightS0" points="62,15 58.9,12.4 59.2,15.8 62.3,18.4 " />
-                <polygon class="rightS1" points="57.3,11.6 53.9,9.6 54.7,12.9 58.2,14.9 " />
-                <polygon class="rightS0" points="52.1,9 48.4,7.6 49.8,10.7 53.6,12.1 " />
-                <polygon class="rightS1" points="46.6,7.4 42.6,6.7 44.6,9.5 48.5,10.2 " />
-            </svg>
-            <svg id="right-circle-fan-outer" width="80" height="80">
-                <style type="text/css">
-                    .rightS0 {
-                        fill: #00A29A;
-                    }
 
-                    .rightS1 {
-                        opacity: 0.5;
-                        fill: #00A29A;
-                    }
-                </style>
-                <polygon class="rightS0" points="39.1,2.6 43.6,2.6 40.9,5.3 36.4,5.3 " />
-                <polygon class="rightS1" points="45.6,3 50.1,3.8 46.9,5.9 42.5,5.2 " />
-                <polygon class="rightS0" points="52,4.5 56.2,6.1 52.7,7.7 48.5,6.1 " />
-                <polygon class="rightS1" points="57.9,7.1 61.8,9.4 58.1,10.4 54.2,8.1 " />
-                <polygon class="rightS0" points="63.4,10.7 66.8,13.6 63,14 59.6,11.1 " />
-                <polygon class="rightS1" points="68.1,15.2 71,18.7 67.2,18.4 64.3,14.9 " />
-                <polygon class="rightS0" points="72,20.5 74.2,24.4 70.5,23.4 68.3,19.5 " />
-                <polygon class="rightS1" points="74.9,26.3 76.4,30.6 72.9,29 71.4,24.7 " />
-                <polygon class="rightS0" points="76.7,32.6 77.5,37.1 74.4,34.9 73.6,30.4 " />
-                <polygon class="rightS1" points="77.4,39.1 77.4,43.6 74.7,40.9 74.7,36.4 " />
-                <polygon class="rightS0" points="77,45.6 76.2,50.1 74.1,46.9 74.8,42.5 " />
-                <polygon class="rightS1" points="75.5,52 73.9,56.2 72.3,52.7 73.9,48.5 " />
-                <polygon class="rightS0" points="72.9,57.9 70.6,61.8 69.6,58.1 71.9,54.2 " />
-                <polygon class="rightS1" points="69.3,63.4 66.4,66.8 66,63 68.9,59.6 " />
-                <polygon class="rightS0" points="64.8,68.1 61.3,71 61.6,67.2 65.1,64.3 " />
-                <polygon class="rightS1" points="59.5,72 55.6,74.2 56.6,70.5 60.5,68.3 " />
-                <polygon class="rightS0" points="53.7,74.9 49.4,76.4 51,72.9 55.3,71.4 " />
-                <polygon class="rightS1" points="47.4,76.7 42.9,77.5 45.1,74.4 49.6,73.6 " />
-                <polygon class="rightS0" points="40.9,77.4 36.4,77.4 39.1,74.7 43.6,74.7 " />
-                <polygon class="rightS1" points="34.4,77 29.9,76.2 33.1,74.1 37.5,74.8 " />
-                <polygon class="rightS0" points="28,75.5 23.8,73.9 27.3,72.3 31.5,73.9 " />
-                <polygon class="rightS1" points="22.1,72.9 18.2,70.6 21.9,69.6 25.8,71.9 " />
-                <polygon class="rightS0" points="16.6,69.3 13.2,66.4 17,66 20.4,68.9 " />
-                <polygon class="rightS1" points="11.9,64.8 9,61.3 12.8,61.6 15.7,65.1 " />
-                <polygon class="rightS0" points="8,59.5 5.8,55.6 9.5,56.6 11.7,60.5 " />
-                <polygon class="rightS1" points="5.1,53.7 3.6,49.4 7.1,51 8.6,55.3 " />
-                <polygon class="rightS0" points="3.3,47.4 2.5,42.9 5.6,45.1 6.4,49.6 " />
-                <polygon class="rightS1" points="2.6,40.9 2.6,36.4 5.3,39.1 5.3,43.6 " />
-                <polygon class="rightS0" points="3,34.4 3.8,29.9 5.9,33.1 5.2,37.5 " />
-                <polygon class="rightS1" points="4.5,28 6.1,23.8 7.7,27.3 6.1,31.5 " />
-                <polygon class="rightS0" points="7.1,22.1 9.4,18.2 10.4,21.9 8.1,25.8 " />
-                <polygon class="rightS1" points="10.7,16.6 13.6,13.2 14,17 11.1,20.4 " />
-                <polygon class="rightS0" points="15.2,11.9 18.7,9 18.4,12.8 14.9,15.7 " />
-                <polygon class="rightS1" points="20.5,8 24.4,5.8 23.4,9.5 19.5,11.7 " />
-                <polygon class="rightS0" points="26.3,5.1 30.6,3.6 29,7.1 24.7,8.6 " />
-                <polygon class="rightS1" points="32.6,3.3 37.1,2.5 34.9,5.6 30.4,6.4 " />
+        <div id="center-phase">
+            <svg width="1064" height="482">
+                <defs>
+                    <style>
+                        .cp1 {
+                            fill: none;
+                            stroke: #32a6de;
+                            stroke-linecap: round;
+                            stroke-dasharray: 6;
+                            stroke-dashoffset: 0;
+                            stroke-width: 2px;
+                        }
+
+                        .cp2 {
+                            fill: #0e6fb8;
+                            stroke-width: 0px;
+                        }
+                    </style>
+                </defs>
+                <path class="cp1" d="M305.86,10c89.43,0,89.43,230.7,178.87,230.7" />
+                <circle class="cp2" cx="295.86" cy="10" r="10" />
+                <path class="cp1" d="M209.73,240.73s275,0,275,0" />
+                <circle class="cp2" cx="199.73" cy="240.83" r="10" />
+                <circle class="cp2" cx="10" cy="470.97" r="10" />
+                <path class="cp1" d="M478.3,240.73c-89.43,0-89.43,230.7-178.87,230.7H20" />
+                <path class="cp1" d="M584.73,240.73c89.43,0,89.43,230.7,178.87,230.7h279.43" />
+                <circle class="cp2" cx="1053.03" cy="471.43" r="10" />
+                <path class="cp1" d="M840.91,240.73s-256,0-256,0" />
+                <circle class="cp2" cx="850.91" cy="240.73" r="10" />
+                <path class="cp1" d="M763.59,10.03c-89.43,0-89.43,230.7-178.87,230.7" />
+                <circle class="cp2" cx="773.59" cy="10.03" r="10" />
+            </svg>
+        </div>
+
+        <div id="kobra-counting-room">
+            <svg width="155" height="202">
+                <defs>
+                    <style>
+                        .kcr1 {
+                            fill: none;
+                            stroke: #32a6de;
+                            stroke-dasharray: 6;
+                            stroke-dashoffset: 0;
+                            stroke-linecap: round;
+                            stroke-miterlimit: 10;
+                            stroke-width: 2px;
+                        }
+
+                        .kcr2 {
+                            fill: #0e6fb8;
+                            stroke-width: 0px;
+                        }
+                    </style>
+                </defs>
+                <rect class="kcr2" x="105.43" width="20" height="20" transform="translate(230.86 20) rotate(180)" />
+                <path class="kcr1" d="M105.43,10C62.3,10,62.3,100.81,1,100.81" />
+                <rect class="kcr2" x="105.43" y="181.53" width="20" height="20"
+                    transform="translate(230.86 383.07) rotate(180)" />
+                <rect class="kcr2" x="136" y="90.92" width="20" height="20"
+                    transform="translate(292 201.84) rotate(180)" />
+                <path class="kcr1" d="M105.43,191.53c-43.13,0-43.13-90.72-104.43-90.72" />
+                <line class="kcr1" x1="1" y1="100.87" x2="136" y2="100.87" />
+            </svg>
+        </div>
+
+        <div id="kobra-e1-tps">
+            <svg width="282" height="202">
+                <defs>
+                    <style>
+                        .ket1 {
+                            fill: none;
+                            stroke: #32a6de;
+                            stroke-dasharray: 6;
+                            stroke-dashoffset: 0;
+                            stroke-linecap: round;
+                            stroke-miterlimit: 10;
+                            stroke-width: 2px;
+                        }
+
+                        .ket2 {
+                            fill: #0e6fb8;
+                            stroke-width: 0px;
+                        }
+                    </style>
+                </defs>
+                <circle class="ket2" cx="146" cy="100.77" r="10" />
+                <line class="ket1" x1="1" y1="100.77" x2="136" y2="100.77" />
+                <circle class="ket2" cx="270.43" cy="10" r="10" />
+                <path class="ket1" d="M260.43,10c-43.13,0-43.13,90.77-104.43,90.77" />
+                <path class="ket1" d="M260.43,191.53c-43.13,0-43.13-90.77-104.43-90.77" />
+                <circle class="ket2" cx="270.43" cy="191.53" r="10" />
+            </svg>
+        </div>
+
+        <div id="kobra-e1-area">
+            <svg width="208" height="262">
+                <defs>
+                    <style>
+                        .kea1 {
+                            fill: none;
+                            stroke: #32a6de;
+                            stroke-dasharray: 6;
+                            stroke-dashoffset: 0;
+                            stroke-linecap: round;
+                            stroke-miterlimit: 10;
+                            stroke-width: 2px;
+                        }
+
+                        .kea2 {
+                            fill: #0e6fb8;
+                            stroke-width: 0px;
+                        }
+                    </style>
+                </defs>
+                <path class="kea1" d="M186.84,89.75c-92.92,0-92.92,40.77-185.84,40.77" />
+                <path class="kea1" d="M150.62,10C77.06,10,77.06,130.52,1,130.52" />
+                <path class="kea1" d="M186.84,171.29c-92.92,0-92.92-40.77-185.84-40.77" />
+                <path class="kea1" d="M150.62,251.04c-73.56,0-73.56-120.52-149.62-120.52" />
+                <circle class="kea2" cx="160.62" cy="10" r="10" />
+                <circle class="kea2" cx="196.84" cy="89.75" r="10" />
+                <circle class="kea2" cx="196.84" cy="171.29" r="10" />
+                <circle class="kea2" cx="160.62" cy="251.04" r="10" />
             </svg>
         </div>
 
 
-        <div id="left-network">
-            <svg id="left-line-group" width="364" height="542" style="position:absolute;top:170px">
-                <path id="control-line" d="M116.09,10.04c89.46,0,163.6,260.96,244.84,260.96" />
-                <path id="ctrluser-line" d="M68.18,76c87.94,0,210.59,195,292.75,195" />
-                <path id="archive1-line" d="M35.02,150.48c86.87,0,240,120.52,325.91,120.52" />
-                <path id="scl3-gateway1-line" d="M20.57,230.23c86.32,0,257.56,40.77,342.86,40.77" />
-                <path id="scl3-gateway2-line" d="M20.57,311.77c86.32,0,257.56-40.77,342.86-40.77" />
-                <path id="archive2-line" d="M35.02,391.52c86.87,0,240-120.52,325.91-120.52" />
-                <path id="display-wall-line" d="M68.18,466c87.94,0,210.59-195,292.75-195" />
-                <path id="operator-line" d="M116.09,531.96c89.46,0,163.6-260.96,244.84-260.96" />
+        <div id="ndps-tof-area">
+            <svg width="280" height="202">
+                <defs>
+                    <style>
+                        .nta1 {
+                            fill: none;
+                            stroke: #32a6de;
+                            stroke-dasharray: 6;
+                            stroke-dashoffset: 0;
+                            stroke-linecap: round;
+                            stroke-miterlimit: 10;
+                            stroke-width: 2px;
+                        }
 
-                <circle class="networkStateFill" id="ctrluser-fill" cx="58.18" cy="76" r="10" />
-                <circle class="networkStateFill" id="control-fill" cx="106.1" cy="10.04" r="10" />
-                <circle class="networkStateFill" id="display-wall-fill" cx="58.18" cy="466" r="10" />
-                <circle class="networkStateFill" id="operator-fill" cx="106.1" cy="531.96" r="10" />
-
-                <rect class="networkStateFill" x="15.02" y="140.48" id="archive1-fill" width="20" height="20" />
-                <rect class="networkStateFill" x="0.57" y="220.23" id="scl3-gateway1-fill" width="20" height="20" />
-                <rect class="networkStateFill" x="0.57" y="301.77" id="scl3-gateway2-fill" width="20" height="20" />
-                <rect class="networkStateFill" x="15.02" y="381.52" id="archive2-fill" width="20" height="20" />
+                        .nta2 {
+                            fill: #0e6fb8;
+                            stroke-width: 0px;
+                        }
+                    </style>
+                </defs>
+                <line class="nta1" x1="144.43" y1="100.74" x2="279.43" y2="100.74" />
+                <circle class="nta2" cx="134.43" cy="100.44" r="10" />
+                <circle class="nta2" cx="10" cy="10" r="10" />
+                <path class="nta1" d="M20,10c43.13,0,43.13,90.77,104.43,90.77" />
+                <path class="nta1" d="M20,191.53c43.13,0,43.13-90.77,104.43-90.77" />
+                <circle class="nta2" cx="10" cy="191.53" r="10" />
             </svg>
         </div>
 
-        <div id="center-left-network">
-            <svg width="322" height="882">
-                <path id="spare1-line" d="M184.05,13.46C298.11,13.46,203.74,441,320.4,441" />
-                <path id="spare2-line" d="M99.31,62.38C208.92,62.38,222.87,441,320.4,441" />
-                <path id="spare3-line" d="M26.59,127.85C133.94,127.85,222.91,441,320.4,441" />
-                <path id="spare4-line" d="M26.59,754.15C133.94,754.15,222.91,441,320.4,441" />
-                <path id="spare5-line" d="M99.31,819.62C208.92,819.62,222.87,441,320.4,441" />
-                <path id="spare6-line" d="M184.05,868.54C298.11,868.54,203.74,441,320.4,441" />
+        <div id="ndps-p2dt-area">
+            <svg width="362" height="20">
+                <defs>
+                    <style>
+                        .npa1 {
+                            fill: none;
+                            stroke: #32a6de;
+                            stroke-dasharray: 6;
+                            stroke-dashoffset: 0;
+                            stroke-linecap: round;
+                            stroke-miterlimit: 10;
+                            stroke-width: 2px;
+                        }
 
-                <circle class="networkStateFill" id="spare1-fill" cx="172.04" cy="13.46" r="12" />
-                <circle class="networkStateFill" id="spare2-fill" cx="87.31" cy="62.38" r="12" />
-                <circle class="networkStateFill" id="spare3-fill" cx="14.6" cy="127.85" r="12" />
-                <circle class="networkStateFill" id="spare4-fill" cx="14.6" cy="754.15" r="12" />
-                <circle class="networkStateFill" id="spare5-fill" cx="87.31" cy="819.62" r="12" />
-                <circle class="networkStateFill" id="spare6-fill" cx="172.04" cy="868.54" r="12" />
+                        .npa2 {
+                            fill: #0e6fb8;
+                            stroke-width: 0px;
+                        }
+                    </style>
+                </defs>
+                <circle class="npa2" cx="250" cy="10" r="10" />
+                <circle class="npa2" cx="130" cy="10" r="10" />
+                <path class="npa1" d="M140,10.11s100,0,100,0" />
+                <circle class="npa2" cx="10" cy="10" r="10" />
+                <path class="npa1" d="M20,10c0,.28,100,.29,100,0" />
+                <path class="npa1" d="M260,9.89s100,0,100,0" />
             </svg>
         </div>
 
-        <div id="center-right-network">
-            <svg width="322" height="882">
-                <path id="isol-line" d="M138.95,13.46C24.89,13.46,119.26,442,2.6,442" />
-                <path id="srf-line" d="M223.69,62.38C114.08,62.38,100.13,442,2.6,442" />
-                <path id="cryo-line" d="M296.41,127.85C189.06,127.85,100.09,442,2.6,442" />
-                <path id="low-energy-line" d="M296.41,754.15C189.06,754.15,100.09,442,2.6,442" />
-                <path id="if-line" d="M223.69,819.62C114.08,819.62,100.13,442,2.6,442" />
-                <path id="high-energy-line" d="M138.95,868.54C24.89,868.54,119.26,442,2.6,442" />
+        <div id="ndps-ps-room">
+            <svg width="276" height="202">
+                <defs>
+                    <style>
+                        .npr1 {
+                            fill: none;
+                            stroke: #32a6de;
+                            stroke-dasharray: 6;
+                            stroke-dashoffset: 0;
+                            stroke-linecap: round;
+                            stroke-miterlimit: 10;
+                            stroke-width: 2px;
+                        }
 
-                <circle class="networkStateFill" id="isol-fill" cx="150.96" cy="13.46" r="12" />
-                <circle class="networkStateFill" id="srf-fill" cx="235.69" cy="62.38" r="12" />
-                <circle class="networkStateFill" id="cryo-fill" cx="308.4" cy="127.85" r="12" />
-                <circle class="networkStateFill" id="low-energy-fill" cx="308.4" cy="754.15" r="12" />
-                <circle class="networkStateFill" id="if-fill" cx="235.69" cy="819.62" r="12" />
-                <circle class="networkStateFill" id="high-energy-fill" cx="150.96" cy="868.54" r="12" />
+                        .npr2 {
+                            fill: #0e6fb8;
+                            stroke-width: 0px;
+                        }
+                    </style>
+                </defs>
+                <rect class="npr2" x="151.24" y="181.53" width="20" height="20" />
+                <path class="npr1" d="M171.24,191.53c43.13,0,43.13-90.77,104.43-90.77" />
+                <circle class="npr2" cx="134.43" cy="100.74" r="10" />
+                <rect class="npr2" y="181.53" width="20" height="20" />
+                <path class="npr1" d="M20,191.53c43.13,0,43.13-90.77,104.43-90.77" />
+                <rect class="npr2" width="20" height="20" />
+                <path class="npr1" d="M20,10c43.13,0,43.13,90.77,104.43,90.77" />
+                <path class="npr1" d="M144.43,100.77s131.24,0,131.24,0" />
             </svg>
         </div>
-
-
-        <div id="right-network">
-            <svg id="right-line-group" width="364" height="734" style="position:absolute;top:75px;">
-                <path id="ccsi1-line" d="M115.44,10.22C20.39,10.22,99.03,366.5,1.82,366.5" />
-                <path id="ccs02-line" d="M186.05,50.98C94.71,50.98,83.09,366.5,1.82,366.5" />
-                <path id="ccs05-line" d="M246.66,105.54c-89.46,0-163.6,260.96-244.84,260.96" />
-                <path id="ccs09-line" d="M294.57,171.5c-87.94,0-210.59,195-292.75,195" />
-                <path id="ccs12-line" d="M327.73,245.98c-86.87,0-240,120.52-325.91,120.52" />
-                <path id="ccs14-line" d="M342.18,325.73c-86.32,0-257.56,40.77-342.86,40.77" />
-                <path id="ccs16-line" d="M342.18,407.27c-86.32,0-257.56-40.77-342.86-40.77" />
-                <path id="ccs21-line" d="M327.73,487.02c-86.87,0-240-120.52-325.91-120.52" />
-                <path id="ccs24-line" d="M294.57,561.5c-87.94,0-210.59-195-292.75-195" />
-                <path id="ccs29-line" d="M246.66,627.46c-89.46,0-163.6-260.96-244.84-260.96" />
-                <path id="ccs34-line" d="M186.05,682.02C94.71,682.02,83.09,366.5,1.82,366.5" />
-                <path id="ccs40-line" d="M115.44,722.78c-95.05,0-16.41-356.28-113.62-356.28" />
-
-                <circle class="networkStateFill" id="ccsi1-fill" cx="125.45" cy="10.22" r="10" />
-                <circle class="networkStateFill" id="ccs02-fill" cx="196.05" cy="50.98" r="10" />
-                <circle class="networkStateFill" id="ccs05-fill" cx="256.64" cy="105.54" r="10" />
-                <circle class="networkStateFill" id="ccs09-fill" cx="304.57" cy="171.5" r="10" />
-                <circle class="networkStateFill" id="ccs12-fill" cx="337.73" cy="245.98" r="10" />
-                <circle class="networkStateFill" id="ccs14-fill" cx="354.68" cy="325.73" r="10" />
-                <circle class="networkStateFill" id="ccs16-fill" cx="354.68" cy="407.27" r="10" />
-                <circle class="networkStateFill" id="ccs21-fill" cx="337.73" cy="487.02" r="10" />
-                <circle class="networkStateFill" id="ccs24-fill" cx="304.57" cy="561.5" r="10" />
-                <circle class="networkStateFill" id="ccs29-fill" cx="256.64" cy="627.46" r="10" />
-                <circle class="networkStateFill" id="ccs34-fill" cx="196.05" cy="682.02" r="10" />
-                <circle class="networkStateFill" id="ccs40-fill" cx="125.45" cy="722.78" r="10" />
-            </svg>
-        </div>
-
-        
-        <svg id="left-line-container" width="345" height="4">
-            <linearGradient id="left-line-gradient" gradientUnits="userSpaceOnUse" x1="0.5" y1="2" x2="344" y2="2">
-                <stop offset="1" style="stop-color: #00A29A;stop-opacity: 0;">
-                    <animate attributeName="offset" begin="0" dur="0.8s" fill="freeze" from="1" to="0"
-                        keySplines="0.6 0 0.4 1" keyTimes="0;1" calcMode="spline"></animate>
-                </stop>
-                <stop offset="1" style="stop-color: #00A29A;">
-                    <animate attributeName="offset" begin="0.2" dur="0.8s" fill="freeze" from="1" to="0"
-                        keySplines="0.6 0 0.4 1" keyTimes="0;1" calcMode="spline"></animate>
-                </stop>
-            </linearGradient>
-            <path id="left-line" d="M341.5,2C281,2,63.3,2,3.5,2" style="stroke:url(#left-line-gradient)" />
-        </svg>
-
-        <svg id="right-line-container" width="345" height="4">
-            <linearGradient id="right-line-gradient" gradientUnits="userSpaceOnUse" x1="0.5" y1="2" x2="344" y2="2">
-                <stop offset="0" style="stop-color: #00A29A;">
-                    <animate attributeName="offset" begin="0.2" dur="0.8s" fill="freeze" from="0" to="1"
-                        keySplines="0.6 0 0.4 1" keyTimes="0;1" calcMode="spline"></animate>
-                </stop>
-                <stop offset="0" style="stop-color: #00A29A; stop-opacity: 0;">
-                    <animate attributeName="offset" begin="0" dur="0.8s" fill="freeze" from="0" to="1"
-                        keySplines="0.6 0 0.4 1" keyTimes="0;1" calcMode="spline"></animate>
-                </stop>
-            </linearGradient>
-            <path id="right-line" d="M343.5,2C282.3,2,62,2,1.5,2" style="stroke:url(#right-line-gradient)" />
-        </svg>
-
 
         <!-- Nework Traffic Text -->
-        <!-- Left Text -->
-        <div class="networkTextContainer" style="top:162px; left:100px;">
-            <div class="networkLeftTitleText">control</div>
-            <div class="networkLeftValueText" id="control-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:228px; left:55px;">
-            <div class="networkLeftTitleText">ctrluer</div>
-            <div class="networkLeftValueText" id="ctrluser-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:302px; left:20px;">
-            <div class="networkLeftTitleText">Archive 1</div>
-            <div class="networkLeftValueText" id="archive1-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:382px; left:5px;">
-            <div class="networkLeftTitleText">SCL3 Gateway 1</div>
-            <div class="networkLeftValueText" id="scl3-gateway1-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:464px; left:5px;">
-            <div class="networkLeftTitleText">SCL3 Gateway 2</div>
-            <div class="networkLeftValueText" id="scl3-gateway2-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:544px; left:20px;">
-            <div class="networkLeftTitleText">Archive 2</div>
-            <div class="networkLeftValueText" id="archive2-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:618px; left:55px;">
-            <div class="networkLeftTitleText">Display Wall</div>
-            <div class="networkLeftValueText" id="display-wall-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:684px; left:100px;">
-            <div class="networkLeftTitleText">Operator</div>
-            <div class="networkLeftValueText" id="operator-value"></div>
+        <div class="networkTextContainer" style="top:180px; left:70px;">
+            <div class="networkRightTitleText">P2DT Gallery</div>
+            <div class="networkRightValueText" id="p2dt-gallery-value1">26.9kB/s</div>
         </div>
 
-        <div class="networkTextContainer" style="top:12px; left:620px">
-            <div class="networUnconnectedText">Utility</div>
-        </div>
-        <div class="networkTextContainer" style="top:64px; left:535px">
-            <div class="networUnconnectedText">Plant</div>
-        </div>
-        <div class="networkTextContainer" style="top:129px; left:460px">
-            <div class="networUnconnectedText">Spare</div>
-        </div>
-        <div class="networkTextContainer" style="top:754px; left:460px">
-            <div class="networUnconnectedText">Spare</div>
-        </div>
-        <div class="networkTextContainer" style="top:824px; left:535px">
-            <div class="networUnconnectedText">SCL3</div>
-        </div>
-        <div class="networkTextContainer" style="top:872px; left:620px">
-            <div class="networUnconnectedText">SCL2</div>
+        <div class="networkTextContainer" style="top:85px; left:190px;">
+            <div class="networkRightTitleText">P2DT Gallery</div>
+            <div class="networkRightValueText" id="p2dt-gallery-value2">26.9kB/s</div>
         </div>
 
-        <!-- Right Text -->
-        <div class="networkTextContainer" style="top:-4px; left:1178px; --delay:2s">
-            <div class="networkRightTitleText">ISOL</div>
-            <div class="networkRightValueText" id="isol-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:46px; left:1260px; --delay:2.1s">
-            <div class="networkRightTitleText">SRF</div>
-            <div class="networkRightValueText" id="srf-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:112px; left:1334px; --delay:2.2s">
-            <div class="networkRightTitleText">Cryo</div>
-            <div class="networkRightValueText" id="cryo-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:738px; left:1334px; --delay:2.3s">
-            <div class="networkRightTitleText">Low Energy</div>
-            <div class="networkRightValueText" id="low-energy-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:804px; left:1260px; --delay:2.4s">
-            <div class="networkRightTitleText">IF</div>
-            <div class="networkRightValueText" id="if-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:852px; left:1178px; --delay:2.5s">
-            <div class="networkRightTitleText">High Energy</div>
-            <div class="networkRightValueText" id="high-energy-value"></div>
+        <div class="networkTextContainer" style="top:180px; left:310px;">
+            <div class="networkRightTitleText">P2DT Gallery</div>
+            <div class="networkRightValueText" id="p2dt-gallery-value3">26.9kB/s</div>
         </div>
 
-        <div class="networkTextContainer" style="top:66px; left:1564px; --delay:3.5s">
-            <div class="networkRightTitleText">CCSI1</div>
-            <div class="networkRightValueText" id="ccsi1-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:110px; left:1632px; --delay:3.6s">
-            <div class="networkRightTitleText">CCS02</div>
-            <div class="networkRightValueText" id="ccs02-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:164px; left:1696px; --delay:3.7s">
-            <div class="networkRightTitleText">CCS05</div>
-            <div class="networkRightValueText" id="ccs05-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:230px; left:1742px; --delay:3.8s">
-            <div class="networkRightTitleText">CCS09</div>
-            <div class="networkRightValueText" id="ccs09-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:304px; left:1778px; --delay:3.9s">
-            <div class="networkRightTitleText">CCS12</div>
-            <div class="networkRightValueText" id="ccs12-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:384px; left:1794px; --delay:4.0s">
-            <div class="networkRightTitleText">CCS14</div>
-            <div class="networkRightValueText" id="ccs14-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:466px; left:1794px; --delay:4.1s">
-            <div class="networkRightTitleText">CCS16</div>
-            <div class="networkRightValueText" id="ccs16-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:546px; left:1778px; --delay:4.2s">
-            <div class="networkRightTitleText">CCS21</div>
-            <div class="networkRightValueText" id="ccs21-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:620px; left:1742px; --delay:4.3s">
-            <div class="networkRightTitleText">CCS24</div>
-            <div class="networkRightValueText" id="ccs24-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:686px; left:1696px; --delay:4.4s">
-            <div class="networkRightTitleText">CCS29</div>
-            <div class="networkRightValueText" id="ccs29-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:741px; left:1632px; --delay:4.5s">
-            <div class="networkRightTitleText">CCS34</div>
-            <div class="networkRightValueText" id="ccs34-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:782px; left:1564px; --delay:4.6s">
-            <div class="networkRightTitleText">CCS40</div>
-            <div class="networkRightValueText" id="ccs40-value"></div>
+        <div class="networkTextContainer" style="top:85px; left:430px;">
+            <div class="networkRightTitleText">P2DT Gallery</div>
+            <div class="networkRightValueText" id="p2dt-gallery-value4">26.9kB/s</div>
         </div>
 
-        <!-- Uplink Switch Value Text -->
-        <div class="networkTextContainer" style="top:420px; left:575px">
-            <div class="networkRightValueText" id="left-switch-value"></div>
-        </div>
-        <div class="networkTextContainer" style="top:420px; left:1230px">
-            <div class="networkLeftValueText" id="right-switch-value"></div>
+        <div class="networkTextContainer" style="top:180px; left:555px;">
+            <div class="networkRightTitleText">TOF Area</div>
+            <div class="networkRightValueText" id="tof-area-value1">26.9kB/s</div>
         </div>
 
-        <!-- CPU Value Text -->
-        <div id="cpu-valueL"></div>
-        <div id="cpu-valueC"></div>
-        <div id="cpu-valueR"></div>
+        <div class="networkTextContainer" style="top:304px; left:318px;">
+            <div class="networkRightTitleText">TOF Area</div>
+            <div class="networkRightValueText" id="tof-area-value2">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:180px; left:716px;">
+            <div class="networkLeftTitleText">TPS-B1-1</div>
+            <div class="networkLeftValueText" id="ndps-tps-b1-1-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:445px; left:500px;">
+            <div class="networkRightTitleText">Counting Room</div>
+            <div class="networkRightValueText" id="ndps-counting-room-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:583px; left:30px;">
+            <div class="networkRightTitleText">Archive</div>
+            <div class="networkRightValueText" id="ndps-archive-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:765px; left:30px;">
+            <div class="networkRightTitleText">Virtual</div>
+            <div class="networkRightValueText" id="ndps-virtual-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:640px; left:276px;">
+            <div class="networkRightTitleText">PS Room</div>
+            <div class="networkRightValueText" id="ndps-ps-room-value1">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:800px; left:230px;">
+            <div class="networkRightTitleText">Storage</div>
+            <div class="networkRightValueText" id="ndps-storage-value1">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:640px; left:430px;">
+            <div class="networkRightTitleText">PS Room</div>
+            <div class="networkRightValueText" id="ndps-ps-room-value2">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:1px; left:1680px;">
+            <div class="networkRightTitleText">F1 Rack</div>
+            <div class="networkRightValueText" id="kobra-f1-rack-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:82px; left:1715px;">
+            <div class="networkRightTitleText">F2 Rack</div>
+            <div class="networkRightValueText" id="kobra-f2-rack-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:163px; left:1715px;">
+            <div class="networkRightTitleText">F3 Rack</div>
+            <div class="networkRightValueText" id="kobra-f3-rack-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:244px; left:1680px;">
+            <div class="networkRightTitleText">Beam Dump Rack</div>
+            <div class="networkRightValueText" id="kobra-beamdump-rack-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:90px; left:1380px;">
+            <div class="networkRightTitleText">E1 Main</div>
+            <div class="networkRightValueText" id="kobra-e1-main-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:304px; left:1510px;">
+            <div class="networkRightTitleText">KoBRA BTR</div>
+            <div class="networkRightValueText" id="kobra-btr-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:180px; left:1255px;">
+            <div class="networkRightTitleText">TPS-B1-2</div>
+            <div class="networkRightValueText" id="kobra-tps-b1-2-value">26.9kB/s</div>
+        </div>
+        
+        <div class="networkTextContainer" style="top:180px; left:1100px;">
+            <div class="networkRightTitleText">TPS-B1-1</div>
+            <div class="networkRightValueText" id="kobra-tps-b1-1-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:355px; left:1435px;">
+            <div class="networkRightTitleText">Archive</div>
+            <div class="networkRightValueText" id="kobra-archive-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:446px; left:1464px;">
+            <div class="networkRightTitleText">Virtual</div>
+            <div class="networkRightValueText" id="kobra-virtual-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:536px; left:1435px;">
+            <div class="networkRightTitleText">EPICS IOCs</div>
+            <div class="networkRightValueText" id="kobra-ioc-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:415px; left:1170px;">
+            <div class="networkRightTitleText">Counting Room</div>
+            <div class="networkRightValueText" id="kobra-counting-room-value">26.9kB/s</div>
+        </div>
+
+        <div class="networkTextContainer" style="top:675px; left:1510px;">
+            <div class="networkRightTitleText">PS Room</div>
+            <div class="networkRightValueText" id="kobra-ps-room-value">26.9kB/s</div>
+        </div>
 
     </div>
 </body>
-
 <script>
-    var documentHidden = true;
-    var numberOfData = 20; // second
-    var timeInterval = numberOfData * 1000; // millisecond
-
-    var textContainerClass = document.getElementsByClassName('networkTextContainer');
-    var stateFillClass = document.getElementsByClassName('networkStateFill');
-
-    var count = 0;
-    var textDelay = 2.0;
-    var textGapDelay = 0.05;
-
-    // Left Value
-    for (count; count < 8; count++) {
-        textDelay += textGapDelay;
-        textContainerClass[count].style.setProperty('--delay', textDelay + 's');
-        stateFillClass[count].style.setProperty('--delay', textDelay + 's');
-    }
-
-    // Center Left Value
-    textDelay = 1.5;
-    for (count; count < 14; count++) {
-        textDelay += textGapDelay;
-        textContainerClass[count].style.setProperty('--delay', textDelay + 's');
-        stateFillClass[count].style.setProperty('--delay', textDelay + 's');
-    }
-
-    // Center Right Value
-    textDelay = 1.5;
-    for (count; count < 20; count++) {
-        textDelay += textGapDelay;
-        textContainerClass[count].style.setProperty('--delay', textDelay + 's');
-        stateFillClass[count].style.setProperty('--delay', textDelay + 's');
-    }
-
-    // Right Value
-    textDelay = 2.0;
-    for (count; count < 32; count++) {
-        textDelay += textGapDelay;
-        textContainerClass[count].style.setProperty('--delay', textDelay + 's');
-        stateFillClass[count].style.setProperty('--delay', textDelay + 's');
-    }
-
-    // Uplink Switch Value
-    textDelay = 2.0;
-    textContainerClass[count].style.setProperty('--delay', textDelay + 's');
-    textContainerClass[count + 1].style.setProperty('--delay', textDelay + 's');
-
-    // textContainerClass[1].style.setProperty('--delay', 4.1);
-    // textContainerClass[2].style.setProperty('--delay', 4.2);
-    // textContainerClass[3].style.setProperty('--delay', 4.3);
-    // textContainerClass[4].style.setProperty('--delay', 4.4);
-    // textContainerClass[5].style.setProperty('--delay', 4.5);
-
-    // Backbone Switch
-    monitorinBackboneSwitch(numberOfData);
-
-    // Server Room S4048 Uplink Switch
-    monitoringServerUplinkSwitch(numberOfData);
-
-    // SCL3 Gallery Uplink Switch
-    monitoringCCSI1Switch(numberOfData);
-    monitoringCCS02Switch(numberOfData);
-    monitoringCCS05Switch(numberOfData);
-    monitoringCCS09Switch(numberOfData);
-    monitoringCCS12Switch(numberOfData);
-    monitoringCCS14Switch(numberOfData);
-    monitoringCCS16Switch(numberOfData);
-    monitoringCCS21Switch(numberOfData);
-
-    window.onload = function () {
-        // var id2 = document.getElementById('ccsi1');
-        // console.log(id2.getTotalLength());
-
-        // Backbone Switch
-        setInterval(monitorinBackboneSwitch, timeInterval, numberOfData);
-
-        // Server Room S4048 Uplink Switch
-        setInterval(monitoringServerUplinkSwitch, timeInterval, numberOfData);
-
-        // SCL3 Gallery Uplink Switch
-        setInterval(monitoringCCSI1Switch, timeInterval, numberOfData);
-        setInterval(monitoringCCS02Switch, timeInterval, numberOfData);
-        setInterval(monitoringCCS05Switch, timeInterval, numberOfData);
-        setInterval(monitoringCCS09Switch, timeInterval, numberOfData);
-        setInterval(monitoringCCS12Switch, timeInterval, numberOfData);
-        setInterval(monitoringCCS14Switch, timeInterval, numberOfData);
-        setInterval(monitoringCCS16Switch, timeInterval, numberOfData);
-        setInterval(monitoringCCS21Switch, timeInterval, numberOfData);
-
-        // setTimeout(test, 5000);
-        var delay = 1;
-        var delayGap = 0.05;
-        var duration = 1;
-        leftLineShowUp(svgInfo.control, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.ctrluser, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.archive1, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.scl3Gateway1, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.scl3Gateway2, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.archive2, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.displayWall, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.operator, delay += delayGap, duration);
-
-        delay = 0;
-        duration = 2;
-        leftLineShowUp(svgInfo.spare1, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.spare2, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.spare3, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.spare4, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.spare5, delay += delayGap, duration);
-        leftLineShowUp(svgInfo.spare6, delay += delayGap, duration);
-
-        delay = 0;
-        duration = 2;
-        rightLineShowUp(svgInfo.isol, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.srf, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.cryo, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.lowEnergy, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.if, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.highEnergy, delay += delayGap, duration);
-
-        delay = 1;
-        duration = 1;
-        rightLineShowUp(svgInfo.ccsi1, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.ccs02, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.ccs05, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.ccs09, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.ccs12, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.ccs14, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.ccs16, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.ccs21, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.ccs24, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.ccs29, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.ccs34, delay += delayGap, duration);
-        rightLineShowUp(svgInfo.ccs40, delay += delayGap, duration);
-    }
-
-    document.addEventListener('visibilitychange', function () {
-        if (document.hidden) {
-            documentHidden = true;
-            console.log('hide');
-        } else {
-            documentHidden = false;
-            console.log('view');
-        }
-    });
 
 </script>
 

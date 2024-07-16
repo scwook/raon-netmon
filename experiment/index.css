@@ -1,0 +1,198 @@
+:root {
+    --background-image-top: 0px;
+}
+
+@font-face {
+    font-family: "Roboto-Thin";
+    src: url(fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Light";
+    src: url(fonts/Roboto-Light.ttf);
+}
+
+body {
+    margin: 0px;
+    background-color: black;
+    background-image: url('images/background1.png');
+    background-repeat: no-repeat;
+    background-position: center var(--background-image-top);
+    font-family: "Roboto-Thin";
+    overflow: hidden;
+}
+
+#raon-box {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 133px;
+    z-index: 100;
+}
+
+.raonLogo {
+    fill: #fff;
+}
+
+#network-container-body {
+    position: relative;
+    width: 1920px;
+    height: 960px;
+    margin: auto;
+    /* border-style: dotted; */
+    /* border-color: red; */
+
+}
+
+#background-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/effect1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    /* animation: opacity 1s 2.5s ease-out forwards; */
+}
+
+#center-circle-container {
+    position: absolute;
+    width: 102px;
+    height: 102px;
+    top: 428px;
+    left: 909px;
+    z-index: 100;
+    opacity: 1;
+    animation: opacity 1s 0s ease-in forwards;
+}
+
+#center-circle-inner {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    fill:none;
+    stroke:#2EA7E0;
+    stroke-width: 1;
+}
+
+#center-circle-outer {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    fill:none;
+    stroke:#2EA7E0;
+    stroke-width: 1;
+    opacity: 0;
+}
+
+#center-circle-fan-inner {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    --degree: -360deg;
+    animation: rotation 30s 0s linear infinite;
+}
+
+#center-circle-fan-outer {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    --degree: 360deg;
+    animation: rotation 30s 0s linear infinite;
+}
+
+#center-phase {
+    position: absolute;
+    width: 1064px;
+    height: 482px;
+    top: 239px;
+    left: 428px;
+}
+
+#kobra-counting-room {
+    position: absolute;
+    width: 156px;
+    height: 202px;
+    top: 379px;
+    left: 1288px;
+}
+
+#kobra-e1-tps {
+    position: absolute;
+    width: 280px;
+    height: 202px;
+    top: 148px;
+    left: 1211px;
+}
+
+#kobra-e1-area {
+    position: absolute;
+    width: 156px;
+    height: 202px;
+    top: 27px;
+    left: 1491px;
+}
+
+#ndps-tof-area {
+    position: absolute;
+    width: 280px;
+    height: 202px;
+    top: 148px;
+    left: 433px;
+}
+
+#ndps-p2dt-area {
+    position: absolute;
+    width: 280px;
+    height: 202px;
+    top: 148px;
+    left: 70px;
+}
+
+#ndps-ps-room {
+    position: absolute;
+    width: 280px;
+    height: 202px;
+    top: 609px;
+    left: 151px;
+}
+
+.networkTextContainer {
+    position: absolute;
+    width: 130px;
+    height: 46px;
+    opacity: 1;
+    /* animation: opacity 1s var(--delay) linear forwards; */
+}
+
+.networkRightTitleText {
+    width: 100%;
+    font-family: "Roboto-Thin";
+    color: gray;
+    font-size: 16px;
+    text-align: left;
+}
+
+.networkRightValueText {
+    width: 100%;
+    font-family: "Roboto-Thin";
+    color: white;
+    font-size: 26px;
+    text-align: left;
+}
+
+.networkLeftTitleText {
+    width: 100%;
+    font-family: "Roboto-Thin";
+    color: gray;
+    font-size: 16px;
+    text-align: right;
+}
+
+.networkLeftValueText {
+    width: 100%;
+    font-family: "Roboto-Thin";
+    color: white;
+    font-size: 26px;
+    text-align: right;
+}
