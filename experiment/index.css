@@ -196,3 +196,49 @@ body {
     font-size: 26px;
     text-align: right;
 }
+
+#ndps-tpsb11-line,
+#ndps-counting-room-line,
+#kobra-counting-room-line,
+#kobra-tpsb11-line,
+#kobra-archive-line,
+#kobra-epics-ioc-line,
+#e1-main-line,
+#kobra-btr-line,
+#f1-rack-line,
+#f2-rack-line,
+#f3-rack-line,
+#beamdump-rack-line
+{
+    animation: animationDashLine1 100s linear infinite;
+}
+
+#ndps-ps-room-line,
+#kobra-ps-room-line,
+#kobra-virtual-line,
+#tpsb1-2-line
+{
+    animation: animationDashLine2 100s linear infinite;
+}
+
+
+@keyframes animationDashLine1 {
+    from {
+        stroke-dashoffset: 400;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+@keyframes animationDashLine2 {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 400;
+    }
+}

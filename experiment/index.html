@@ -5,7 +5,6 @@
 
 <script src="config.js"></script>
 <script src="influxDB.js"></script>
-<script src="lineAnimation.js"></script>
 
 <body>
     <div style="margin:auto; position: relative; width:1920px; height:80px;">
@@ -135,7 +134,6 @@
             </svg>
         </div>
 
-
         <div id="center-phase">
             <svg width="1064" height="482">
                 <defs>
@@ -155,17 +153,17 @@
                         }
                     </style>
                 </defs>
-                <path class="cp1" d="M305.86,10c89.43,0,89.43,230.7,178.87,230.7" />
+                <path id="ndps-tpsb11-line" class="cp1" d="M305.86,10c89.43,0,89.43,230.7,178.87,230.7" />
                 <circle class="cp2" cx="295.86" cy="10" r="10" />
-                <path class="cp1" d="M209.73,240.73s275,0,275,0" />
+                <path id="ndps-counting-room-line" class="cp1" d="M209.73,240.73s275,0,275,0" />
                 <circle class="cp2" cx="199.73" cy="240.83" r="10" />
                 <circle class="cp2" cx="10" cy="470.97" r="10" />
-                <path class="cp1" d="M478.3,240.73c-89.43,0-89.43,230.7-178.87,230.7H20" />
-                <path class="cp1" d="M584.73,240.73c89.43,0,89.43,230.7,178.87,230.7h279.43" />
+                <path id="ndps-ps-room-line" class="cp1" d="M478.3,240.73c-89.43,0-89.43,230.7-178.87,230.7H20" />
+                <path id="kobra-ps-room-line" class="cp1" d="M584.73,240.73c89.43,0,89.43,230.7,178.87,230.7h279.43" />
                 <circle class="cp2" cx="1053.03" cy="471.43" r="10" />
-                <path class="cp1" d="M840.91,240.73s-256,0-256,0" />
+                <path id="kobra-counting-room-line" class="cp1" d="M840.91,240.73s-256,0-256,0" />
                 <circle class="cp2" cx="850.91" cy="240.73" r="10" />
-                <path class="cp1" d="M763.59,10.03c-89.43,0-89.43,230.7-178.87,230.7" />
+                <path id="kobra-tpsb11-line" class="cp1" d="M763.59,10.03c-89.43,0-89.43,230.7-178.87,230.7" />
                 <circle class="cp2" cx="773.59" cy="10.03" r="10" />
             </svg>
         </div>
@@ -191,13 +189,13 @@
                     </style>
                 </defs>
                 <rect class="kcr2" x="105.43" width="20" height="20" transform="translate(230.86 20) rotate(180)" />
-                <path class="kcr1" d="M105.43,10C62.3,10,62.3,100.81,1,100.81" />
+                <path id="kobra-archive-line" class="kcr1" d="M105.43,10C62.3,10,62.3,100.81,1,100.81" />
                 <rect class="kcr2" x="105.43" y="181.53" width="20" height="20"
                     transform="translate(230.86 383.07) rotate(180)" />
                 <rect class="kcr2" x="136" y="90.92" width="20" height="20"
                     transform="translate(292 201.84) rotate(180)" />
-                <path class="kcr1" d="M105.43,191.53c-43.13,0-43.13-90.72-104.43-90.72" />
-                <line class="kcr1" x1="1" y1="100.87" x2="136" y2="100.87" />
+                <path id="kobra-epics-ioc-line" class="kcr1" d="M105.43,191.53c-43.13,0-43.13-90.72-104.43-90.72" />
+                <line id="kobra-virtual-line" class="kcr1" x1="1" y1="100.87" x2="136" y2="100.87" />
             </svg>
         </div>
 
@@ -222,10 +220,10 @@
                     </style>
                 </defs>
                 <circle class="ket2" cx="146" cy="100.77" r="10" />
-                <line class="ket1" x1="1" y1="100.77" x2="136" y2="100.77" />
+                <line id="tpsb1-2-line" class="ket1" x1="1" y1="100.77" x2="136" y2="100.77" />
                 <circle class="ket2" cx="270.43" cy="10" r="10" />
-                <path class="ket1" d="M260.43,10c-43.13,0-43.13,90.77-104.43,90.77" />
-                <path class="ket1" d="M260.43,191.53c-43.13,0-43.13-90.77-104.43-90.77" />
+                <path id="e1-main-line" class="ket1" d="M260.43,10c-43.13,0-43.13,90.77-104.43,90.77" />
+                <path id="kobra-btr-line" class="ket1" d="M260.43,191.53c-43.13,0-43.13-90.77-104.43-90.77" />
                 <circle class="ket2" cx="270.43" cy="191.53" r="10" />
             </svg>
         </div>
@@ -250,10 +248,10 @@
                         }
                     </style>
                 </defs>
-                <path class="kea1" d="M186.84,89.75c-92.92,0-92.92,40.77-185.84,40.77" />
-                <path class="kea1" d="M150.62,10C77.06,10,77.06,130.52,1,130.52" />
-                <path class="kea1" d="M186.84,171.29c-92.92,0-92.92-40.77-185.84-40.77" />
-                <path class="kea1" d="M150.62,251.04c-73.56,0-73.56-120.52-149.62-120.52" />
+                <path id="f1-rack-line" class="kea1" d="M150.62,10C77.06,10,77.06,130.52,1,130.52" />
+                <path id="f2-rack-line" class="kea1" d="M186.84,89.75c-92.92,0-92.92,40.77-185.84,40.77" />
+                <path id="f3-rack-line" class="kea1" d="M186.84,171.29c-92.92,0-92.92-40.77-185.84-40.77" />
+                <path id="beamdump-rack-line" class="kea1" d="M150.62,251.04c-73.56,0-73.56-120.52-149.62-120.52" />
                 <circle class="kea2" cx="160.62" cy="10" r="10" />
                 <circle class="kea2" cx="196.84" cy="89.75" r="10" />
                 <circle class="kea2" cx="196.84" cy="171.29" r="10" />
@@ -354,137 +352,153 @@
         <!-- Nework Traffic Text -->
         <div class="networkTextContainer" style="top:180px; left:70px;">
             <div class="networkRightTitleText">P2DT Gallery</div>
-            <div class="networkRightValueText" id="p2dt-gallery-value1">26.9kB/s</div>
+            <div class="networkRightValueText" id="p2dt-gallery-value1"></div>
         </div>
 
         <div class="networkTextContainer" style="top:85px; left:190px;">
             <div class="networkRightTitleText">P2DT Gallery</div>
-            <div class="networkRightValueText" id="p2dt-gallery-value2">26.9kB/s</div>
+            <div class="networkRightValueText" id="p2dt-gallery-value2"></div>
         </div>
 
         <div class="networkTextContainer" style="top:180px; left:310px;">
             <div class="networkRightTitleText">P2DT Gallery</div>
-            <div class="networkRightValueText" id="p2dt-gallery-value3">26.9kB/s</div>
+            <div class="networkRightValueText" id="p2dt-gallery-value3"></div>
         </div>
 
         <div class="networkTextContainer" style="top:85px; left:430px;">
             <div class="networkRightTitleText">P2DT Gallery</div>
-            <div class="networkRightValueText" id="p2dt-gallery-value4">26.9kB/s</div>
+            <div class="networkRightValueText" id="p2dt-gallery-value4"></div>
         </div>
 
         <div class="networkTextContainer" style="top:180px; left:555px;">
             <div class="networkRightTitleText">TOF Area</div>
-            <div class="networkRightValueText" id="tof-area-value1">26.9kB/s</div>
+            <div class="networkRightValueText" id="tof-area-value1"></div>
         </div>
 
         <div class="networkTextContainer" style="top:304px; left:318px;">
             <div class="networkRightTitleText">TOF Area</div>
-            <div class="networkRightValueText" id="tof-area-value2">26.9kB/s</div>
+            <div class="networkRightValueText" id="tof-area-value2"></div>
         </div>
 
         <div class="networkTextContainer" style="top:180px; left:716px;">
             <div class="networkLeftTitleText">TPS-B1-1</div>
-            <div class="networkLeftValueText" id="ndps-tps-b1-1-value">26.9kB/s</div>
+            <div class="networkLeftValueText" id="ndps-tps-b1-1-value"></div>
         </div>
 
         <div class="networkTextContainer" style="top:445px; left:500px;">
             <div class="networkRightTitleText">Counting Room</div>
-            <div class="networkRightValueText" id="ndps-counting-room-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="ndps-counting-room-value"></div>
         </div>
 
         <div class="networkTextContainer" style="top:583px; left:30px;">
             <div class="networkRightTitleText">Archive</div>
-            <div class="networkRightValueText" id="ndps-archive-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="ndps-archive-value"></div>
         </div>
 
         <div class="networkTextContainer" style="top:765px; left:30px;">
             <div class="networkRightTitleText">Virtual</div>
-            <div class="networkRightValueText" id="ndps-virtual-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="ndps-virtual-value"></div>
         </div>
 
         <div class="networkTextContainer" style="top:640px; left:276px;">
             <div class="networkRightTitleText">PS Room</div>
-            <div class="networkRightValueText" id="ndps-ps-room-value1">26.9kB/s</div>
+            <div class="networkRightValueText" id="ndps-ps-room-value1"></div>
         </div>
 
         <div class="networkTextContainer" style="top:800px; left:230px;">
             <div class="networkRightTitleText">Storage</div>
-            <div class="networkRightValueText" id="ndps-storage-value1">26.9kB/s</div>
+            <div class="networkRightValueText" id="ndps-storage-value1"></div>
         </div>
 
         <div class="networkTextContainer" style="top:640px; left:430px;">
             <div class="networkRightTitleText">PS Room</div>
-            <div class="networkRightValueText" id="ndps-ps-room-value2">26.9kB/s</div>
+            <div class="networkRightValueText" id="ndps-ps-room-value2"></div>
         </div>
 
         <div class="networkTextContainer" style="top:1px; left:1680px;">
             <div class="networkRightTitleText">F1 Rack</div>
-            <div class="networkRightValueText" id="kobra-f1-rack-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="kobra-f1-rack-value">0.0kB/s</div>
         </div>
 
         <div class="networkTextContainer" style="top:82px; left:1715px;">
             <div class="networkRightTitleText">F2 Rack</div>
-            <div class="networkRightValueText" id="kobra-f2-rack-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="kobra-f2-rack-value">0.0kB/s</div>
         </div>
 
         <div class="networkTextContainer" style="top:163px; left:1715px;">
             <div class="networkRightTitleText">F3 Rack</div>
-            <div class="networkRightValueText" id="kobra-f3-rack-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="kobra-f3-rack-value">0.0kB/s</div>
         </div>
 
         <div class="networkTextContainer" style="top:244px; left:1680px;">
             <div class="networkRightTitleText">Beam Dump Rack</div>
-            <div class="networkRightValueText" id="kobra-beamdump-rack-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="kobra-beamdump-rack-value">0.0kB/s</div>
         </div>
 
         <div class="networkTextContainer" style="top:90px; left:1380px;">
             <div class="networkRightTitleText">E1 Main</div>
-            <div class="networkRightValueText" id="kobra-e1-main-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="kobra-e1-main-value">0.0kB/s</div>
         </div>
 
         <div class="networkTextContainer" style="top:304px; left:1510px;">
             <div class="networkRightTitleText">KoBRA BTR</div>
-            <div class="networkRightValueText" id="kobra-btr-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="kobra-btr-value">0.0kB/s</div>
         </div>
 
         <div class="networkTextContainer" style="top:180px; left:1255px;">
             <div class="networkRightTitleText">TPS-B1-2</div>
-            <div class="networkRightValueText" id="kobra-tps-b1-2-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="tps-b1-2-value">0.0kB/s</div>
         </div>
-        
+
         <div class="networkTextContainer" style="top:180px; left:1100px;">
             <div class="networkRightTitleText">TPS-B1-1</div>
-            <div class="networkRightValueText" id="kobra-tps-b1-1-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="tps-b1-1-value">0.0kB/s</div>
         </div>
 
         <div class="networkTextContainer" style="top:355px; left:1435px;">
             <div class="networkRightTitleText">Archive</div>
-            <div class="networkRightValueText" id="kobra-archive-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="kobra-archive-value">0.0kB/s</div>
         </div>
 
         <div class="networkTextContainer" style="top:446px; left:1464px;">
             <div class="networkRightTitleText">Virtual</div>
-            <div class="networkRightValueText" id="kobra-virtual-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="kobra-virtual-value">0.0kB/s</div>
         </div>
 
         <div class="networkTextContainer" style="top:536px; left:1435px;">
             <div class="networkRightTitleText">EPICS IOCs</div>
-            <div class="networkRightValueText" id="kobra-ioc-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="kobra-ioc-value">0.0kB/s</div>
         </div>
 
         <div class="networkTextContainer" style="top:415px; left:1170px;">
             <div class="networkRightTitleText">Counting Room</div>
-            <div class="networkRightValueText" id="kobra-counting-room-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="kobra-counting-room-value">0.0kB/s</div>
         </div>
 
         <div class="networkTextContainer" style="top:675px; left:1510px;">
             <div class="networkRightTitleText">PS Room</div>
-            <div class="networkRightValueText" id="kobra-ps-room-value">26.9kB/s</div>
+            <div class="networkRightValueText" id="kobra-ps-room-value">0.0kB/s</div>
         </div>
 
     </div>
 </body>
 <script>
+    // This value depend on saved push time interval on telegraf configuration
+    var dataTimeInterval = 20; // second
+
+    var timeInterval = 3000; // millisecond
+
+    monitoringTPSB1_1Switch(dataTimeInterval);
+    setInterval(monitoringTPSB1_1Switch, timeInterval, dataTimeInterval);
+
+    monitoringTPSB1_2Switch(dataTimeInterval);
+    setInterval(monitoringTPSB1_2Switch, timeInterval, dataTimeInterval);
+
+    monitoringKoBRAe1MainSwitch(dataTimeInterval);
+    setInterval(monitoringKoBRAe1MainSwitch, timeInterval, dataTimeInterval);
+
+    monitoringKoBRACountingRoomSwitch(dataTimeInterval);
+    setInterval(monitoringKoBRACountingRoomSwitch, timeInterval, dataTimeInterval);
 
 </script>
 
