@@ -280,7 +280,7 @@
                         }
                     </style>
                 </defs>
-                <line class="nta1" x1="144.43" y1="100.74" x2="279.43" y2="100.74" />
+                <line id="ndps-tof-main-line" class="nta1" x1="144.43" y1="100.74" x2="279.43" y2="100.74" />
                 <circle class="nta2" cx="134.43" cy="100.44" r="10" />
                 <circle class="nta2" cx="10" cy="10" r="10" />
                 <path class="nta1" d="M20,10c43.13,0,43.13,90.77,104.43,90.77" />
@@ -339,13 +339,13 @@
                     </style>
                 </defs>
                 <rect class="npr2" x="151.24" y="181.53" width="20" height="20" />
-                <path class="npr1" d="M171.24,191.53c43.13,0,43.13-90.77,104.43-90.77" />
+                <path id="ndps-storage-line" class="npr1" d="M171.24,191.53c43.13,0,43.13-90.77,104.43-90.77" />
                 <circle class="npr2" cx="134.43" cy="100.74" r="10" />
                 <rect class="npr2" y="181.53" width="20" height="20" />
-                <path class="npr1" d="M20,191.53c43.13,0,43.13-90.77,104.43-90.77" />
+                <path id="ndps-virtual-line" class="npr1" d="M20,191.53c43.13,0,43.13-90.77,104.43-90.77" />
                 <rect class="npr2" width="20" height="20" />
-                <path class="npr1" d="M20,10c43.13,0,43.13,90.77,104.43,90.77" />
-                <path class="npr1" d="M144.43,100.77s131.24,0,131.24,0" />
+                <path id="ndps-archive-line" class="npr1" d="M20,10c43.13,0,43.13,90.77,104.43,90.77" />
+                <path id="ndps-ps-room1-line"  class="npr1" d="M144.43,100.77s131.24,0,131.24,0" />
             </svg>
         </div>
 
@@ -390,29 +390,29 @@
             <div class="networkRightValueText" id="ndps-counting-room-value"></div>
         </div>
 
-        <div class="networkTextContainer" style="top:583px; left:30px;">
-            <div class="networkRightTitleText">Archive</div>
-            <div class="networkRightValueText" id="ndps-archive-value"></div>
+        <div class="networkTextContainer" style="top:583px; left:0px;">
+            <div class="networkLeftTitleText">Archive</div>
+            <div class="networkLeftValueText" id="ndps-archive-value"></div>
         </div>
 
-        <div class="networkTextContainer" style="top:765px; left:30px;">
-            <div class="networkRightTitleText">Virtual</div>
-            <div class="networkRightValueText" id="ndps-virtual-value"></div>
+        <div class="networkTextContainer" style="top:765px; left:0px;">
+            <div class="networkLeftTitleText">Virtual</div>
+            <div class="networkLeftValueText" id="ndps-virtual-value"></div>
         </div>
 
         <div class="networkTextContainer" style="top:640px; left:276px;">
             <div class="networkRightTitleText">PS Room</div>
-            <div class="networkRightValueText" id="ndps-ps-room-value1"></div>
+            <div class="networkRightValueText" id="ndps-ps-room-value"></div>
         </div>
 
         <div class="networkTextContainer" style="top:800px; left:230px;">
             <div class="networkRightTitleText">Storage</div>
-            <div class="networkRightValueText" id="ndps-storage-value1"></div>
+            <div class="networkRightValueText" id="ndps-storage-value"></div>
         </div>
 
         <div class="networkTextContainer" style="top:640px; left:430px;">
-            <div class="networkRightTitleText">PS Room</div>
-            <div class="networkRightValueText" id="ndps-ps-room-value2"></div>
+            <div class="networkRightTitleText">PS Room Main</div>
+            <div class="networkRightValueText" id="ndps-ps-room-main-value"></div>
         </div>
 
         <div class="networkTextContainer" style="top:1px; left:1680px;">
@@ -500,6 +500,14 @@
     monitoringKoBRACountingRoomSwitch(dataTimeInterval);
     setInterval(monitoringKoBRACountingRoomSwitch, timeInterval, dataTimeInterval);
 
+    monitoringNDPSTOFMainSwitch(dataTimeInterval);
+    setInterval(monitoringNDPSTOFMainSwitch, timeInterval, dataTimeInterval);
+
+    monitoringNDPSPSRoomMainSwitch(dataTimeInterval);
+    setInterval(monitoringNDPSPSRoomMainSwitch, timeInterval, dataTimeInterval);
+
+    monitoringNDPSPSRoomSwitch(dataTimeInterval);
+    setInterval(monitoringNDPSPSRoomSwitch, timeInterval, dataTimeInterval);
 </script>
 
 </html>

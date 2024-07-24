@@ -208,7 +208,12 @@ body {
 #f1-rack-line,
 #f2-rack-line,
 #f3-rack-line,
-#beamdump-rack-line
+#beamdump-rack-line,
+#ndps-tof-main-line,
+#ndps-storage-line,
+#ndps-ps-room1-line,
+#ndps-archive-line,
+#ndps-virtual-line
 {
     animation: animationDashLine1 100s linear infinite;
 }
@@ -240,5 +245,14 @@ body {
 
     to {
         stroke-dashoffset: 400;
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(var(--degree));
     }
 }
